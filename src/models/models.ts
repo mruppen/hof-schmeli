@@ -27,6 +27,7 @@ export const TeaserKeys: TeaserKeyLabel[] = [
 export interface TeaserModel {
   keys: TeaserKeyEnum[];
   image?: string;
+  imageCaption?: string;
   title: string;
   text: string;
   to: string;

@@ -1,7 +1,9 @@
 import { ThemeProvider } from "@material-ui/core";
 import QuoteTeaser from "./components/quoteTeaser";
+import TeaserRow from "./components/teaserRow";
 import useCustomTheme from "./customTheme";
 import roger from "./data/images/roger.png";
+import { allTeasers } from "./data/teasers";
 
 export function App() {
   const theme = useCustomTheme();
@@ -17,6 +19,7 @@ Erdreich verankert und seine Nährstoffe
 aufnimmt.”"
         person="person"
       />
+      <TeaserRow teasers={allTeasers} />
     </ThemeProvider>
   );
 }
