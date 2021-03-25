@@ -143,6 +143,12 @@ export default function useCustomTheme(): Theme {
       },
     };
 
+    // Label
+    theme.typography.subtitle1 = {
+      fontSize: theme.typography.pxToRem(14),
+      lineHeight: "160%",
+    };
+
     return theme;
   }, []);
 }

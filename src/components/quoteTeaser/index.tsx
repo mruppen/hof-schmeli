@@ -7,52 +7,33 @@ import {
   Typography,
 } from "@material-ui/core";
 import preact from "preact";
+import { ColorStyles, useContainerStyles } from "../../hooks";
 import ArrowButton from "../arrowButton";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      backgroundColor: theme.palette.blue.main,
-      color: theme.palette.common.white,
-      [theme.breakpoints.up("sm")]: {
-        width: 1440,
-        maxWidth: 1440,
-        paddingLeft: 188,
-        paddingRight: 188,
-      },
-      [theme.breakpoints.down("xs")]: {
-        paddingLeft: 24,
-        paddingRight: 24,
-        width: 375,
-        maxWidth: 375,
-      },
-    },
-
     image: {
       [theme.breakpoints.up("sm")]: {
-        paddingTop: 80,
-        paddingBottom: 80,
+        paddingTop: 80 - theme.spacing(1),
+        paddingBottom: 80 - theme.spacing(1),
       },
       [theme.breakpoints.down("xs")]: {
         paddingLeft: 33.5,
         paddingRight: 33.5,
-        paddingTop: 56,
-        paddingBottom: 56,
+        paddingTop: 56 - theme.spacing(1),
+        paddingBottom: 56 - theme.spacing(1),
       },
     },
 
     content: {
-      //   display: flex;
-      //   flex-direction: column;
-      //   align-items: flex-start;
       [theme.breakpoints.up("sm")]: {
         marginLeft: 40,
-        paddingTop: 80,
-        paddingBottom: 80,
+        paddingTop: 80 - theme.spacing(1),
+        paddingBottom: 80 - theme.spacing(1),
       },
       [theme.breakpoints.down("xs")]: {
-        paddingTop: 0,
-        paddingBottom: 56,
+        paddingTop: 0 - theme.spacing(1),
+        paddingBottom: 56 - theme.spacing(1),
         marginLeft: 0,
       },
     },
@@ -74,9 +55,18 @@ export default function QuoteTeaser({
   title,
   person,
 }: QuoteTeaserProps): preact.VNode {
+  const containerClasses = useContainerStyles(
+    (theme: Theme): ColorStyles => {
+      return {
+        backgroundColor: theme.palette.blue.main,
+        color: theme.palette.common.white,
+      };
+    }
+  );
   const classes = useStyles();
+
   return (
-    <Container className={classes.container} disableGutters>
+    <Container className={containerClasses.main} disableGutters>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3}>
           <div className={classes.image}>
