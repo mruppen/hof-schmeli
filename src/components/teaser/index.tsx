@@ -9,7 +9,7 @@ import { ClassNameMap } from "@material-ui/core/styles/withStyles";
 import preact from "preact";
 import { ColorStylesFunc } from "../../hooks";
 import { TeaserModel } from "../../models/models";
-import { getPaletteColor, PaletteType } from "../../utils";
+import { getColorStyles, PaletteType } from "../../utils";
 import ArrowButton from "../arrowButton";
 
 type UseStylesType = (
@@ -51,7 +51,7 @@ export default function Teaser({
   toText,
   palette,
 }: TeaserProps): preact.VNode {
-  const classes = useStyles((theme: Theme) => getPaletteColor(theme, palette));
+  const classes = useStyles((theme: Theme) => getColorStyles(theme, palette));
   return (
     <Grid container spacing={0} className={classes.container}>
       {image && (

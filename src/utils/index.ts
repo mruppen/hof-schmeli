@@ -8,7 +8,7 @@ export type ColorStyles = {
 
 export type PaletteType = "green" | "blue" | "orange" | "yellow" | ColorStyles;
 
-export function getPaletteColor(
+export function getColorStyles(
   theme: Theme,
   palette: PaletteType
 ): ColorStyles {

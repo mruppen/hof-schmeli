@@ -1,8 +1,10 @@
 import { ThemeProvider } from "@material-ui/core";
+import MainTeaser from "./components/mainTeaser";
 import QuoteTeaser from "./components/quoteTeaser";
 import TeaserRow from "./components/teaserRow";
 import useCustomTheme from "./customTheme";
 import roger from "./data/images/roger.png";
+import teaser from "./data/images/teaser.png";
 import { allTeasers } from "./data/teasers";
 
 export function App() {
@@ -20,6 +22,13 @@ aufnimmt.”"
         person="person"
       />
       <TeaserRow teasers={allTeasers} />
+      <MainTeaser
+        image={teaser}
+        text="Selbstbestimmtes und selbstorganisiertes Lernen heisst Lernen, das vorwiegend aus eigenem Antrieb, gemäss eigenen Interessen und individuellem Tempo und mit selbstgewählter Lerntechnik und Sozialform geschieht."
+        title="Die Bauernhof-Schule"
+        to="."
+        toText="Mehr Infos für Eltern"
+      />
     </ThemeProvider>
   );
 }

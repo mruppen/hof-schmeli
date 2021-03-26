@@ -1,4 +1,4 @@
-import { Container, Grid, makeStyles, Theme } from "@material-ui/core";
+import { Container, Grid, Theme, useTheme } from "@material-ui/core";
 import preact from "preact";
 import { ColorStyles, useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
@@ -8,12 +8,6 @@ export type TeaserRowProps = {
   teasers: TeaserModel[];
 };
 
-const useStyles = makeStyles({
-  container: {
-    marginTop: -8,
-  },
-});
-
 export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
   const classes = useContainerStyles(
     (theme: Theme): ColorStyles => ({
@@ -22,7 +16,7 @@ export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
     })
   );
 
-  const localClasses = useStyles();
+  const theme = useTheme();
 
   const children: React.ReactNode[] = [];
   teasers.forEach((teaser, index) =>
@@ -30,7 +24,10 @@ export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
       <Grid item xs={12} sm={4}>
         <Teaser
           keys={teaser.keys}
-          palette={{ backgroundColor: "inherit", color: "inherit" }}
+          palette={{
+            backgroundColor: theme.palette.green.contrastText,
+            color: theme.palette.green.main,
+          }}
           text={teaser.text}
           title={teaser.title}
           to={teaser.to}

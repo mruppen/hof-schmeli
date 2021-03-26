@@ -9,7 +9,7 @@ import {
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import clsx from "clsx";
 import preact from "preact";
-import { ColorStyles, getPaletteColor, PaletteType } from "../../utils";
+import { ColorStyles, getColorStyles, PaletteType } from "../../utils";
 
 type ArrowButtonProps = {
   arrow: "start" | "end";
@@ -39,7 +39,7 @@ export default function ArrowButton({
   ...props
 }: ArrowButtonProps): preact.VNode {
   const theme = useTheme();
-  const classes = useStyles(getPaletteColor(theme, palette));
+  const classes = useStyles(getColorStyles(theme, palette));
   console.log(props);
   return (
     <Button
