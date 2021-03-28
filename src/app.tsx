@@ -1,5 +1,8 @@
 import { ThemeProvider } from "@material-ui/core";
+import preact from "preact";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import MainTeaser from "./components/mainTeaser";
+import PlainTeaser from "./components/plainTeaser";
 import QuoteTeaser from "./components/quoteTeaser";
 import TeaserRow from "./components/teaserRow";
 import useCustomTheme from "./customTheme";
@@ -7,28 +10,53 @@ import roger from "./data/images/roger.png";
 import teaser from "./data/images/teaser.png";
 import { allTeasers } from "./data/teasers";
 
-export function App() {
+export function App(): preact.VNode {
   const theme = useCustomTheme();
-
   return (
     <ThemeProvider theme={theme}>
-      <QuoteTeaser
-        image={roger}
-        title="“Bäume brauchen Wurzeln. Ein kleiner Baum
-kann umso besser wachsen und gedeihen, je
-kräftiger seine Wurzeln sind, mit denen er sich im
-Erdreich verankert und seine Nährstoffe
-aufnimmt.”"
-        person="person"
-      />
-      <TeaserRow teasers={allTeasers} />
-      <MainTeaser
-        image={teaser}
-        text="Selbstbestimmtes und selbstorganisiertes Lernen heisst Lernen, das vorwiegend aus eigenem Antrieb, gemäss eigenen Interessen und individuellem Tempo und mit selbstgewählter Lerntechnik und Sozialform geschieht."
-        title="Die Bauernhof-Schule"
-        to="."
-        toText="Mehr Infos für Eltern"
-      />
+      <Router>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/teaserRow">Teaser Row</Link>
+          </li>
+          <li>
+            <Link to="/mainTeaser">Main Teaser</Link>
+          </li>
+          <li>
+            <Link to="/plainTeaser">Plain Teaser</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route path="/mainTeaser">
+            <MainTeaser
+              image={teaser}
+              text="Selbstbestimmtes und selbstorganisiertes Lernen heisst Lernen, das vorwiegend aus eigenem Antrieb, gemäss eigenen Interessen und individuellem Tempo und mit selbstgewählter Lerntechnik und Sozialform geschieht."
+              title="Die Bauernhof-Schule"
+              to="."
+              toText="Mehr Infos für Eltern"
+            />
+          </Route>
+          <Route path="/teaserRow">
+            <TeaserRow teasers={allTeasers} />
+          </Route>
+          <Route path="/plainTeaser">
+            <PlainTeaser to="/teaserRow" toText="Unsere Vision">
+              Wir leben Schule -<br />
+              Mit Menschlichkeit
+            </PlainTeaser>
+          </Route>
+          <Route path="/">
+            <QuoteTeaser
+              image={roger}
+              title="“Bäume brauchen Wurzeln. Ein kleiner Baum kann umso besser wachsen und gedeihen, je kräftiger seine Wurzeln sind, mit denen er sich im Erdreich verankert und seine Nährstoffe aufnimmt.”"
+              person="person"
+            />
+          </Route>
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }
