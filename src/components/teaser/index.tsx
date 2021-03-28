@@ -80,7 +80,7 @@ export default function Teaser({
       )}
       {to && (
         <Grid item xs={12}>
-          <ArrowButton arrow="start" palette={palette} variant="text">
+          <ArrowButton arrow="start" palette={palette} variant="text" to={to}>
             {toText}
           </ArrowButton>
         </Grid>
