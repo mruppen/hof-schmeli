@@ -14,7 +14,7 @@ import ArrowButton from "../arrowButton";
 
 type UseStylesType = (
   func: ColorStylesFunc
-) => ClassNameMap<"container" | "image" | "caption" | "text">;
+) => ClassNameMap<"container" | "image" | "caption" | "text" | "subtitle">;
 
 const useStyles: UseStylesType = makeStyles<Theme, ColorStylesFunc>(
   (theme: Theme) =>
@@ -28,7 +28,7 @@ const useStyles: UseStylesType = makeStyles<Theme, ColorStylesFunc>(
         width: "100%",
         height: "auto",
       },
-      subtitle1: {
+      subtitle: {
         marginTop: theme.spacing(1),
       },
       text: {
@@ -61,7 +61,7 @@ export default function Teaser({
       )}
       {imageCaption && (
         <Grid item xs={12}>
-          <Typography variant="subtitle1" className={classes.subtitle1}>
+          <Typography variant="subtitle1" className={classes.subtitle}>
             {imageCaption}
           </Typography>
         </Grid>
