@@ -46,9 +46,11 @@ export default function PlainTeaser({
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <ArrowButton variant="outlined" arrow="start" palette="orange">
-            {toText}
-          </ArrowButton>
+          <div className={classes.center}>
+            <ArrowButton variant="outlined" arrow="start" palette="orange">
+              {toText}
+            </ArrowButton>
+          </div>
         </Grid>
       </Grid>
     </Container>
