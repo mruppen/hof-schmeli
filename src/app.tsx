@@ -5,6 +5,7 @@ import MainTeaser from "./components/mainTeaser";
 import PlainTeaser from "./components/plainTeaser";
 import QuoteTeaser from "./components/quoteTeaser";
 import TeaserRow from "./components/teaserRow";
+import ContactSubscribe from "./components/contactSubscribe";
 import useCustomTheme from "./customTheme";
 import roger from "./data/images/roger.png";
 import teaser from "./data/images/teaser.png";
@@ -28,6 +29,9 @@ export function App(): preact.VNode {
           <li>
             <Link to="/plainTeaser">Plain Teaser</Link>
           </li>
+          <li>
+            <Link to="/contactSubscribe">Contact subscribe</Link>
+          </li>
         </ul>
         <Switch>
           <Route path="/mainTeaser">
@@ -47,6 +51,9 @@ export function App(): preact.VNode {
               Wir leben Schule -<br />
               Mit Menschlichkeit
             </PlainTeaser>
+          </Route>
+          <Route patch="/contactSubscribe">
+            <ContactSubscribe />
           </Route>
           <Route path="/">
             <QuoteTeaser
