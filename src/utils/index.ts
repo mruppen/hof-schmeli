@@ -1,17 +1,22 @@
 import { Theme } from "@material-ui/core";
 import { PaletteColor } from "@material-ui/core/styles/createPalette";
 
-export type ColorStyles = {
+export type ColorsType = {
   color: string;
   backgroundColor: string;
 };
 
-export type PaletteType = "green" | "blue" | "orange" | "yellow" | ColorStyles;
+export type PaletteOrColorsType =
+  | "green"
+  | "blue"
+  | "orange"
+  | "yellow"
+  | ColorsType;
 
-export function getColorStyles(
+export function getColors(
   theme: Theme,
-  palette: PaletteType
-): ColorStyles {
+  palette: PaletteOrColorsType
+): ColorsType {
   const paletteColor = getPaletteColorFromTheme(theme, palette);
   if (!!paletteColor) {
     return {
@@ -20,15 +25,15 @@ export function getColorStyles(
     };
   } else {
     return {
-      backgroundColor: (palette as ColorStyles).backgroundColor,
-      color: (palette as ColorStyles).color,
+      backgroundColor: (palette as ColorsType).backgroundColor,
+      color: (palette as ColorsType).color,
     };
   }
 }
 
 function getPaletteColorFromTheme(
   theme: Theme,
-  palette: PaletteType
+  palette: PaletteOrColorsType
 ): PaletteColor | null {
   if (typeof palette === "string" && palette in theme.palette) {
     return theme.palette[palette];

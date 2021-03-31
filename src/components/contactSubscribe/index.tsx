@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) => {
     contact: {
       backgroundColor: theme.palette.blue.contrastText,
       color: theme.palette.blue.main,
-      minHeight: "100%"
+      minHeight: "100%",
     },
     listItem: {
       display: "flex",
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => {
       height: 30,
       borderRadius: 40,
       textAlign: "center",
-      verticalAlign: "center"
+      verticalAlign: "center",
     },
 
     bulletText: {
@@ -82,7 +82,9 @@ function createListItem(
   return (
     <div className={classes.listItem}>
       <div className={classes.bullet}>
-        <Typography variant="body1" className={classes.bulletText}>{index}</Typography>
+        <Typography variant="body1" className={classes.bulletText}>
+          {index}
+        </Typography>
       </div>
       {text}
     </div>
@@ -101,7 +103,7 @@ export default function ContactSubscribe(): preact.VNode {
   const theme = useTheme();
   const buttonStyle = {
     color: theme.palette.blue.main,
-    backgroundColor: theme.palette.blue.contrastText
+    backgroundColor: theme.palette.blue.contrastText,
   };
 
   return (
@@ -122,21 +124,34 @@ export default function ContactSubscribe(): preact.VNode {
             <br /> So sieht unser Anmeldeprozess aus:
           </Typography>
         </Grid>
-        <Grid item sm={1}><Hidden/></Grid>
+        <Grid item sm={1}>
+          <Hidden />
+        </Grid>
         <Grid item xs={12} sm={6}>
           <div className={clsx(classes.subscribe, classes.flexbox)}>
             <Typography variant="h2">Anmeldeprozess</Typography>
             {createListItem(
               1,
-              <Typography variant="body1" className={classes.listItemText}>Schreibe uns eine Mail oder rufe uns an, wenn du vorgängig noch mehr Fragen hast</Typography>, classes
+              <Typography variant="body1" className={classes.listItemText}>
+                Schreibe uns eine Mail oder rufe uns an, wenn du vorgängig noch
+                mehr Fragen hast
+              </Typography>,
+              classes
             )}
             {createListItem(
               2,
-              <Typography variant="body1" className={classes.listItemText}>Fülle das Formular «provisorische Anmeldung» bis zum …Datum… aus.</Typography>, classes
+              <Typography variant="body1" className={classes.listItemText}>
+                Fülle das Formular «provisorische Anmeldung» bis zum …Datum…
+                aus.
+              </Typography>,
+              classes
             )}
             {createListItem(
               3,
-              <Typography variant="body1" className={classes.listItemText}>Bis spätestens ….Datum…. nehmen wir Kontakt mit dir auf.</Typography>, classes
+              <Typography variant="body1" className={classes.listItemText}>
+                Bis spätestens ….Datum…. nehmen wir Kontakt mit dir auf.
+              </Typography>,
+              classes
             )}
           </div>
         </Grid>
@@ -144,13 +159,23 @@ export default function ContactSubscribe(): preact.VNode {
           <div className={clsx(classes.flexbox, classes.contact)}>
             <Typography variant="h2">Kontakt</Typography>
             <Typography variant="body2">
-              Schule Bauernhof Schmeli<br />Rumpelstilzweg 1<br />3994 Brig-Glis
+              Schule Bauernhof Schmeli
+              <br />
+              Rumpelstilzweg 1<br />
+              3994 Brig-Glis
             </Typography>
             <Typography variant="body2">
-              Telefon<br/>034 234 56 78
+              Telefon
+              <br />
+              034 234 56 78
             </Typography>
-            <ArrowButton variant="text" arrow="end" palette={buttonStyle} to="/">
-Mehr erfahren
+            <ArrowButton
+              variant="text"
+              arrow="end"
+              palette={buttonStyle}
+              to="/"
+            >
+              Mehr erfahren
             </ArrowButton>
           </div>
         </Grid>

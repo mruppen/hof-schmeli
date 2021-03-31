@@ -1,11 +1,12 @@
 import { ThemeProvider } from "@material-ui/core";
 import preact from "preact";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ContactSubscribe from "./components/contactSubscribe";
+import MainNavigation from "./components/mainNavigation";
 import MainTeaser from "./components/mainTeaser";
 import PlainTeaser from "./components/plainTeaser";
 import QuoteTeaser from "./components/quoteTeaser";
 import TeaserRow from "./components/teaserRow";
-import ContactSubscribe from "./components/contactSubscribe";
 import useCustomTheme from "./customTheme";
 import roger from "./data/images/roger.png";
 import teaser from "./data/images/teaser.png";
@@ -16,23 +17,7 @@ export function App(): preact.VNode {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/teaserRow">Teaser Row</Link>
-          </li>
-          <li>
-            <Link to="/mainTeaser">Main Teaser</Link>
-          </li>
-          <li>
-            <Link to="/plainTeaser">Plain Teaser</Link>
-          </li>
-          <li>
-            <Link to="/contactSubscribe">Contact subscribe</Link>
-          </li>
-        </ul>
+        <MainNavigation colors="orange" />
         <Switch>
           <Route path="/mainTeaser">
             <MainTeaser
@@ -52,7 +37,7 @@ export function App(): preact.VNode {
               Mit Menschlichkeit
             </PlainTeaser>
           </Route>
-          <Route patch="/contactSubscribe">
+          <Route path="/contactSubscribe">
             <ContactSubscribe />
           </Route>
           <Route path="/">
