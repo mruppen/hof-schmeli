@@ -46,7 +46,7 @@ export default function MainTeaser({
   to,
   toText,
 }: MainTeaserProps): preact.VNode {
-  const containerClasses = useContainerStyles((theme: Theme) => {
+  const containerClasses = useContainerStyles((theme) => {
     return {
       color: theme.palette.green.main,
       backgroundColor: theme.palette.green.contrastText,

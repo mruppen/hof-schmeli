@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import preact from "preact";
-import { ColorStyles, useContainerStyles } from "../../hooks";
+import { useContainerStyles } from "../../hooks";
 import ArrowButton from "../arrowButton";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -55,14 +55,12 @@ export default function QuoteTeaser({
   title,
   person,
 }: QuoteTeaserProps): preact.VNode {
-  const containerClasses = useContainerStyles(
-    (theme: Theme): ColorStyles => {
-      return {
-        backgroundColor: theme.palette.blue.main,
-        color: theme.palette.common.white,
-      };
-    }
-  );
+  const containerClasses = useContainerStyles((theme: Theme) => {
+    return {
+      backgroundColor: theme.palette.blue.main,
+      color: theme.palette.common.white,
+    };
+  });
   const classes = useStyles();
 
   return (

@@ -1,6 +1,6 @@
 import { Container, Grid, Theme, useTheme } from "@material-ui/core";
 import preact from "preact";
-import { ColorStyles, useContainerStyles } from "../../hooks";
+import { Colors, useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
 import Teaser from "../teaser";
 
@@ -10,7 +10,7 @@ export type TeaserRowProps = {
 
 export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
   const classes = useContainerStyles(
-    (theme: Theme): ColorStyles => ({
+    (theme: Theme): Colors => ({
       color: theme.palette.green.main,
       backgroundColor: theme.palette.green.contrastText,
     })

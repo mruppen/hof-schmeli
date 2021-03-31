@@ -7,39 +7,38 @@ import {
 } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/core/styles/withStyles";
 import preact from "preact";
-import { ColorStylesFunc } from "../../hooks";
+import { ColorsFunc } from "../../hooks";
 import { TeaserModel } from "../../models/models";
-import { getColorStyles, PaletteType } from "../../utils";
+import { getColors, PaletteOrColorsType } from "../../utils";
 import ArrowButton from "../arrowButton";
 
 type UseStylesType = (
-  func: ColorStylesFunc
+  func: ColorsFunc
 ) => ClassNameMap<"container" | "image" | "caption" | "text" | "subtitle">;
 
-const useStyles: UseStylesType = makeStyles<Theme, ColorStylesFunc>(
-  (theme: Theme) =>
-    createStyles({
-      container: (props) => ({
-        backgroundColor: props(theme).backgroundColor,
-        color: props(theme).color,
-        paddingTop: 0,
-      }),
-      image: {
-        width: "100%",
-        height: "auto",
-      },
-      subtitle: {
-        marginTop: theme.spacing(1),
-      },
-      text: {
-        marginTop: theme.spacing(1),
-        paddingBottom: theme.spacing(2),
-      },
-    })
+const useStyles: UseStylesType = makeStyles<Theme, ColorsFunc>((theme: Theme) =>
+  createStyles({
+    container: (props) => ({
+      backgroundColor: props(theme).backgroundColor,
+      color: props(theme).color,
+      paddingTop: 0,
+    }),
+    image: {
+      width: "100%",
+      height: "auto",
+    },
+    subtitle: {
+      marginTop: theme.spacing(1),
+    },
+    text: {
+      marginTop: theme.spacing(1),
+      paddingBottom: theme.spacing(2),
+    },
+  })
 );
 
 type TeaserProps = TeaserModel & {
-  palette: PaletteType;
+  palette: PaletteOrColorsType;
 };
 
 export default function Teaser({
@@ -51,7 +50,7 @@ export default function Teaser({
   toText,
   palette,
 }: TeaserProps): preact.VNode {
-  const classes = useStyles((theme: Theme) => getColorStyles(theme, palette));
+  const classes = useStyles((theme: Theme) => getColors(theme, palette));
   return (
     <Grid container spacing={0} className={classes.container}>
       {image && (
