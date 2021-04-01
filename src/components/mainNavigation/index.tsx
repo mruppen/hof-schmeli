@@ -26,8 +26,9 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       alignContent: "flex-start",
       justifyContent: "baseline",
       alignItems: "center",
-      [theme.breakpoints.down("xs")]:{
-        alignContent: "flex-end"
+      [theme.breakpoints.down("xs")]: {
+        backgroundColor: "transparent",
+        justifyContent: "flex-end"
       }
     }),
     link: {
@@ -39,6 +40,9 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       fontWeight: 700,
       fontSize: 24,
     },
+    menu: (props) =>({
+      color: props.color,
+    })
   })
 );
 
@@ -91,10 +95,10 @@ export default function MainNavigation({
     );
   } else {
     return (
-      <div><IconButton color="inherit" onClick={handleClick}><MenuIcon /></IconButton>
-        <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}
+      <div className={classes.navigation}><IconButton color="inherit" onClick={handleClick}><MenuIcon /></IconButton>
+        <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} className={classes.menu}
         >
-          <MenuItem onClick={handleClose}>Für Eltern</MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menu}>Für Eltern</MenuItem>
           <MenuItem onClick={handleClose}>Schule</MenuItem>
           <MenuItem onClick={handleClose}>Vision</MenuItem>
           <MenuItem onClick={handleClose}>Geschichten</MenuItem>
