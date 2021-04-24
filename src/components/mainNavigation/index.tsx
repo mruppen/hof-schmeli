@@ -5,8 +5,9 @@ import {
   useMediaQuery,
   useTheme,
   Menu,
-  IconButton,
   MenuItem,
+  Button,
+  withStyles,
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -40,8 +41,13 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       fontWeight: 700,
       fontSize: 24,
     },
-    menu: (props) =>({
-      color: props.color,
+    menuItem: (props) =>({
+      color: props.backgroundColor,
+      backgroundColor: props.color,
+      paddingTop: 24,
+      "> li": {
+        textAlign: "center",
+      }
     })
   })
 );
@@ -94,16 +100,22 @@ export default function MainNavigation({
       </nav>
     );
   } else {
+    const styles = {
+      paper: {
+        backgroundColor: theme.palette.orange.main,
+        width: "100%"
+      }
+    }
+    const StyledMenu = withStyles(styles)(Menu);
     return (
-      <div className={classes.navigation}><IconButton color="inherit" onClick={handleClick}><MenuIcon /></IconButton>
-        <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} className={classes.menu}
-        >
-          <MenuItem onClick={handleClose} className={classes.menu}>Für Eltern</MenuItem>
-          <MenuItem onClick={handleClose}>Schule</MenuItem>
-          <MenuItem onClick={handleClose}>Vision</MenuItem>
-          <MenuItem onClick={handleClose}>Geschichten</MenuItem>
-          <MenuItem onClick={handleClose}>Ich möchte helfen</MenuItem>
-        </Menu>
+      <div className={classes.navigation}><Button style={{paddingRight: 0}} color="inherit" onClick={handleClick}><MenuIcon />Menu</Button>
+        <StyledMenu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+          <MenuItem onClick={handleClose} className={classes.menuItem} alignItems="center">Für Eltern</MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>Schule</MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>Vision</MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>Geschichten</MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>Ich möchte helfen</MenuItem>
+        </StyledMenu>
       </div>
     );
   }
