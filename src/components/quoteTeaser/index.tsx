@@ -4,25 +4,26 @@ import {
   Grid,
   makeStyles,
   Theme,
-  Typography,
 } from "@material-ui/core";
-import preact from "preact";
+import clsx from "clsx";
+import preact, { ComponentChildren } from "preact";
 import { useContainerStyles } from "../../hooks";
-import ArrowButton from "../arrowButton";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    container: {
+      paddingTop: 80,
+      paddingBottom: 80,
+    },
+    imageContainer: {
+      display: "flex",
+      alignItems: "center",
+      height: "100%",
+    },
     image: {
-      [theme.breakpoints.up("sm")]: {
-        paddingTop: 80 - theme.spacing(1),
-        paddingBottom: 80 - theme.spacing(1),
-      },
-      [theme.breakpoints.down("xs")]: {
-        paddingLeft: 33.5,
-        paddingRight: 33.5,
-        paddingTop: 56 - theme.spacing(1),
-        paddingBottom: 56 - theme.spacing(1),
-      },
+      width: "100%",
+      marginTop: "auto",
+      marginBottom: "auto",
     },
 
     content: {
@@ -46,46 +47,34 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type QuoteTeaserProps = {
   image: string;
-  title: string;
-  person: string;
+  children: ComponentChildren;
 };
 
 export default function QuoteTeaser({
   image,
-  title,
-  person,
+  children,
 }: QuoteTeaserProps): preact.VNode {
   const containerClasses = useContainerStyles((theme: Theme) => {
     return {
-      backgroundColor: theme.palette.blue.main,
-      color: theme.palette.common.white,
+      backgroundColor: theme.palette.yellow.main,
+      color: theme.palette.yellow.contrastText,
     };
   });
   const classes = useStyles();
 
   return (
-    <Container className={containerClasses.main} disableGutters>
+    <Container
+      className={clsx(containerClasses.main, classes.container)}
+      disableGutters
+    >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3}>
-          <div className={classes.image}>
-            <img src={image} />
+          <div className={classes.imageContainer}>
+            <img src={image} className={classes.image} />
           </div>
         </Grid>
         <Grid item xs={12} sm={9}>
-          <div className={classes.content}>
-            <Typography variant="h2">{title}</Typography>
-            <Typography variant="h5" className={classes.spacing}>
-              {person}
-            </Typography>
-            <ArrowButton
-              variant="outlined"
-              palette="blue"
-              arrow="start"
-              className={classes.spacing}
-            >
-              Mehr informationen
-            </ArrowButton>
-          </div>
+          {children}
         </Grid>
       </Grid>
     </Container>

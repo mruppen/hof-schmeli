@@ -13,6 +13,13 @@ export type PaletteOrColorsType =
   | "yellow"
   | ColorsType;
 
+export function invert(colors: ColorsType): ColorsType {
+  return {
+    color: colors.backgroundColor,
+    backgroundColor: colors.color,
+  };
+}
+
 export function getColors(
   theme: Theme,
   palette: PaletteOrColorsType
@@ -20,8 +27,8 @@ export function getColors(
   const paletteColor = getPaletteColorFromTheme(theme, palette);
   if (!!paletteColor) {
     return {
-      backgroundColor: paletteColor.main,
-      color: paletteColor.contrastText,
+      backgroundColor: paletteColor.contrastText,
+      color: paletteColor.main,
     };
   } else {
     return {

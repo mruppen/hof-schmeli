@@ -3,6 +3,8 @@ import common from "@material-ui/core/colors/common";
 import createPalette from "@material-ui/core/styles/createPalette";
 import React from "react";
 
+const fontFamily = ["IBM Plex Sans"].join(",");
+
 declare module "@material-ui/core/styles/createPalette" {
   interface Palette {
     green: Palette["primary"];
@@ -40,7 +42,8 @@ export default function useCustomTheme(): Theme {
         },
       },
       typography: {
-        fontSize: 16,
+        fontSize: 14,
+        htmlFontSize: 16,
       },
     });
 
@@ -51,8 +54,11 @@ export default function useCustomTheme(): Theme {
 
     // P paragraph
     theme.typography.body1 = {
-      fontSize: "1.25rem",
-      lineHeight: "160%",
+      fontSize: theme.typography.pxToRem(20),
+      lineHeight: "150%",
+      fontFamily: fontFamily,
+      fontStyle: "normal",
+      fontWeight: 600,
       [theme.breakpoints.down("xs")]: {
         fontSize: "1rem",
       },
@@ -62,6 +68,7 @@ export default function useCustomTheme(): Theme {
     theme.typography.body2 = {
       fontSize: theme.typography.pxToRem(16),
       lineHeight: "160%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(14),
       },
@@ -71,12 +78,14 @@ export default function useCustomTheme(): Theme {
     theme.typography.button = {
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "100%",
+      fontFamily: fontFamily,
     };
 
     // Caption
     theme.typography.caption = {
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "150%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(13),
         lineHeight: "160%",
@@ -85,8 +94,10 @@ export default function useCustomTheme(): Theme {
 
     // H1
     theme.typography.h1 = {
-      fontSize: theme.typography.pxToRem(64),
-      lineHeight: "110%",
+      fontSize: theme.typography.pxToRem(100),
+      lineHeight: "93%",
+      fontWeight: 700,
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(32),
         lineHeight: "130%",
@@ -95,8 +106,9 @@ export default function useCustomTheme(): Theme {
 
     // H2
     theme.typography.h2 = {
-      fontSize: theme.typography.pxToRem(48),
-      lineHeight: "120%",
+      fontSize: theme.typography.pxToRem(44),
+      lineHeight: "110%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(28),
         lineHeight: "130%",
@@ -107,6 +119,7 @@ export default function useCustomTheme(): Theme {
     theme.typography.h3 = {
       fontSize: theme.typography.pxToRem(32),
       lineHeight: "130%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(24),
         lineHeight: "130%",
@@ -117,6 +130,7 @@ export default function useCustomTheme(): Theme {
     theme.typography.h4 = {
       fontSize: theme.typography.pxToRem(24),
       lineHeight: "130%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(20),
         lineHeight: "140%",
@@ -127,6 +141,7 @@ export default function useCustomTheme(): Theme {
     theme.typography.h5 = {
       fontSize: theme.typography.pxToRem(18),
       lineHeight: "140%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(16),
         lineHeight: "150%",
@@ -137,6 +152,7 @@ export default function useCustomTheme(): Theme {
     theme.typography.h6 = {
       fontSize: theme.typography.pxToRem(16),
       lineHeight: "150%",
+      fontFamily: fontFamily,
       [theme.breakpoints.down("xs")]: {
         fontSize: theme.typography.pxToRem(14),
         lineHeight: "160%",
@@ -145,6 +161,7 @@ export default function useCustomTheme(): Theme {
 
     // Label
     theme.typography.subtitle1 = {
+      fontFamily: fontFamily,
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "160%",
     };

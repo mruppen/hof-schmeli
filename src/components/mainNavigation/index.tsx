@@ -1,21 +1,22 @@
 import {
+  Button,
   createStyles,
   makeStyles,
-  Theme,
-  useMediaQuery,
-  useTheme,
   Menu,
   MenuItem,
-  Button,
+  Theme,
+  Typography,
+  useMediaQuery,
+  useTheme,
   withStyles,
 } from "@material-ui/core";
-import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
 import preact from "preact";
 import { useState } from "preact/hooks";
 import { Link } from "react-router-dom";
 import { ColorsType, getColors, PaletteOrColorsType } from "../../utils";
+import HomeIcon from "../icons/home";
 
 const useStyles = makeStyles<Theme, ColorsType>((theme) =>
   createStyles({
@@ -24,31 +25,30 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       color: props.color,
       display: "flex",
       flexDirection: "row",
-      alignContent: "flex-start",
-      justifyContent: "baseline",
+      justifyContent: "flex-start",
       alignItems: "center",
       [theme.breakpoints.down("xs")]: {
         backgroundColor: "transparent",
-        justifyContent: "flex-end"
-      }
+        justifyContent: "flex-end",
+      },
     }),
     link: {
       color: "inherit",
-      lineHeight: "130%",
     },
     textLink: {
       marginLeft: 24,
       fontWeight: 700,
       fontSize: 24,
+      // lineHeight: "130%",
     },
-    menuItem: (props) =>({
+    menuItem: (props) => ({
       color: props.backgroundColor,
       backgroundColor: props.color,
       paddingTop: 24,
       "> li": {
         textAlign: "center",
-      }
-    })
+      },
+    }),
   })
 );
 
@@ -82,9 +82,11 @@ export default function MainNavigation({
         <Link className={classes.link} to="/">
           <HomeIcon />
         </Link>
-        <Link to="/parents" className={clsx(classes.link, classes.textLink)}>
-          Für Eltern
-        </Link>
+        <Typography variant="h2">
+          <Link to="/parents" className={clsx(classes.link, classes.textLink)}>
+            Für Eltern
+          </Link>
+        </Typography>
         <Link to="/school" className={clsx(classes.link, classes.textLink)}>
           Schule
         </Link>
@@ -103,18 +105,44 @@ export default function MainNavigation({
     const styles = {
       paper: {
         backgroundColor: theme.palette.orange.main,
-        width: "100%"
-      }
-    }
+        width: "100%",
+      },
+    };
     const StyledMenu = withStyles(styles)(Menu);
     return (
-      <div className={classes.navigation}><Button style={{paddingRight: 0}} color="inherit" onClick={handleClick}><MenuIcon />Menu</Button>
-        <StyledMenu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-          <MenuItem onClick={handleClose} className={classes.menuItem} alignItems="center">Für Eltern</MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>Schule</MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>Vision</MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>Geschichten</MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>Ich möchte helfen</MenuItem>
+      <div className={classes.navigation}>
+        <Button
+          style={{ paddingRight: 0 }}
+          color="inherit"
+          onClick={handleClick}
+        >
+          <MenuIcon />
+          Menu
+        </Button>
+        <StyledMenu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem
+            onClick={handleClose}
+            className={classes.menuItem}
+            alignItems="center"
+          >
+            Für Eltern
+          </MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>
+            Schule
+          </MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>
+            Vision
+          </MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>
+            Geschichten
+          </MenuItem>
+          <MenuItem onClick={handleClose} className={classes.menuItem}>
+            Ich möchte helfen
+          </MenuItem>
         </StyledMenu>
       </div>
     );

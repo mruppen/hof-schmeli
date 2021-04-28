@@ -4,12 +4,13 @@ import {
   makeStyles,
   Theme,
   Typography,
+  useTheme,
 } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/core/styles/withStyles";
 import preact from "preact";
 import { ColorsFunc } from "../../hooks";
 import { TeaserModel } from "../../models/models";
-import { getColors, PaletteOrColorsType } from "../../utils";
+import { getColors, invert, PaletteOrColorsType } from "../../utils";
 import ArrowButton from "../arrowButton";
 
 type UseStylesType = (
@@ -50,7 +51,9 @@ export default function Teaser({
   toText,
   palette,
 }: TeaserProps): preact.VNode {
-  const classes = useStyles((theme: Theme) => getColors(theme, palette));
+  const theme = useTheme();
+  const colors = getColors(theme, palette);
+  const classes = useStyles((theme: Theme) => colors);
   return (
     <Grid container spacing={0} className={classes.container}>
       {image && (
@@ -79,7 +82,12 @@ export default function Teaser({
       )}
       {to && (
         <Grid item xs={12}>
-          <ArrowButton arrow="start" palette={palette} variant="text" to={to}>
+          <ArrowButton
+            arrow="start"
+            palette={invert(colors)}
+            variant="text"
+            to={to}
+          >
             {toText}
           </ArrowButton>
         </Grid>

@@ -1,7 +1,7 @@
 import {
-  Button,
-  ButtonProps,
   createStyles,
+  Link,
+  LinkProps,
   makeStyles,
   Theme,
   useTheme,
@@ -9,7 +9,6 @@ import {
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import clsx from "clsx";
 import preact from "preact";
-import { Link } from "react-router-dom";
 import {
   ColorsType,
   getColors,
@@ -17,13 +16,12 @@ import {
   PaletteOrColorsType,
 } from "../../utils";
 
-type ArrowButtonProps = {
-  arrow: "start" | "end";
+type ArrowLinkProps = {
   palette: PaletteOrColorsType;
   transparent?: Boolean;
   to?: string;
-} & Pick<ButtonProps, "className"> &
-  Required<Pick<ButtonProps, "variant" | "children">>;
+} & Pick<LinkProps, "className"> &
+  Required<Pick<LinkProps, "variant" | "children">>;
 
 type ButtonColorsType = ColorsType & {
   hoverColor: string;
@@ -31,49 +29,46 @@ type ButtonColorsType = ColorsType & {
 
 const useStyles = makeStyles<Theme, ButtonColorsType>((theme: Theme) => {
   return createStyles({
-    button: (props) => ({
+    link: (props) => ({
       color: props.color,
       backgroundColor: props.backgroundColor,
       borderColor: props.color,
-      "&:hover": {
-        color: props.hoverColor,
-        backgroundColor: props.color,
-      },
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "flex-start",
     }),
+    padding12: {
+      paddingLeft: 12,
+    },
   });
 });
 
-export default function ArrowButton({
+export default function ArrowLink({
   children,
-  arrow,
   palette,
   to,
-  className,
   transparent,
+  className,
   ...props
-}: ArrowButtonProps): preact.VNode {
+}: ArrowLinkProps): preact.VNode {
   const theme = useTheme();
   const colors = invert(getColors(theme, palette));
-  const buttonColors: ButtonColorsType = {
+  const linkColors: ButtonColorsType = {
     color: colors.color,
     backgroundColor: colors.backgroundColor,
     hoverColor: colors.backgroundColor,
   };
   if (!!transparent) {
-    buttonColors.backgroundColor = "transparent";
+    linkColors.backgroundColor = "transparent";
   }
 
-  const classes = useStyles(buttonColors);
+  const classes = useStyles(linkColors);
   return (
-    <Button
-      className={clsx(classes.button, className)}
-      startIcon={arrow === "start" ? <ArrowForwardIcon /> : null}
-      endIcon={arrow === "end" ? <ArrowForwardIcon /> : null}
-      component={Link}
-      to={to ?? "/"}
-      {...props}
-    >
-      {children}
-    </Button>
+    <Link className={clsx(classes.link, className)} href={to ?? "/"} {...props}>
+      <span>{children}</span>
+      <span className={classes.padding12}>
+        <ArrowForwardIcon />
+      </span>
+    </Link>
   );
 }
