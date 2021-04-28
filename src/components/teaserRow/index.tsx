@@ -1,4 +1,4 @@
-import { Container, Grid, Theme, useTheme } from "@material-ui/core";
+import { Grid, Theme, useTheme } from "@material-ui/core";
 import preact from "preact";
 import { Colors, useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
@@ -31,7 +31,7 @@ export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
           text={teaser.text}
           title={teaser.title}
           to={teaser.to}
-          toText="Mehr Informationen"
+          toText={teaser.toText}
           image={teaser.image}
           imageCaption={teaser.imageCaption}
           key={index}
@@ -41,10 +41,8 @@ export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
   );
 
   return (
-    <Container disableGutters className={classes.main}>
-      <Grid container spacing={2}>
-        {children}
-      </Grid>
-    </Container>
+    <Grid container spacing={2}>
+      {children}
+    </Grid>
   );
 }
