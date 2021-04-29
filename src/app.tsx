@@ -11,6 +11,7 @@ import milchHolen from "./data/images/milch_holen_1_20120113_1046466239 1.png";
 import teaser from "./data/images/teaser.png";
 import { allTeasers } from "./data/teasers";
 import Home from "./routes/home";
+import Schule from "./routes/schule";
 
 export function App(): preact.VNode {
   const theme = useCustomTheme();
@@ -21,6 +22,9 @@ export function App(): preact.VNode {
         <Switch>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/schule">
+            <Schule />
           </Route>
           <Route path="/mainTeaser">
             <MainTeaser
