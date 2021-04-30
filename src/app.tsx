@@ -7,7 +7,7 @@ import PlainTeaser from "./components/plainTeaser";
 import TeaserRow from "./components/teaserRow";
 import TopicTeaser from "./components/topicTeaser";
 import useCustomTheme from "./customTheme";
-import milchHolen from "./data/images/milch_holen_1_20120113_1046466239 1.png";
+import milchHolen from "./data/images/milchHolen.png";
 import teaser from "./data/images/teaser.png";
 import { allTeasers } from "./data/teasers";
 import Home from "./routes/home";

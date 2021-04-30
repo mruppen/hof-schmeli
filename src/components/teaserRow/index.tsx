@@ -3,17 +3,16 @@ import preact from "preact";
 import { Colors, useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
 import Teaser from "../teaser";
+import { PaletteOrColorsType, getColors } from "../../utils";
 
 export type TeaserRowProps = {
   teasers: TeaserModel[];
+  palette?: PaletteOrColorsType
 };
 
-export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
+export default function TeaserRow({ teasers, palette = "green" }: TeaserRowProps): preact.VNode {
   const classes = useContainerStyles(
-    (theme: Theme): Colors => ({
-      color: theme.palette.green.main,
-      backgroundColor: theme.palette.green.contrastText,
-    })
+    (theme: Theme): Colors => getColors(theme, palette)
   );
 
   const theme = useTheme();
@@ -24,10 +23,7 @@ export default function TeaserRow({ teasers }: TeaserRowProps): preact.VNode {
       <Grid item xs={12} sm={4}>
         <Teaser
           keys={teaser.keys}
-          palette={{
-            backgroundColor: theme.palette.green.contrastText,
-            color: theme.palette.green.main,
-          }}
+          palette={palette}
           text={teaser.text}
           title={teaser.title}
           to={teaser.to}

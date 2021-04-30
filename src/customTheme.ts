@@ -4,6 +4,7 @@ import createPalette from "@material-ui/core/styles/createPalette";
 import React from "react";
 
 const fontFamily = ["IBM Plex Sans"].join(",");
+const fontFamilyMono = ["IBM Plex Mono"].join(",");
 
 declare module "@material-ui/core/styles/createPalette" {
   interface Palette {
@@ -161,7 +162,7 @@ export default function useCustomTheme(): Theme {
 
     // Label
     theme.typography.subtitle1 = {
-      fontFamily: fontFamily,
+      fontFamily: fontFamilyMono,
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "160%",
     };

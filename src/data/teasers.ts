@@ -1,5 +1,5 @@
 import { TeaserKeyEnum, TeaserModel } from "../models/models";
-import image1 from "./images/kinderHolenMilch.png";
+import image1 from "./images/milchHolen.png";
 
 export const homeTeasers: TeaserModel[] = [
   {
