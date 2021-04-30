@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import preact from "preact";
-import schule from "../../../data/images/header/schule.png";
+import vision from "../../../data/images/header/vision.png";
 import { useContainerStyles } from "../../../hooks";
 import { PaletteOrColorsType } from "../../../utils";
 import MainNavigation from "../../mainNavigation";
@@ -17,11 +17,11 @@ import MainNavigation from "../../mainNavigation";
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
-      backgroundImage: `url(${schule})`,
+      backgroundImage: `url(${vision})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
       width: 1440,
-      height: 1075,
+      height: 960,
       border: "none",
     },
     inner: {
@@ -29,35 +29,38 @@ const useStyles = makeStyles(() =>
       width: "100%",
     },
     title: {
-      paddingTop: 64,
+      paddingTop: 42,
     },
     subtitle: {
       paddingTop: 48,
     },
     lead: {
       paddingTop: 24,
+      fontStyle: "normal",
+      fontWeight: 700,
     },
   })
 );
 
-export default function HeaderSchule(): preact.VNode {
+export default function HeaderVision(): preact.VNode {
   const theme = useTheme();
   const classes = useStyles();
   const containerClasses = useContainerStyles((theme) => {
     return {
-      color: theme.palette.orange.contrastText,
-      backgroundColor: "transparent",
+      color: theme.palette.orange.main,
+      backgroundColor: theme.palette.orange.contrastText,
     };
   });
 
   const navigationColors: PaletteOrColorsType = {
     color: "transparent",
-    backgroundColor: theme.palette.orange.contrastText,
+    backgroundColor: theme.palette.orange.main,
   };
 
   return (
     <Container
       disableGutters
+      maxWidth={false}
       className={clsx(classes.container, containerClasses.main)}
     >
       <Container disableGutters maxWidth={false} className={classes.inner}>
@@ -81,15 +84,13 @@ export default function HeaderSchule(): preact.VNode {
           </Grid>
           <Grid xs={12} sm={8} item>
             <Typography variant="h2" className={classes.subtitle}>
-              Wir sind anders
+              Wir wollen eine Schule mit Menschlichkeit
             </Typography>
             <Typography variant="h4" className={classes.lead}>
-              In der Schule Bauernhof Schmeli dürfen Kinder Kinder sein. Sie
-              werden individuell gefordert und gefördert. Dabei steht die
-              persönliche Potenzialentfaltung in einem selbstbestimmten und
-              selbstorganisierten Lern-Rhythmus im Vordergrund. Ziel ist es,
-              Kindern einen naturverbundenen Schulalltag, gepaart mit Lern- und
-              Lebensfreude, zu ermöglichen.
+              Schule Bauernhof Schmeli – ein Ort des friedlichen und freudigen
+              Zusammenlebens.
+              <br /> Wo Menschen sich gegenseitig helfen und ermutigen. Kinder
+              sich sicher, geborgen und aufgehoben fühlen können.
             </Typography>
           </Grid>
         </Grid>
