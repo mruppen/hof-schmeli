@@ -27,6 +27,7 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       flexDirection: "row",
       justifyContent: "flex-start",
       alignItems: "center",
+      paddingBottom: 80,
       [theme.breakpoints.down("xs")]: {
         backgroundColor: "transparent",
         justifyContent: "flex-end",
@@ -79,7 +80,7 @@ export default function MainNavigation({
   if (!isXs) {
     return (
       <nav className={classes.navigation}>
-        <Link className={classes.link} to="/">
+        <Link className={classes.link} to="/home">
           <HomeIcon />
         </Link>
         <Typography variant="h2">
@@ -87,7 +88,7 @@ export default function MainNavigation({
             Für Eltern
           </Link>
         </Typography>
-        <Link to="/school" className={clsx(classes.link, classes.textLink)}>
+        <Link to="/schule" className={clsx(classes.link, classes.textLink)}>
           Schule
         </Link>
         <Link to="/vision" className={clsx(classes.link, classes.textLink)}>
