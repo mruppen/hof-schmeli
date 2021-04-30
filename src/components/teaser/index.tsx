@@ -88,7 +88,7 @@ export default function Teaser({
             variant="text"
             to={to}
           >
-            {toText}
+            {toText || "Link"}
           </ArrowButton>
         </Grid>
       )}

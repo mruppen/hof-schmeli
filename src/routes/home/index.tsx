@@ -12,7 +12,7 @@ import PlainTeaser from "../../components/plainTeaser";
 import QuoteTeaser from "../../components/quoteTeaser";
 import TopicTeaser from "../../components/topicTeaser";
 import baum from "../../data/images/baum.png";
-import milchHolen from "../../data/images/milch_holen_1_20120113_1046466239 1.png";
+import milchHolen from "../../data/images/milchHolen.png";
 import { homeTeasers } from "../../data/teasers";
 
 const useStyles = makeStyles(() =>

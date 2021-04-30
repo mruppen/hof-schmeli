@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
 type TopicTeaserProps = {
   image: string;
   title: string;
-  teasers: TeaserModel[];
+  subtitle?: string;
+  teasers?: TeaserModel[];
   to: string;
   toText: string;
   children: ComponentChildren;
@@ -40,6 +41,7 @@ type TopicTeaserProps = {
 export default function TopicTeaser({
   image,
   title,
+  subtitle,
   teasers,
   to,
   toText,
@@ -63,6 +65,9 @@ export default function TopicTeaser({
         </Grid>
         <Grid item xs={12} sm={5}>
           <div className={classes.content}>
+            {subtitle &&
+              <Typography variant="h4">{subtitle}</Typography>
+            }
             {children}
             <ArrowButton
               arrow="start"
@@ -75,7 +80,9 @@ export default function TopicTeaser({
           </div>
         </Grid>
       </Grid>
-      <TeaserRow teasers={teasers} />
+      {teasers && 
+        <TeaserRow teasers={teasers} />
+      }
     </Container>
   );
 }
