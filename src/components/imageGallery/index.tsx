@@ -13,22 +13,16 @@ import { invert, ColorsType } from "../../utils";
 import clsx from "clsx";
 
 const teasers: TeaserModel[] = [{
-    imageCaption: "Here comes the caption",
     image: gaestehaus
 }, {
-    imageCaption: "Here comes the caption",
     image: landschaft
 }, {
-    imageCaption: "Here comes the caption",
     image: schweine
 }, {
-    imageCaption: "Here comes the caption",
     image: wohnwagen
 }, {
-    imageCaption: "Here comes the caption",
     image: milchHolen
 }, {
-    imageCaption: "Here comes the caption",
     image: tipi
 }];
 

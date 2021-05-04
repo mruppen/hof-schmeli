@@ -6,13 +6,13 @@ import {
   useTheme,
 } from "@material-ui/core";
 import preact from "preact";
-import ContentTeaserBg from "../../components/contentTeaserBg";
+import ContentTeaserSchule from "../../components/contentTeaserSchule";
 import ContentTeaserLeft from "../../components/contentTeaserLeft";
 import Footer from "../../components/footer";
 import HeaderSchule from "../../components/headers/schule";
 import ImageGallery from "../../components/imageGallery";
 import PlainTeaser from "../../components/plainTeaser";
-import TeachersList from "../../components/teachersList";
+import PersonsList from "../../components/personsList";
 import TopicTeaser from "../../components/topicTeaser";
 import genossenschafter from "../../data/images/genossenschafter.png";
 import hahn from "../../data/images/hahn.png";
@@ -64,8 +64,8 @@ export default function Schule(): preact.VNode {
         </Typography>
       </ContentTeaserLeft>
       <ImageGallery />
-      <ContentTeaserBg />
-      <TopicTeaser
+      <ContentTeaserSchule />
+      {/* <TopicTeaser
         to="/home"
         toText="Replace with correct text"
         image={genossenschafter}
@@ -80,7 +80,7 @@ export default function Schule(): preact.VNode {
           Benedikt Maurer
           <br />
         </Typography>
-      </TopicTeaser>
+      </TopicTeaser> */}
       <ContentTeaserLeft
         palette={teacherTeaserColors}
         title="Das Lehrer-Team"
@@ -96,7 +96,7 @@ export default function Schule(): preact.VNode {
           die Kinder aktiv miteinbezieht.
         </Typography>
       </ContentTeaserLeft>
-      <TeachersList />
+      <PersonsList />
       <PlainTeaser to="/vision" toText="Unsere Vision">
         Wir leben Schule - Mit Menschlichkeit
       </PlainTeaser>

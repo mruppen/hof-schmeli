@@ -20,8 +20,10 @@ const useStyles = makeStyles(() =>
       backgroundImage: `url(${vision})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
+      backgroundPosition: "left bottom",
+      backgroundColor: "white",
       width: 1440,
-      height: 960,
+      height: 986,
       border: "none",
     },
     inner: {
@@ -35,9 +37,7 @@ const useStyles = makeStyles(() =>
       paddingTop: 48,
     },
     lead: {
-      paddingTop: 24,
-      fontStyle: "normal",
-      fontWeight: 700,
+      paddingTop: 18
     },
   })
 );
