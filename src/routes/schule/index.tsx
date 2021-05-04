@@ -13,8 +13,6 @@ import HeaderSchule from "../../components/headers/schule";
 import ImageGallery from "../../components/imageGallery";
 import PlainTeaser from "../../components/plainTeaser";
 import PersonsList from "../../components/personsList";
-import TopicTeaser from "../../components/topicTeaser";
-import genossenschafter from "../../data/images/genossenschafter.png";
 import hahn from "../../data/images/hahn.png";
 import schnecke from "../../data/images/schnecke.png";
 import { getColors, invert } from "../../utils";
