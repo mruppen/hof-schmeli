@@ -29,7 +29,7 @@ const useStyles = makeStyles(() =>
       width: "100%",
     },
     title: {
-      paddingTop: 64,
+      paddingTop: 42,
     },
     subtitle: {
       paddingTop: 48,

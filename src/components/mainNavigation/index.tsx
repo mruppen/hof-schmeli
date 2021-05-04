@@ -83,23 +83,31 @@ export default function MainNavigation({
         <Link className={classes.link} to="/home">
           <HomeIcon />
         </Link>
-        <Typography variant="h2">
+        <Typography variant="h4">
           <Link to="/parents" className={clsx(classes.link, classes.textLink)}>
             Für Eltern
           </Link>
         </Typography>
+        <Typography variant="h4">
         <Link to="/schule" className={clsx(classes.link, classes.textLink)}>
           Schule
         </Link>
+        </Typography>
+        <Typography variant="h4">
         <Link to="/vision" className={clsx(classes.link, classes.textLink)}>
           Vision
         </Link>
+        </Typography>
+        <Typography variant="h4">
         <Link to="/stories" className={clsx(classes.link, classes.textLink)}>
           Geschichten
         </Link>
+        </Typography>
+        <Typography variant="h4">
         <Link to="/help" className={clsx(classes.link, classes.textLink)}>
           Ich möchte helfen
         </Link>
+        </Typography>
       </nav>
     );
   } else {

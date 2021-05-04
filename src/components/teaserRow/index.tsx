@@ -15,8 +15,6 @@ export default function TeaserRow({ teasers, palette = "green" }: TeaserRowProps
     (theme: Theme): Colors => getColors(theme, palette)
   );
 
-  const theme = useTheme();
-
   const children: React.ReactNode[] = [];
   teasers.forEach((teaser, index) =>
     children.push(
