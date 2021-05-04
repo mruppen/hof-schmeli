@@ -41,7 +41,7 @@ const teasers: TeaserModel[] = [
   },
 ];
 
-export default function TeachersList(): preact.VNode {
+export default function PersonsList(): preact.VNode {
   const theme = useTheme();
   const colors: ColorsType = {
     color: theme.palette.yellow.contrastText,

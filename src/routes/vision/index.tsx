@@ -1,10 +1,17 @@
-import { Container, Typography, useTheme } from "@material-ui/core";
+import { Container, Typography, useTheme, makeStyles } from "@material-ui/core";
 import preact from "preact";
 import HeaderVision from "../../components/headers/vision";
 import ContentTeaserVision from "../../components/contentTeaserVision";
 import ContentTeaserRight from "../../components/contentTeaserRight";
 import dreck from "../../data/images/dreck.png";
 import { invert, getColors } from "../../utils";
+
+const useStyles = makeStyles({
+  image: {
+    backgroundSize: "auto",
+    
+  }
+})
 
 export default function Vision(): preact.VNode {
   const theme = useTheme();
