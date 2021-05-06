@@ -1,9 +1,4 @@
-import {
-  Container,
-  createStyles,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { createStyles, makeStyles, Typography } from "@material-ui/core";
 import preact from "preact";
 import ContactSubscribe from "../../components/contactSubscribe";
 import Footer from "../../components/footer";
@@ -29,7 +24,7 @@ const useStyles = makeStyles(() =>
 export default function Home(): preact.VNode {
   const classes = useStyles();
   return (
-    <Container disableGutters>
+    <div>
       <HeaderHome />
       <TopicTeaser
         image={milchHolen}
@@ -71,6 +66,6 @@ export default function Home(): preact.VNode {
         «Um ein Kind grosszuziehen braucht es ein ganzes Dorf»
       </PlainTeaser>
       <Footer />
-    </Container>
+    </div>
   );
 }
