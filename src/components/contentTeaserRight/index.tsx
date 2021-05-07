@@ -49,7 +49,7 @@ type ImageProp = {
   image: string;
 };
 
-export default function ContentTeaserLeft({
+export default function ContentTeaserRight({
   palette,
   title,
   image,
