@@ -40,7 +40,6 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       marginLeft: 24,
       fontWeight: 700,
       fontSize: 24,
-      // lineHeight: "130%",
     },
     menuItem: (props) => ({
       color: props.backgroundColor,
@@ -84,29 +83,29 @@ export default function MainNavigation({
           <HomeIcon />
         </Link>
         <Typography variant="h4">
-          <Link to="/parents" className={clsx(classes.link, classes.textLink)}>
+          <Link to="/eltern" className={clsx(classes.link, classes.textLink)}>
             Für Eltern
           </Link>
         </Typography>
         <Typography variant="h4">
           <Link to="/schule" className={clsx(classes.link, classes.textLink)}>
             Schule
-        </Link>
+          </Link>
         </Typography>
         <Typography variant="h4">
           <Link to="/vision" className={clsx(classes.link, classes.textLink)}>
             Vision
-        </Link>
+          </Link>
         </Typography>
         <Typography variant="h4">
           <Link to="/stories" className={clsx(classes.link, classes.textLink)}>
             Geschichten
-        </Link>
+          </Link>
         </Typography>
         <Typography variant="h4">
           <Link to="/help" className={clsx(classes.link, classes.textLink)}>
             Ich möchte helfen
-        </Link>
+          </Link>
         </Typography>
       </nav>
     );

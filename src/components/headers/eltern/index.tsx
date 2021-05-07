@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import preact from "preact";
-import vision from "../../../data/images/header/vision.png";
+import eltern from "../../../data/images/header/eltern.png";
 import { useContainerStyles } from "../../../hooks";
 import { PaletteOrColorsType } from "../../../utils";
 import MainNavigation from "../../mainNavigation";
@@ -17,13 +17,13 @@ import MainNavigation from "../../mainNavigation";
 const useStyles = makeStyles(() =>
   createStyles({
     container: {
-      backgroundImage: `url(${vision})`,
+      backgroundImage: `url(${eltern})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
       backgroundPosition: "left bottom",
       backgroundColor: "#F2F2F2",
       width: 1440,
-      height: 986,
+      height: 1028,
       border: "none",
     },
     inner: {
@@ -42,7 +42,7 @@ const useStyles = makeStyles(() =>
   })
 );
 
-export default function HeaderVision(): preact.VNode {
+export default function HeaderEltern(): preact.VNode {
   const theme = useTheme();
   const classes = useStyles();
   const containerClasses = useContainerStyles((theme) => {
@@ -84,13 +84,12 @@ export default function HeaderVision(): preact.VNode {
           </Grid>
           <Grid xs={12} sm={8} item>
             <Typography variant="h2" className={classes.subtitle}>
-              Wir wollen eine Schule mit Menschlichkeit
+              Die Alternative für dein Kind
             </Typography>
             <Typography variant="h4" className={classes.lead}>
-              Schule Bauernhof Schmeli – ein Ort des friedlichen und freudigen
-              Zusammenlebens.
-              <br /> Wo Menschen sich gegenseitig helfen und ermutigen. Kinder
-              sich sicher, geborgen und aufgehoben fühlen können.
+              Man kann Kindern soziale Kompetenz nicht beibringen, man kann
+              ihnen keine innere Stärke anerziehen, man kann ihnen Mitgefühl
+              nicht vermitteln. Solche Kompetenzen müssen erfahren werden.
             </Typography>
           </Grid>
         </Grid>
