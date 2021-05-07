@@ -4,16 +4,16 @@ import {
   Grid,
   Hidden,
   makeStyles,
-  Theme,
   Typography,
   useTheme,
 } from "@material-ui/core";
 import clsx from "clsx";
-import preact, { ComponentChildren } from "preact";
+import preact from "preact";
+import dreck from "../../data/images/dreck.png";
 import { useContainerStyles } from "../../hooks";
-import { getColors, PaletteOrColorsType } from "../../utils";
+import { getColors, invert } from "../../utils";
 
-const useStyles = makeStyles<Theme, ImageProp>((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     container: {
       paddingTop: 80,
@@ -22,44 +22,24 @@ const useStyles = makeStyles<Theme, ImageProp>((theme: Theme) =>
     padding24: {
       paddingBottom: 24,
     },
-    imageContainer: (props) => ({
+    imageContainer: {
       overflow: "hidden",
       marginBottom: -217,
       borderRadius: 8,
       height: 637,
-      backgroundImage: `url(${props.image})`,
+      backgroundImage: `url(${dreck})`,
       backgroundPositionX: "-200px",
-    }),
+    },
     image: {
       borderRadius: 8,
     },
   })
 );
 
-type ContentTeaserLeftProps = {
-  palette: PaletteOrColorsType;
-  title: string;
-  image: string;
-  containerClassName?: string;
-  imageClassName?: string;
-  children: ComponentChildren;
-};
-
-type ImageProp = {
-  image: string;
-};
-
-export default function ContentTeaserRight({
-  palette,
-  title,
-  image,
-  containerClassName,
-  imageClassName,
-  children,
-}: ContentTeaserLeftProps): preact.VNode {
-  const classes = useStyles({ image });
+export default function ContentTeaserRightDirt(): preact.VNode {
+  const classes = useStyles();
   const theme = useTheme();
-  const colors = getColors(theme, palette);
+  const colors = invert(getColors(theme, "blue"));
   const containerClasses = useContainerStyles((_) => {
     return {
       color: colors.color,
@@ -70,16 +50,12 @@ export default function ContentTeaserRight({
     <Container
       disableGutters
       maxWidth={false}
-      className={clsx(
-        containerClasses.main,
-        classes.container,
-        containerClassName
-      )}
+      className={clsx(containerClasses.main, classes.container)}
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <div className={classes.imageContainer}>
-            <img src={image} className={clsx(classes.image, imageClassName)} />
+            <img src={dreck} className={classes.image} />
           </div>
         </Grid>
         <Grid item xs={false} sm={1}>
@@ -87,9 +63,16 @@ export default function ContentTeaserRight({
         </Grid>
         <Grid item xs={12} sm={5}>
           <Typography variant="h2" className={classes.padding24}>
-            {title}
+            Mit Dreck unter den Fingernägeln
           </Typography>
-          {children}
+          <Typography variant="body1">
+            Mit der engen Verknüpfung zum Bauernhof wollen wir ein Umfeld
+            schaffen, in dem die Kinder Verbundenheit mit der Natur, den Tieren
+            und der Gemeinschaft erleben und lernen können. Ein Umfeld, in dem
+            sie Tag für Tag aktiv Verantwortung für ihr eigenes Tun, für ihr
+            Wohlbefinden, für das Wohlbefinden der Tiere, der Umwelt und der
+            Gemeinschaft und für ihre Bildung übernehmen können.
+          </Typography>
         </Grid>
       </Grid>
     </Container>

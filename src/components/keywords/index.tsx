@@ -16,8 +16,11 @@ const useStyles = makeStyles({
   container: {
     backgroundImage: `url(${flower})`,
     backgroundSize: "contain",
+    marginTop: 112,
+    paddingBottom: 112,
   },
   padding24: {
+    paddingTop: 260,
     paddingBottom: 24,
   },
   image: {
