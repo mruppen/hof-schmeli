@@ -72,6 +72,7 @@ export default function MainTeaser({
               variant="outlined"
               palette="green"
               className={classes.spacing}
+              to={to}
             >
               {toText}
             </ArrowButton>

@@ -1,20 +1,18 @@
-import { Grid, Theme, useTheme } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import preact from "preact";
-import { Colors, useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
+import { PaletteOrColorsType } from "../../utils";
 import Teaser from "../teaser";
-import { PaletteOrColorsType, getColors } from "../../utils";
 
 export type TeaserRowProps = {
   teasers: TeaserModel[];
-  palette?: PaletteOrColorsType
+  palette?: PaletteOrColorsType;
 };
 
-export default function TeaserRow({ teasers, palette = "green" }: TeaserRowProps): preact.VNode {
-  const classes = useContainerStyles(
-    (theme: Theme): Colors => getColors(theme, palette)
-  );
-
+export default function TeaserRow({
+  teasers,
+  palette = "green",
+}: TeaserRowProps): preact.VNode {
   const children: React.ReactNode[] = [];
   teasers.forEach((teaser, index) =>
     children.push(
