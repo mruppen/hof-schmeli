@@ -98,12 +98,18 @@ export default function MainNavigation({
           </Link>
         </Typography>
         <Typography variant="h4">
-          <Link to="/stories" className={clsx(classes.link, classes.textLink)}>
+          <Link
+            to="/geschichten"
+            className={clsx(classes.link, classes.textLink)}
+          >
             Geschichten
           </Link>
         </Typography>
         <Typography variant="h4">
-          <Link to="/help" className={clsx(classes.link, classes.textLink)}>
+          <Link
+            to="/gemeinschaft"
+            className={clsx(classes.link, classes.textLink)}
+          >
             Ich möchte helfen
           </Link>
         </Typography>

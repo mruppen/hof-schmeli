@@ -58,7 +58,7 @@ export default function ContactFooter({ colors }: ContactProps): preact.VNode {
       <ArrowLink
         variant="body2"
         palette={invert(colorsType)}
-        to="mailto:schmeli@gmail.com"
+        to="mailto:info.schmeli@gmail.com"
       >
         Mail schreiben
       </ArrowLink>

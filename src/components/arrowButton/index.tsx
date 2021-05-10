@@ -6,7 +6,7 @@ import {
   Theme,
   useTheme,
 } from "@material-ui/core";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { ArrowForward } from "@material-ui/icons";
 import clsx from "clsx";
 import preact from "preact";
 import { Link } from "react-router-dom";
@@ -67,8 +67,8 @@ export default function ArrowButton({
   return (
     <Button
       className={clsx(classes.button, className)}
-      startIcon={arrow === "start" ? <ArrowForwardIcon /> : null}
-      endIcon={arrow === "end" ? <ArrowForwardIcon /> : null}
+      startIcon={arrow == "start" ? <ArrowForward /> : undefined}
+      endIcon={arrow == "end" ? <ArrowForward /> : undefined}
       component={Link}
       to={to ?? "/"}
       {...props}

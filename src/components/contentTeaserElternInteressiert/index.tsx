@@ -42,7 +42,7 @@ export default function ContentTeaserElternInteressiert(): preact.VNode {
   const classes = useStyles();
 
   return (
-    <Section paddingTop={80} paddingBottom={80} palette="green">
+    <Section paddingBottom={80} palette="green">
       <Typography variant="h2" className={classes.padding32}>
         Ich bin interessiert
       </Typography>

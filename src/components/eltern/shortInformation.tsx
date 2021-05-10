@@ -8,7 +8,7 @@ import {
 import preact from "preact";
 import { getColors, invert } from "../../utils";
 import CheckIcon from "../icons/check";
-import Section from "../Section";
+import Section from "../section";
 
 const useStyles = makeStyles({
   enumeration: {

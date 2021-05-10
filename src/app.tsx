@@ -3,7 +3,10 @@ import preact from "preact";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import useCustomTheme from "./customTheme";
 import Eltern from "./routes/eltern";
+import Gemeinschaft from "./routes/gemeinschaft";
+import Geschichten from "./routes/geschichten";
 import Home from "./routes/home";
+import Leitbild from "./routes/leitbild";
 import Schule from "./routes/schule";
 import Vision from "./routes/vision";
 
@@ -25,6 +28,15 @@ export function App(): preact.VNode {
           </Route>
           <Route path="/eltern">
             <Eltern />
+          </Route>
+          <Route path="/gemeinschaft">
+            <Gemeinschaft />
+          </Route>
+          <Route path="/geschichten">
+            <Geschichten />
+          </Route>
+          <Route path="/leitbild">
+            <Leitbild />
           </Route>
         </Switch>
       </Router>
