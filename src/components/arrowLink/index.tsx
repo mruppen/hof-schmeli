@@ -6,7 +6,7 @@ import {
   Theme,
   useTheme,
 } from "@material-ui/core";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import { ArrowForward } from "@material-ui/icons";
 import clsx from "clsx";
 import preact from "preact";
 import {
@@ -35,10 +35,13 @@ const useStyles = makeStyles<Theme, ButtonColorsType>((theme: Theme) => {
       borderColor: props.color,
       display: "flex",
       flexDirection: "row",
-      alignItems: "flex-start",
+      justifyContent: "flex-start",
+      alignItems: "center",
     }),
-    padding12: {
+    icon: {
       paddingLeft: 12,
+      display: "flex",
+      alignItems: "center",
     },
   });
 });
@@ -66,8 +69,8 @@ export default function ArrowLink({
   return (
     <Link className={clsx(classes.link, className)} href={to ?? "/"} {...props}>
       <span>{children}</span>
-      <span className={classes.padding12}>
-        <ArrowForwardIcon />
+      <span className={classes.icon}>
+        <ArrowForward />
       </span>
     </Link>
   );

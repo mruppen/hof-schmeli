@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import HeaderHome from "../../components/headers/home";
 import PlainTeaser from "../../components/plainTeaser";
 import QuoteTeaser from "../../components/quoteTeaser";
+import Section from "../../components/section";
 import TopicTeaser from "../../components/topicTeaser";
 import baum from "../../data/images/baum.png";
 import milchHolen from "../../data/images/milchHolen.png";
@@ -18,6 +19,12 @@ const useStyles = makeStyles(() =>
     margin24: {
       marginBottom: 24,
     },
+    milchHolenImage: {
+      backgroundRepeat: "no-repeat",
+      backgroundImage: `url(${milchHolen})`,
+      backgroundSize: "115%",
+      backgroundPosition: "-50px center",
+    },
   })
 );
 
@@ -26,28 +33,30 @@ export default function Home(): preact.VNode {
   return (
     <div>
       <HeaderHome />
-      <TopicTeaser
-        image={milchHolen}
-        title="So lernt dein Kind"
-        to="/"
-        toText="Infos für Eltern"
-        teasers={homeTeasers}
-      >
-        <Typography variant="h4" className={classes.margin24}>
-          Die Bauernhof-Schule
-        </Typography>
-        <Typography variant="body1" className={classes.margin24}>
-          in einem sicheren und geborgenen Umfeld
-          <br />
-          angenommen in seiner ureigenen Persönlichkeit
-          <br />
-          selbstbestimmt, selbstorganisiert, aus eigenem Antrieb mit
-          liebevoller, wertschätzender und professioneller Unterstützung
-          <br />
-          verbunden mit der Natur, den Tieren und der Gemeinschaft
-          <br />
-        </Typography>
-      </TopicTeaser>
+      <Section palette="green" paddingBottom={80} paddingTop={80}>
+        <TopicTeaser
+          imageClass={classes.milchHolenImage}
+          title="So lernt dein Kind"
+          to="/"
+          toText="Infos für Eltern"
+          teasers={homeTeasers}
+        >
+          <Typography variant="h4" className={classes.margin24}>
+            Die Bauernhof-Schule
+          </Typography>
+          <Typography variant="body1">
+            in einem sicheren und geborgenen Umfeld
+            <br />
+            angenommen in seiner ureigenen Persönlichkeit
+            <br />
+            selbstbestimmt, selbstorganisiert, aus eigenem Antrieb mit
+            liebevoller, wertschätzender und professioneller Unterstützung
+            <br />
+            verbunden mit der Natur, den Tieren und der Gemeinschaft
+            <br />
+          </Typography>
+        </TopicTeaser>
+      </Section>
       <QuoteTeaser image={baum}>
         <Typography variant="h2" className={classes.margin20}>
           «Bäume brauchen Wurzeln. Ein kleiner Baum kann umso besser wachsen und

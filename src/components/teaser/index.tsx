@@ -11,7 +11,7 @@ import preact from "preact";
 import { ColorsFunc } from "../../hooks";
 import { TeaserModel } from "../../models/models";
 import { getColors, invert, PaletteOrColorsType } from "../../utils";
-import ArrowButton from "../arrowButton";
+import ArrowLink from "../arrowLink";
 
 type UseStylesType = (
   func: ColorsFunc
@@ -27,6 +27,7 @@ const useStyles: UseStylesType = makeStyles<Theme, ColorsFunc>((theme: Theme) =>
     image: {
       width: "100%",
       height: "auto",
+      borderRadius: 8,
     },
     subtitle: {
       marginTop: theme.spacing(1),
@@ -82,14 +83,9 @@ export default function Teaser({
       )}
       {to && (
         <Grid item xs={12}>
-          <ArrowButton
-            arrow="start"
-            palette={invert(colors)}
-            variant="text"
-            to={to}
-          >
+          <ArrowLink variant="body2" palette={invert(colors)} to={to}>
             {toText || "Link"}
-          </ArrowButton>
+          </ArrowLink>
         </Grid>
       )}
     </Grid>

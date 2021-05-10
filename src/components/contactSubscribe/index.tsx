@@ -12,7 +12,8 @@ import { ClassNameMap } from "@material-ui/styles";
 import clsx from "clsx";
 import preact, { ComponentChildren } from "preact";
 import { useContainerStyles } from "../../hooks";
-import ArrowButton from "../arrowButton";
+import { getColors, invert } from "../../utils";
+import ArrowLink from "../arrowLink";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
@@ -46,7 +47,6 @@ const useStyles = makeStyles((theme: Theme) => {
       alignItems: "flex-start",
       marginTop: 20,
     },
-
     bullet: {
       backgroundColor: theme.palette.blue.contrastText,
       color: theme.palette.blue.main,
@@ -57,12 +57,6 @@ const useStyles = makeStyles((theme: Theme) => {
       textAlign: "center",
       verticalAlign: "center",
     },
-
-    bulletText: {
-      // textAlign: "center",
-      // verticalAlign: "center"
-    },
-
     listItemText: {
       backgroundColor: theme.palette.blue.main,
       color: theme.palette.blue.contrastText,
@@ -71,20 +65,21 @@ const useStyles = makeStyles((theme: Theme) => {
       marginBottom: 0,
       marginLeft: 12,
     },
+    margin20: {
+      marginBottom: 20,
+    },
   });
 });
 
 function createListItem(
   index: number,
   text: ComponentChildren,
-  classes: ClassNameMap<"listItem" | "bullet" | "listItemText" | "bulletText">
+  classes: ClassNameMap<"listItem" | "bullet" | "listItemText">
 ): preact.VNode {
   return (
     <div className={classes.listItem}>
       <div className={classes.bullet}>
-        <Typography variant="body1" className={classes.bulletText}>
-          {index}
-        </Typography>
+        <Typography variant="body1">{index}</Typography>
       </div>
       {text}
     </div>
@@ -101,10 +96,7 @@ export default function ContactSubscribe(): preact.VNode {
 
   const classes = useStyles();
   const theme = useTheme();
-  const buttonStyle = {
-    color: theme.palette.blue.main,
-    backgroundColor: theme.palette.blue.contrastText,
-  };
+  const buttonStyle = invert(getColors(theme, "blue"));
 
   return (
     <Container
@@ -143,6 +135,9 @@ export default function ContactSubscribe(): preact.VNode {
               <Typography variant="body1" className={classes.listItemText}>
                 Fülle das Formular «provisorische Anmeldung» bis zum …Datum…
                 aus.
+                <ArrowLink variant="body1" palette="blue" to="/">
+                  Download pdf
+                </ArrowLink>
               </Typography>,
               classes
             )}
@@ -157,26 +152,28 @@ export default function ContactSubscribe(): preact.VNode {
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={clsx(classes.flexbox, classes.contact)}>
-            <Typography variant="h2">Kontakt</Typography>
-            <Typography variant="body2">
+            <Typography variant="h2" className={classes.margin20}>
+              Kontakt
+            </Typography>
+            <Typography variant="body2" className={classes.margin20}>
               Schule Bauernhof Schmeli
               <br />
-              Rumpelstilzweg 1<br />
-              3994 Brig-Glis
+              Termerweg 140
+              <br />
+              3900 Brig
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" className={classes.margin20}>
               Telefon
               <br />
-              034 234 56 78
+              079 847 93 96
             </Typography>
-            <ArrowButton
-              variant="text"
-              arrow="end"
+            <ArrowLink
+              variant="body2"
               palette={buttonStyle}
-              to="/"
+              to="mailto:info.schmeli@gmail.com"
             >
-              Mehr erfahren
-            </ArrowButton>
+              Mail schreiben
+            </ArrowLink>
           </div>
         </Grid>
       </Grid>

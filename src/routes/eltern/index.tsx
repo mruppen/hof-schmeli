@@ -4,6 +4,7 @@ import ContactSubscribe from "../../components/contactSubscribe";
 import ContentImportantAssets from "../../components/contentImportantAssets";
 import ContentTeaserElternInteressiert from "../../components/contentTeaserElternInteressiert";
 import ContentTeaserSnailEltern from "../../components/contentTeaserSnailEltern";
+import ContentTeaserWayOfLearning from "../../components/contentTeaserWayOfLearning";
 import ShortInformation from "../../components/eltern/shortInformation";
 import Footer from "../../components/footer";
 import HeaderEltern from "../../components/headers/eltern";
@@ -34,6 +35,7 @@ export default function Eltern(): preact.VNode {
       <ShortInformation />
       <ContentImportantAssets />
       <ContentTeaserSnailEltern />
+      <ContentTeaserWayOfLearning />
       <ContentTeaserElternInteressiert />
       <ContactSubscribe />
       <Footer />
