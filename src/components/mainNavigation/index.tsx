@@ -79,7 +79,7 @@ export default function MainNavigation({
   if (!isXs) {
     return (
       <nav className={classes.navigation}>
-        <Link className={classes.link} to="/home">
+        <Link className={classes.link} to="/">
           <HomeIcon />
         </Link>
         <Typography variant="h4">

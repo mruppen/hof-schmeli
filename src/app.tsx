@@ -17,9 +17,6 @@ export function App(): preact.VNode {
       <CssBaseline />
       <Router>
         <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
           <Route path="/schule">
             <Schule />
           </Route>
@@ -37,6 +34,9 @@ export function App(): preact.VNode {
           </Route>
           <Route path="/leitbild">
             <Leitbild />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </Router>

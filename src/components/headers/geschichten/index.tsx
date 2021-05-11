@@ -47,11 +47,16 @@ export default function HeaderGeschichten(): preact.VNode {
 
   const navigationColors: PaletteOrColorsType = {
     color: "transparent",
-    backgroundColor: theme.palette.orange.main,
+    backgroundColor: "white",
+  };
+
+  const sectionColors: PaletteOrColorsType = {
+    color: "white",
+    backgroundColor: theme.palette.yellow.main,
   };
 
   return (
-    <Section additionalClassName={classes.container} palette="orange">
+    <Section additionalClassName={classes.container} palette={sectionColors}>
       <Container disableGutters maxWidth={false} className={classes.inner}>
         <Grid container spacing={2}>
           <Grid xs={12} item>

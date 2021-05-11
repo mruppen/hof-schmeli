@@ -9,7 +9,7 @@ import Section from "../../components/section";
 import TopicTeaser from "../../components/topicTeaser";
 import baum from "../../data/images/baum.png";
 import milchHolen from "../../data/images/milchHolen.png";
-import { homeTeasers } from "../../data/teasers";
+import { TeaserModel } from "../../models/models";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -27,6 +27,27 @@ const useStyles = makeStyles(() =>
     },
   })
 );
+
+const homeTeasers: TeaserModel[] = [
+  {
+    text: "Schule Bauernhof Schmeli- ein Ort des friedlichen und freudigen Zusammenlebens. Wo Menschen sich gegenseitig helfen, ermutigen und bilden. Kinder sich sicher, geborgen und aufgehoben fühlen können.",
+    title: "Mit einer klaren Vision",
+    to: "/vision",
+    toText: "Mehr erfahren",
+  },
+  {
+    text: "In der Schule Bauernhof Schmeli dürfen Kinder Kinder sein. Schulalltag kann mit Lern- und Lebensfreude in naturverbundener Umgebung erlebt werden.",
+    title: "In einem lebendigen Umfeld",
+    to: "/schule",
+    toText: "Mehr erfahren",
+  },
+  {
+    text: "Wir sind eine Schule, die Chancengleichheit für alle Kinder bieten will. Dieses Ziel können wir nur gemeinsam und mit Unterstützung erreichen.",
+    title: "Mit Solidarität",
+    to: "/helfen",
+    toText: "Mehr erfahren",
+  },
+];
 
 export default function Home(): preact.VNode {
   const classes = useStyles();

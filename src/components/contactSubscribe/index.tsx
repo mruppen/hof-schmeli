@@ -68,6 +68,9 @@ const useStyles = makeStyles((theme: Theme) => {
     margin20: {
       marginBottom: 20,
     },
+    marginTop: {
+      marginTop: 20,
+    },
   });
 });
 
@@ -133,10 +136,10 @@ export default function ContactSubscribe(): preact.VNode {
             {createListItem(
               2,
               <Typography variant="body1" className={classes.listItemText}>
-                Fülle das Formular «provisorische Anmeldung» bis zum …Datum…
-                aus.
+                Fülle das Formular «provisorische Anmeldung» bis spätestens Ende
+                März 2022 aus.
                 <ArrowLink variant="body1" palette="blue" to="/">
-                  Download pdf
+                  Download Anmeldeformular
                 </ArrowLink>
               </Typography>,
               classes
@@ -144,10 +147,14 @@ export default function ContactSubscribe(): preact.VNode {
             {createListItem(
               3,
               <Typography variant="body1" className={classes.listItemText}>
-                Bis spätestens ….Datum…. nehmen wir Kontakt mit dir auf.
+                Wir nehmen persönlich Kontakt mit dir auf.
               </Typography>,
               classes
             )}
+            <Typography variant="body2" className={classes.marginTop}>
+              Anmerkung: Aus schulorganisatorischen Gründen behalten wir uns
+              vor, nicht alle Anmeldungen zu berücksichtigen.
+            </Typography>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>

@@ -17,24 +17,21 @@ const teasers: TeaserModel[] = [
   {
     image: schulstart,
     title: "Schulstart",
-    text:
-      "Die Schule Bauernhof Schmeli öffnet ihre Tore im August 2022. Unsere Schule soll dynamisch wachsen dürfen und die Kinder mit ihr. Deshalb starten wir mit Kindern des ersten Zyklus (KG, 1./2.Kl.>>1-4H). Für ältere Geschwisterkinder wären eventuell Ausnahmen möglich.",
+    text: "Die Schule Bauernhof Schmeli öffnet ihre Tore im August 2022. Unsere Schule soll dynamisch wachsen dürfen und die Kinder mit ihr. Deshalb starten wir mit Kindern des ersten Zyklus (KG, 1./2.Kl.>>1-4H). Für ältere Geschwisterkinder wären eventuell Ausnahmen möglich.",
   },
   {
     image: stundenplan,
     title: "Stundenplan",
-    text:
-      "Wir sind eine Tagesschule mit Mittagstisch. Die Schulzeiten sind an die Fahrpläne des ÖV angepasst. Die Ferienpläne entsprechen den offiziellen Plänen der Schulen Brig und Umgebung. Mittwochs ist schulfrei.",
+    text: "Wir sind eine Tagesschule mit Mittagstisch. Die Schulzeiten sind an die Fahrpläne des ÖV angepasst. Die Ferienpläne entsprechen den offiziellen Plänen der Schulen Brig und Umgebung. Mittwochs ist schulfrei.",
     to: "/home",
     toText: "Stundenplan",
   },
   {
     image: schulgeld,
     title: "Schulgeld",
-    text:
-      "Gelebte Solidarität heisst auch, dass Elternbeiträge einkommensabhängig sind, damit jeder seinen ihm möglichen Teil beitragen kann, auch wenn das Familienbudget klein ist.",
+    text: "Gelebte Solidarität heisst auch, dass Elternbeiträge einkommensabhängig sind, damit jeder seinen ihm möglichen Teil beitragen kann, auch wenn das Familienbudget klein ist.",
     to: "/home",
-    toText: "Statuten Unterstützungsverein",
+    toText: "Schulgeld",
   },
 ];
 

@@ -6,13 +6,13 @@ import {
   useTheme,
 } from "@material-ui/core";
 import preact from "preact";
-import ContentTeaserSchule from "../../components/contentTeaserSchule";
 import ContentTeaserLeft from "../../components/contentTeaserLeft";
+import ContentTeaserSchule from "../../components/contentTeaserSchule";
 import Footer from "../../components/footer";
 import HeaderSchule from "../../components/headers/schule";
 import ImageGallery from "../../components/imageGallery";
-import PlainTeaser from "../../components/plainTeaser";
 import PersonsList from "../../components/personsList";
+import PlainTeaser from "../../components/plainTeaser";
 import hahn from "../../data/images/hahn.png";
 import schnecke from "../../data/images/schnecke.png";
 import { getColors, invert } from "../../utils";
@@ -81,7 +81,7 @@ export default function Schule(): preact.VNode {
       </TopicTeaser> */}
       <ContentTeaserLeft
         palette={teacherTeaserColors}
-        title="Das Lehrer-Team"
+        title="Team"
         image={schnecke}
         containerClassName={classes.margin112}
         imageClassName={classes.margin100}
@@ -95,7 +95,7 @@ export default function Schule(): preact.VNode {
         </Typography>
       </ContentTeaserLeft>
       <PersonsList />
-      <PlainTeaser to="/vision" toText="Unsere Vision">
+      <PlainTeaser to="/vision" toText="Unsere Werte und Grundhaltungen">
         Wir leben Schule - Mit Menschlichkeit
       </PlainTeaser>
       <Footer />
