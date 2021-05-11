@@ -66,7 +66,7 @@ export default function HeaderEltern(): preact.VNode {
       <Container disableGutters maxWidth={false} className={classes.inner}>
         <Grid container spacing={2}>
           <Grid xs={12} item>
-            <MainNavigation colors={navigationColors} />
+            <MainNavigation colors={navigationColors} route="eltern" />
           </Grid>
           <Grid xs={12} item>
             <Typography variant="h1" className={classes.title}>

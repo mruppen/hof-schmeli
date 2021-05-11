@@ -41,6 +41,9 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
       fontWeight: 700,
       fontSize: 24,
     },
+    textLinkActive: {
+      textDecoration: "none",
+    },
     menuItem: (props) => ({
       color: props.backgroundColor,
       backgroundColor: props.color,
@@ -54,10 +57,12 @@ const useStyles = makeStyles<Theme, ColorsType>((theme) =>
 
 type MainNavigationProps = {
   colors: PaletteOrColorsType;
+  route?: "/" | "eltern" | "schule" | "vision" | "geschichten" | "gemeinschaft";
 };
 
 export default function MainNavigation({
   colors,
+  route = "/",
 }: MainNavigationProps): preact.VNode {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
@@ -83,24 +88,41 @@ export default function MainNavigation({
           <HomeIcon />
         </Link>
         <Typography variant="h4">
-          <Link to="/eltern" className={clsx(classes.link, classes.textLink)}>
+          <Link
+            to="/eltern"
+            className={clsx(classes.link, classes.textLink, {
+              [classes.textLinkActive]: route === "eltern",
+            })}
+          >
             Für Eltern
           </Link>
         </Typography>
         <Typography variant="h4">
-          <Link to="/schule" className={clsx(classes.link, classes.textLink)}>
+          <Link
+            to="/schule"
+            className={clsx(classes.link, classes.textLink, {
+              [classes.textLinkActive]: route === "schule",
+            })}
+          >
             Schule
           </Link>
         </Typography>
         <Typography variant="h4">
-          <Link to="/vision" className={clsx(classes.link, classes.textLink)}>
+          <Link
+            to="/vision"
+            className={clsx(classes.link, classes.textLink, {
+              [classes.textLinkActive]: route === "vision",
+            })}
+          >
             Vision
           </Link>
         </Typography>
         <Typography variant="h4">
           <Link
             to="/geschichten"
-            className={clsx(classes.link, classes.textLink)}
+            className={clsx(classes.link, classes.textLink, {
+              [classes.textLinkActive]: route === "geschichten",
+            })}
           >
             Geschichten
           </Link>
@@ -108,7 +130,9 @@ export default function MainNavigation({
         <Typography variant="h4">
           <Link
             to="/gemeinschaft"
-            className={clsx(classes.link, classes.textLink)}
+            className={clsx(classes.link, classes.textLink, {
+              [classes.textLinkActive]: route === "gemeinschaft",
+            })}
           >
             Ich möchte helfen
           </Link>
