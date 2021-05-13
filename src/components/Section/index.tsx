@@ -24,7 +24,7 @@ type PaddingStyles = {
   paddingBottom: number | string;
 };
 
-type SectionProps = {
+export type SectionProps = {
   palette: PaletteOrColorsType;
   paddingTop?: number | string;
   paddingBottom?: number | string;

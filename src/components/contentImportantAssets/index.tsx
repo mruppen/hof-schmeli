@@ -20,38 +20,32 @@ const teasers: TeaserModel[] = [
   {
     image: schulweg,
     title: "Problemloser Schulweg mit dem ÖV",
-    text:
-      "Vom Bahnhof Brig mit dem Bus in 15 Minuten auf der Biela. Kurzer gemeinschaftlicher Spaziergang bis zur Schule Bauernhof Schmeli.",
+    text: "Vom Bahnhof Brig mit dem Bus in 15 Minuten auf der Biela. Kurzer gemeinschaftlicher Spaziergang bis zur Schule Bauernhof Schmeli.",
   },
   {
     image: wachsen,
     title: "Täglich Lernlandschaften entdecken",
-    text:
-      "Nebst umsetzen von eigenen Projekten werden regelmässig geführte Unterrichts-Sequenzen angeboten, zu denen dein Kind in den Lernlandschaften viel Material zum Vertiefen und Üben findet.",
+    text: "Nebst umsetzen von eigenen Projekten werden regelmässig geführte Unterrichts-Sequenzen angeboten, zu denen dein Kind in den Lernlandschaften viel Material zum Vertiefen und Üben findet.",
   },
   {
     image: bauernhof,
     title: "Bauernhof-Schule",
-    text:
-      "Kühe auf die Weide begleiten, Esel striegeln, kleine Lämmer streicheln, Schweine füttern, Eier holen, ausmisten. All dies kann erlebt werden.",
+    text: "Kühe auf die Weide begleiten, Esel striegeln, kleine Lämmer streicheln, Schweine füttern, Eier holen, ausmisten. All dies kann erlebt werden.",
   },
   {
     image: unterwegs,
     title: "Auch gerne mal mit der Schule unterwegs",
-    text:
-      "Wann immer möglich möchten wir auch ausserschulisches Lernen, Entdecken und Erforschen ermöglichen.",
+    text: "Wann immer möglich möchten wir auch ausserschulisches Lernen, Entdecken und Erforschen ermöglichen.",
   },
   {
     image: mittagstisch,
     title: "Ganztagesstruktur mit Mittagstisch",
-    text:
-      "Vom Aussäen bis zum Ernten – wie kommt der Salat auf meinen Teller? Gemeinsam kochen und essen stärkt unseren Zusammenhalt. Bei uns kommen Bio- und Demeter-Produkte auf den Tisch.",
+    text: "Vom Aussäen bis zum Ernten – wie kommt der Salat auf meinen Teller? Gemeinsam kochen und essen stärkt unseren Zusammenhalt. Bei uns kommen Bio- und Demeter-Produkte auf den Tisch.",
   },
   {
     image: foerdern,
     title: "Draussen sein",
-    text:
-      "Bewegung an der frischen Luft, entdeckendes, begreifendes Lernen in der Natur – in der direkten Schulumgebung oder auf den wöchentlichen Waldausflügen.",
+    text: "Bewegung an der frischen Luft, entdeckendes, begreifendes Lernen in der Natur – in der direkten Schulumgebung oder auf den wöchentlichen Waldausflügen.",
   },
 ];
 

@@ -6,10 +6,10 @@ import {
   Typography,
 } from "@material-ui/core";
 import clsx from "clsx";
-import preact, { ComponentChildren } from "preact";
+import preact, { ComponentChildren, Fragment } from "preact";
 import { TeaserModel } from "../../models/models";
 import ArrowButton from "../arrowButton";
-import TeaserRow from "../teaserRow";
+import { createTeaserRowGridItems } from "../teaserRow";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -55,33 +55,31 @@ export default function TopicTeaser({
 }: TopicTeaserProps): preact.VNode {
   const classes = useStyles();
   return (
-    <Fragment>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant="h2" className={classes.title}>
-            {title}
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={7}>
-          <div className={clsx(classes.image, imageClass)} />
-        </Grid>
-        <Grid item xs={12} sm={5}>
-          <div className={classes.content}>
-            {subtitle && <Typography variant="h4">{subtitle}</Typography>}
-            {children}
-            <ArrowButton
-              arrow="start"
-              palette="green"
-              variant="outlined"
-              to={to}
-              className={classes.button}
-            >
-              {toText}
-            </ArrowButton>
-          </div>
-        </Grid>
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Typography variant="h2" className={classes.title}>
+          {title}
+        </Typography>
       </Grid>
-      {teasers && <TeaserRow teasers={teasers} />}
-    </Fragment>
+      <Grid item xs={12} sm={7}>
+        <div className={clsx(classes.image, imageClass)} />
+      </Grid>
+      <Grid item xs={12} sm={5}>
+        <div className={classes.content}>
+          {subtitle && <Typography variant="h4">{subtitle}</Typography>}
+          {children}
+          <ArrowButton
+            arrow="start"
+            palette="green"
+            variant="outlined"
+            to={to}
+            className={classes.button}
+          >
+            {toText}
+          </ArrowButton>
+        </div>
+      </Grid>
+      {teasers && createTeaserRowGridItems(teasers, "green")}
+    </Grid>
   );
 }

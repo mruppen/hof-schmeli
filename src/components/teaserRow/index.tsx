@@ -1,18 +1,12 @@
 import { Grid } from "@material-ui/core";
-import preact from "preact";
 import { TeaserModel } from "../../models/models";
 import { PaletteOrColorsType } from "../../utils";
 import Teaser from "../teaser";
 
-export type TeaserRowProps = {
-  teasers: TeaserModel[];
-  palette?: PaletteOrColorsType;
-};
-
-export default function TeaserRow({
-  teasers,
-  palette = "green",
-}: TeaserRowProps): preact.VNode {
+export function createTeaserRowGridItems(
+  teasers: TeaserModel[],
+  palette: PaletteOrColorsType = "green"
+): React.ReactNode[] {
   const children: React.ReactNode[] = [];
   teasers.forEach((teaser, index) =>
     children.push(
@@ -32,9 +26,21 @@ export default function TeaserRow({
     )
   );
 
+  return children;
+}
+
+type TeaserRowProps = {
+  teasers: TeaserModel[];
+  palette?: PaletteOrColorsType;
+};
+
+export default function TeaserRow({
+  teasers,
+  palette,
+}: TeaserRowProps): preact.VNode {
   return (
     <Grid container spacing={2}>
-      {children}
+      {createTeaserRowGridItems(teasers, palette)};
     </Grid>
   );
 }

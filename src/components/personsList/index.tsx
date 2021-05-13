@@ -1,11 +1,10 @@
-import { Container, makeStyles, useTheme } from "@material-ui/core";
-import clsx from "clsx";
+import { Grid, makeStyles, useTheme } from "@material-ui/core";
 import preact from "preact";
 import peopleSample from "../../data/images/peopleSample.png";
 import { useContainerStyles } from "../../hooks";
 import { TeaserModel } from "../../models/models";
 import { ColorsType } from "../../utils";
-import TeaserRow from "../teaserRow";
+import Section from "../section";
 
 const useStyles = makeStyles({
   container: {
@@ -18,24 +17,21 @@ const teasers: TeaserModel[] = [
   {
     image: peopleSample,
     title: "Simone Maurer",
-    text:
-      "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
+    text: "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
     to: "mailto:simone.maurer@sbs.ch",
     toText: "simone.maurer@sbs.ch",
   },
   {
     image: peopleSample,
     title: "Simone Maurer",
-    text:
-      "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
+    text: "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
     to: "mailto:simone.maurer@sbs.ch",
     toText: "simone.maurer@sbs.ch",
   },
   {
     image: peopleSample,
     title: "Simone Maurer",
-    text:
-      "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
+    text: "Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin",
     to: "mailto:simone.maurer@sbs.ch",
     toText: "simone.maurer@sbs.ch",
   },
@@ -51,12 +47,10 @@ export default function PersonsList(): preact.VNode {
   const classes = useStyles();
 
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      className={clsx(containerClasses.main, classes.container)}
-    >
-      <TeaserRow teasers={teasers} palette="yellow" />
-    </Container>
+    <Section palette="yellow" additionalClassName={classes.container}>
+      <Grid container spacing={2}>
+        createTeaserRowGridItems(teasers, "yellow");
+      </Grid>
+    </Section>
   );
 }
