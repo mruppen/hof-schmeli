@@ -19,16 +19,13 @@ import { getColors, invert } from "../../utils";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    margin20: {
-      marginBottom: 20,
-    },
-    margin92: {
+    imageRooster: {
       marginTop: 92,
     },
-    margin100: {
+    imageSnail: {
       marginTop: -200,
     },
-    margin112: {
+    container: {
       marginTop: 112,
     },
   })
@@ -46,7 +43,7 @@ export default function Schule(): preact.VNode {
         palette="blue"
         title="Die Bauernhof Schule"
         image={hahn}
-        imageClassName={classes.margin92}
+        imageClassName={classes.imageRooster}
       >
         <Typography variant="body1">
           Der Bio-Bauernhof Schmeli befindet sich auf der Biela, 15 Minuten vom
@@ -63,28 +60,12 @@ export default function Schule(): preact.VNode {
       </ContentTeaserLeft>
       <ImageGallery />
       <ContentTeaserSchule />
-      {/* <TopicTeaser
-        to="/home"
-        toText="Replace with correct text"
-        image={genossenschafter}
-        title="Das sind wir"
-        subtitle="Unsere Genossenschafter"
-      >
-        <Typography variant="body1">
-          Von Links nach rechts:
-          <br />
-          Simone Maurer
-          <br />
-          Benedikt Maurer
-          <br />
-        </Typography>
-      </TopicTeaser> */}
       <ContentTeaserLeft
         palette={teacherTeaserColors}
         title="Team"
         image={schnecke}
-        containerClassName={classes.margin112}
-        imageClassName={classes.margin100}
+        containerClassName={classes.container}
+        imageClassName={classes.imageSnail}
       >
         <Typography variant="body1">
           Wir sind ein Team aus engagierten und motivierten Lehrpersonen, die
