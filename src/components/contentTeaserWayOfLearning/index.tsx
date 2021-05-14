@@ -46,7 +46,8 @@ export default function ContentTeaserWayOfLearning(): preact.VNode {
       <TopicTeaser
         title="So lernt dein Kind"
         imageClass={classes.feldstecherImage}
-        to="/"
+        documentLink={true}
+        to="/documents/Unsere Werte und Grundhaltungen.pdf"
         toText="Unsere Werte und Grundhaltungen"
       >
         <Typography variant="body1">

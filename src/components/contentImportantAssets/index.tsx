@@ -1,4 +1,3 @@
-import { makeStyles, Typography } from "@material-ui/core";
 import preact from "preact";
 import bauernhof from "../../data/images/bauernhof.png";
 import foerdern from "../../data/images/foerdern.png";
@@ -9,12 +8,7 @@ import wachsen from "../../data/images/wachsen.png";
 import { TeaserModel } from "../../models/models";
 import Section from "../section";
 import TeaserRow from "../teaserRow";
-
-const useStyles = makeStyles({
-  padding32: {
-    paddingBottom: 32,
-  },
-});
+import SectionTitle from "../titles/sectionTitle";
 
 const teasers: TeaserModel[] = [
   {
@@ -50,12 +44,9 @@ const teasers: TeaserModel[] = [
 ];
 
 export default function ContentImportantAssets(): preact.VNode {
-  const classes = useStyles();
   return (
     <Section paddingTop={80} paddingBottom={80} palette="green">
-      <Typography variant="h2" className={classes.padding32}>
-        Ein Tag im Leben deines Kindes
-      </Typography>
+      <SectionTitle title="Ein Tag im Leben deines Kindes" />
       <TeaserRow teasers={teasers} palette="green" />
     </Section>
   );

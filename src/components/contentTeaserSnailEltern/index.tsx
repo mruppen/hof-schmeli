@@ -13,6 +13,7 @@ import schnecke from "../../data/images/schneckeGelb.png";
 import { useContainerStyles } from "../../hooks";
 import { ColorsType, invert } from "../../utils";
 import ArrowButton from "../arrowButton";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   container: {
@@ -49,9 +50,7 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.padding24}>
-            Die Schule als Gemeinschaft
-          </Typography>
+          <SectionTitle title="Die Schule als Gemeinschaft" />
           <Typography variant="body1" className={classes.padding24}>
             Die Kinder sollen ein vollwertiger Teil der Schulgemeinschaft sein.
             Sie dürfen zu Entscheidungsfindungen beitragen, Mitverantwortung
@@ -62,19 +61,18 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
             arrow="start"
             palette={buttonColors}
             variant="outlined"
-            to="/home"
+            documentLink
+            to="/documents/Unsere Lernkultur.pdf"
             transparent={true}
           >
-            Ich möchte helfen
+            Unsere Lernkultur
           </ArrowButton>
         </Grid>
         <Grid item xs={false} sm={2}>
           <Hidden />
         </Grid>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.padding24}>
-            Gelebte Solidarität
-          </Typography>
+          <SectionTitle title="Gelebte Solidarität" />
           <Typography variant="body1" className={classes.padding24}>
             Wir möchten mit all jenen, die sich mit unserer pädagogischen
             Ausrichtung identifizieren können, ganz bewusst gemeinsam eine
@@ -89,10 +87,11 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
             arrow="start"
             palette={buttonColors}
             variant="outlined"
-            to="/home"
+            documentLink
+            to="/documents/Unsere Werte und Grundhaltungen.pdf"
             transparent={true}
           >
-            Ich möchte helfen
+            Unsere Werte und Grundhaltungen
           </ArrowButton>
         </Grid>
       </Grid>

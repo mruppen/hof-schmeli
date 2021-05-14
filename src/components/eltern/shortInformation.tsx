@@ -9,6 +9,7 @@ import preact from "preact";
 import { getColors, invert } from "../../utils";
 import CheckIcon from "../icons/check";
 import Section from "../section";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   enumeration: {
@@ -54,7 +55,7 @@ export default function ShortInformation(): preact.VNode {
     <Section palette={colors} paddingBottom={80} paddingTop={80}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h2">Das Wichtigste in Kürze</Typography>
+          <SectionTitle title="Das Wichtigste in Kürze" isInsideGrid />
         </Grid>
         <Grid item xs={12} sm={5}>
           <Typography variant="body1">

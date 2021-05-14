@@ -47,6 +47,7 @@ export default function Teaser({
   image,
   imageCaption,
   title,
+  documentLink = false,
   text,
   to,
   toText,
@@ -83,7 +84,12 @@ export default function Teaser({
       )}
       {to && (
         <Grid item xs={12}>
-          <ArrowLink variant="body2" palette={invert(colors)} to={to}>
+          <ArrowLink
+            variant="body2"
+            palette={invert(colors)}
+            to={to}
+            documentLink={documentLink}
+          >
             {toText || "Link"}
           </ArrowLink>
         </Grid>

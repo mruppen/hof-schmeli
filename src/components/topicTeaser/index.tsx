@@ -1,15 +1,11 @@
-import {
-  createStyles,
-  Grid,
-  makeStyles,
-  Theme,
-  Typography,
-} from "@material-ui/core";
+import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
 import preact, { ComponentChildren, Fragment } from "preact";
 import { TeaserModel } from "../../models/models";
 import ArrowButton from "../arrowButton";
 import { createTeaserRowGridItems } from "../teaserRow";
+import ContentTitleH4 from "../titles/contentTitleH4";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -35,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type TopicTeaserProps = {
+  documentLink?: boolean;
   imageClass: string;
   title: string;
   subtitle?: string;
@@ -45,6 +42,7 @@ type TopicTeaserProps = {
 };
 
 export default function TopicTeaser({
+  documentLink = false,
   imageClass,
   title,
   subtitle,
@@ -57,19 +55,18 @@ export default function TopicTeaser({
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h2" className={classes.title}>
-          {title}
-        </Typography>
+        <SectionTitle title={title} isInsideGrid />
       </Grid>
       <Grid item xs={12} sm={7}>
         <div className={clsx(classes.image, imageClass)} />
       </Grid>
       <Grid item xs={12} sm={5}>
         <div className={classes.content}>
-          {subtitle && <Typography variant="h4">{subtitle}</Typography>}
+          {subtitle && <ContentTitleH4 title={subtitle} />}
           {children}
           <ArrowButton
             arrow="start"
+            documentLink={documentLink}
             palette="green"
             variant="outlined"
             to={to}

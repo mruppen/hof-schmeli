@@ -1,5 +1,4 @@
 import {
-  Container,
   createStyles,
   Grid,
   Hidden,
@@ -14,6 +13,9 @@ import preact, { ComponentChildren } from "preact";
 import { useContainerStyles } from "../../hooks";
 import { getColors, invert } from "../../utils";
 import ArrowLink from "../arrowLink";
+import Section from "../section";
+import ContentTitleH3 from "../titles/contentTitleH3";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) => {
       flexDirection: "row",
       justifyContent: "flex-start",
       alignItems: "flex-start",
-      marginTop: 20,
+      marginBottom: 20,
     },
     bullet: {
       backgroundColor: theme.palette.blue.contrastText,
@@ -102,15 +104,14 @@ export default function ContactSubscribe(): preact.VNode {
   const buttonStyle = invert(getColors(theme, "blue"));
 
   return (
-    <Container
-      disableGutters
-      className={clsx(containerClasses.main, classes.container)}
-    >
+    <Section paddingBottom={80} paddingTop={80} palette={buttonStyle}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h2" className={classes.center}>
-            Ich bin interessiert
-          </Typography>
+          <SectionTitle
+            title="Ich bin interessiert"
+            className={classes.center}
+            isInsideGrid
+          />
         </Grid>
         <Grid item xs={12}>
           <Typography className={classes.center} variant="body2">
@@ -124,7 +125,7 @@ export default function ContactSubscribe(): preact.VNode {
         </Grid>
         <Grid item xs={12} sm={6}>
           <div className={clsx(classes.subscribe, classes.flexbox)}>
-            <Typography variant="h2">Anmeldeprozess</Typography>
+            <ContentTitleH3 title="Anmeldeprozess" />
             {createListItem(
               1,
               <Typography variant="body1" className={classes.listItemText}>
@@ -138,7 +139,12 @@ export default function ContactSubscribe(): preact.VNode {
               <Typography variant="body1" className={classes.listItemText}>
                 Fülle das Formular «provisorische Anmeldung» bis spätestens Ende
                 März 2022 aus.
-                <ArrowLink variant="body1" palette="blue" to="/">
+                <ArrowLink
+                  variant="body1"
+                  palette="blue"
+                  to="/documents/Anmeldung Schule Bauernhof Schmeli.pdf"
+                  documentLink
+                >
                   Download Anmeldeformular
                 </ArrowLink>
               </Typography>,
@@ -151,7 +157,7 @@ export default function ContactSubscribe(): preact.VNode {
               </Typography>,
               classes
             )}
-            <Typography variant="body2" className={classes.marginTop}>
+            <Typography variant="body2">
               Anmerkung: Aus schulorganisatorischen Gründen behalten wir uns
               vor, nicht alle Anmeldungen zu berücksichtigen.
             </Typography>
@@ -159,9 +165,7 @@ export default function ContactSubscribe(): preact.VNode {
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={clsx(classes.flexbox, classes.contact)}>
-            <Typography variant="h2" className={classes.margin20}>
-              Kontakt
-            </Typography>
+            <ContentTitleH3 title="Kontakt" />
             <Typography variant="body2" className={classes.margin20}>
               Schule Bauernhof Schmeli
               <br />
@@ -184,6 +188,6 @@ export default function ContactSubscribe(): preact.VNode {
           </div>
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }

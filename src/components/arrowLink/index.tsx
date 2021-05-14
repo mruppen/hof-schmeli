@@ -18,7 +18,8 @@ import {
 
 type ArrowLinkProps = {
   palette: PaletteOrColorsType;
-  transparent?: Boolean;
+  documentLink?: boolean;
+  transparent?: boolean;
   to?: string;
 } & Pick<LinkProps, "className"> &
   Required<Pick<LinkProps, "variant" | "children">>;
@@ -49,6 +50,7 @@ const useStyles = makeStyles<Theme, ButtonColorsType>((theme: Theme) => {
 export default function ArrowLink({
   children,
   palette,
+  documentLink = false,
   to,
   transparent,
   className,
@@ -67,7 +69,12 @@ export default function ArrowLink({
 
   const classes = useStyles(linkColors);
   return (
-    <Link className={clsx(classes.link, className)} href={to ?? "/"} {...props}>
+    <Link
+      className={clsx(classes.link, className)}
+      href={to ?? "/"}
+      target={documentLink ? "_blank" : undefined}
+      {...props}
+    >
       <span>{children}</span>
       <span className={classes.icon}>
         <ArrowForward />

@@ -18,6 +18,7 @@ export function createTeaserRowGridItems(
           title={teaser.title}
           to={teaser.to}
           toText={teaser.toText}
+          documentLink={teaser.documentLink}
           image={teaser.image}
           imageCaption={teaser.imageCaption}
           key={index}
@@ -40,7 +41,7 @@ export default function TeaserRow({
 }: TeaserRowProps): preact.VNode {
   return (
     <Grid container spacing={2}>
-      {createTeaserRowGridItems(teasers, palette)};
+      {createTeaserRowGridItems(teasers, palette)}
     </Grid>
   );
 }

@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import preact from "preact";
 import schulgeld from "../../data/images/schulgeld.png";
 import schulstart from "../../data/images/schulstart.png";
@@ -6,6 +6,7 @@ import stundenplan from "../../data/images/stundenplan.png";
 import { TeaserModel } from "../../models/models";
 import Section from "../section";
 import TeaserRow from "../teaserRow";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   padding32: {
@@ -23,15 +24,17 @@ const teasers: TeaserModel[] = [
     image: stundenplan,
     title: "Stundenplan",
     text: "Wir sind eine Tagesschule mit Mittagstisch. Die Schulzeiten sind an die Fahrpläne des ÖV angepasst. Die Ferienpläne entsprechen den offiziellen Plänen der Schulen Brig und Umgebung. Mittwochs ist schulfrei.",
-    to: "/home",
+    to: "/documents/Stundenplan Schule Bauernhof Schmeli.pdf",
     toText: "Stundenplan",
+    documentLink: true,
   },
   {
     image: schulgeld,
     title: "Schulgeld",
     text: "Gelebte Solidarität heisst auch, dass Elternbeiträge einkommensabhängig sind, damit jeder seinen ihm möglichen Teil beitragen kann, auch wenn das Familienbudget klein ist.",
-    to: "/home",
+    to: "/documents/Schulgeld Schule Bauernhof Schmeli.pdf",
     toText: "Schulgeld",
+    documentLink: true,
   },
 ];
 
@@ -40,9 +43,7 @@ export default function ContentTeaserElternInteressiert(): preact.VNode {
 
   return (
     <Section paddingBottom={80} palette="green">
-      <Typography variant="h2" className={classes.padding32}>
-        Ich bin interessiert
-      </Typography>
+      <SectionTitle title="Ich bin interessiert" />
       <TeaserRow teasers={teasers} palette="green" />
     </Section>
   );

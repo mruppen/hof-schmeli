@@ -32,4 +32,5 @@ export interface TeaserModel {
   text?: string;
   to?: string;
   toText?: string;
+  documentLink?: boolean;
 }

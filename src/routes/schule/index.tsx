@@ -76,7 +76,11 @@ export default function Schule(): preact.VNode {
         </Typography>
       </ContentTeaserLeft>
       <PersonsList />
-      <PlainTeaser to="/vision" toText="Unsere Werte und Grundhaltungen">
+      <PlainTeaser
+        to="/documents/Unsere Werte und Grundhaltungen.pdf"
+        toText="Unsere Werte und Grundhaltungen"
+        documentLink
+      >
         Wir leben Schule - Mit Menschlichkeit
       </PlainTeaser>
       <Footer />
