@@ -68,8 +68,9 @@ export default function ContentTeaserSchule(): preact.VNode {
           <ArrowButton
             arrow="start"
             palette={invert(colors)}
-            to="/home"
+            to="/StatutenUnterstuetzungsverein.pdf"
             variant="outlined"
+            routerLink={false}
           >
             Statuten Unterstützungsverein
           </ArrowButton>
