@@ -27,12 +27,14 @@ const useStyles = makeStyles((theme: Theme) => {
 type PlainTeaserProps = {
   to: string;
   toText: string;
+  documentLink?: boolean;
   children: ComponentChildren;
 };
 
 export default function PlainTeaser({
   to,
   toText,
+  documentLink = false,
   children,
 }: PlainTeaserProps): preact.VNode {
   const containerClasses = useContainerStyles((theme) => {
@@ -64,6 +66,7 @@ export default function PlainTeaser({
               arrow="start"
               palette="orange"
               to={to}
+              documentLink={documentLink}
             >
               {toText}
             </ArrowButton>

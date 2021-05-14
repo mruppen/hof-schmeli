@@ -1,11 +1,4 @@
-import {
-  Grid,
-  Hidden,
-  makeStyles,
-  Typography,
-  useTheme,
-} from "@material-ui/core";
-import clsx from "clsx";
+import { Grid, Hidden, makeStyles, useTheme } from "@material-ui/core";
 import preact from "preact";
 import benedikt from "../../data/images/benedikt.png";
 import carole from "../../data/images/carole.png";
@@ -24,13 +17,14 @@ import { ColorsType } from "../../utils";
 import Section from "../section";
 import Teaser from "../teaser";
 import { createTeaserRowGridItems } from "../teaserRow";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   title: {
     marginBottom: 24,
   },
   titleTop: {
-    marginTop: 80,
+    marginTop: 64,
   },
 });
 
@@ -79,9 +73,7 @@ export default function PersonsList(): preact.VNode {
     <Section palette={colors} paddingBottom={80}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="h2" className={classes.title}>
-            Das Lehrer-Team
-          </Typography>
+          <SectionTitle title="Das Lehrer-Team" isInsideGrid />
         </Grid>
         <Grid item xs={12} sm={5}>
           <Teaser
@@ -122,12 +114,11 @@ export default function PersonsList(): preact.VNode {
           />
         </Grid>
         <Grid item xs={12}>
-          <Typography
-            variant="h2"
-            className={clsx(classes.title, classes.titleTop)}
-          >
-            Das Bauern-Paar
-          </Typography>
+          <SectionTitle
+            title="Das Bauern-Paar"
+            isInsideGrid
+            className={classes.titleTop}
+          />
         </Grid>
         <Grid item xs={12} sm={5}>
           <Teaser palette={colors} image={piera} title="Piera Sutter" />
@@ -139,12 +130,11 @@ export default function PersonsList(): preact.VNode {
           <Teaser palette={colors} image={david} title="David Müller" />
         </Grid>
         <Grid item xs={12}>
-          <Typography
-            variant="h2"
-            className={clsx(classes.title, classes.titleTop)}
-          >
-            Weitere Genossenschafts-Mitglieder
-          </Typography>
+          <SectionTitle
+            title="Weitere Genossenschafts-Mitglieder"
+            isInsideGrid
+            className={classes.titleTop}
+          />
         </Grid>
         {createTeaserRowGridItems(teasers, colors)}
       </Grid>

@@ -65,7 +65,7 @@ export default function ContentTeaserRightSnail(): preact.VNode {
             arrow="start"
             palette={buttonColors}
             variant="outlined"
-            to="/home"
+            to="/gemeinschaft"
             transparent={true}
           >
             Ich möchte helfen

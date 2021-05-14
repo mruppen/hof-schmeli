@@ -11,6 +11,7 @@ import preact from "preact";
 import { useContainerStyles } from "../../hooks";
 import { ColorsType, invert } from "../../utils";
 import ArrowButton from "../arrowButton";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   container: {
@@ -39,9 +40,7 @@ export default function ContentTeaserSchule(): preact.VNode {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.margin24}>
-            Die Genossenschaft «Schule Bauernhof Schmeli»
-          </Typography>
+          <SectionTitle title="Die Genossenschaft «Schule Bauernhof Schmeli»" />
           <Typography variant="body1" className={classes.margin24}>
             Wir sind nicht profitorientiert (keine GmbH oder AG), sondern
             genossenschaftlich. Bei uns gibt es auch keine Chefetage oder andere
@@ -57,9 +56,7 @@ export default function ContentTeaserSchule(): preact.VNode {
           <Hidden />
         </Grid>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.margin24}>
-            Der Unterstützungsverein «Schule Bauernhof Schmeli»
-          </Typography>
+          <SectionTitle title="Der Unterstützungsverein «Schule Bauernhof Schmeli»" />
           <Typography variant="body1" className={classes.margin24}>
             Unser Unterstützungsverein hat zum Sinn und Zweck, die Schule
             Bauernhof Schmeli finanziell, ideell und tatkräftig zu unterstützen.
@@ -68,9 +65,9 @@ export default function ContentTeaserSchule(): preact.VNode {
           <ArrowButton
             arrow="start"
             palette={invert(colors)}
-            to="/StatutenUnterstuetzungsverein.pdf"
+            to="/documents/Statuten Unterstützungsverein.pdf"
             variant="outlined"
-            routerLink={false}
+            documentLink
           >
             Statuten Unterstützungsverein
           </ArrowButton>

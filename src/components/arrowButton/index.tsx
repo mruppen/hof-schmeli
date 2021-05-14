@@ -22,7 +22,7 @@ type ArrowButtonProps = {
   palette: PaletteOrColorsType;
   transparent?: Boolean;
   to?: string;
-  routerLink?: boolean;
+  documentLink?: boolean;
 } & Pick<ButtonProps, "className"> &
   Required<Pick<ButtonProps, "variant" | "children">>;
 
@@ -49,7 +49,7 @@ export default function ArrowButton({
   arrow,
   palette,
   to,
-  routerLink = true,
+  documentLink = false,
   className,
   transparent,
   ...props
@@ -66,12 +66,16 @@ export default function ArrowButton({
   }
 
   const classes = useStyles(buttonColors);
-  if (routerLink) {
+  const buttonClass = clsx(classes.button, className);
+  const startIcon = arrow == "start" ? <ArrowForward /> : undefined;
+  const endIcon = arrow == "end" ? <ArrowForward /> : undefined;
+
+  if (!documentLink) {
     return (
       <Button
-        className={clsx(classes.button, className)}
-        startIcon={arrow == "start" ? <ArrowForward /> : undefined}
-        endIcon={arrow == "end" ? <ArrowForward /> : undefined}
+        className={buttonClass}
+        startIcon={startIcon}
+        endIcon={endIcon}
         component={Link}
         to={to ?? "/"}
         {...props}
@@ -82,9 +86,9 @@ export default function ArrowButton({
   } else {
     return (
       <Button
-        className={clsx(classes.button, className)}
-        startIcon={arrow == "start" ? <ArrowForward /> : undefined}
-        endIcon={arrow == "end" ? <ArrowForward /> : undefined}
+        className={buttonClass}
+        startIcon={startIcon}
+        endIcon={endIcon}
         href={to ?? "/"}
         target="_blank"
         {...props}

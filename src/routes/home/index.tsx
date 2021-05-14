@@ -6,6 +6,7 @@ import HeaderHome from "../../components/headers/home";
 import PlainTeaser from "../../components/plainTeaser";
 import QuoteTeaser from "../../components/quoteTeaser";
 import Section from "../../components/section";
+import ContentTitleH4 from "../../components/titles/contentTitleH4";
 import TopicTeaser from "../../components/topicTeaser";
 import baum from "../../data/images/baum.png";
 import milchHolen from "../../data/images/milchHolen.png";
@@ -44,7 +45,7 @@ const homeTeasers: TeaserModel[] = [
   {
     text: "Wir sind eine Schule, die Chancengleichheit für alle Kinder bieten will. Dieses Ziel können wir nur gemeinsam und mit Unterstützung erreichen.",
     title: "Mit Solidarität",
-    to: "/helfen",
+    to: "/gemeinschaft",
     toText: "Mehr erfahren",
   },
 ];
@@ -62,9 +63,7 @@ export default function Home(): preact.VNode {
           toText="Infos für Eltern"
           teasers={homeTeasers}
         >
-          <Typography variant="h4" className={classes.margin24}>
-            Die Bauernhof-Schule
-          </Typography>
+          <ContentTitleH4 title="Die Bauernhof-Schule" />
           <Typography variant="body1">
             in einem sicheren und geborgenen Umfeld
             <br />
@@ -92,7 +91,7 @@ export default function Home(): preact.VNode {
         </Typography>
       </QuoteTeaser>
       <ContactSubscribe />
-      <PlainTeaser to="/helfen" toText="Ich möchte helfen">
+      <PlainTeaser to="/gemeinschaft" toText="Ich möchte helfen">
         «Um ein Kind grosszuziehen braucht es ein ganzes Dorf»
       </PlainTeaser>
       <Footer />
