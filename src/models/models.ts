@@ -34,3 +34,10 @@ export interface TeaserModel {
   toText?: string;
   documentLink?: boolean;
 }
+
+export type LinkType = {
+  to: string;
+  label: string;
+  documentLink?: boolean;
+  target?: string;
+};

@@ -17,3 +17,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.spaceBottom24 {
+  margin-bottom: 24px;
+}
+
+.spaceBottom20 {
+  margin-bottom: 20px;
+}

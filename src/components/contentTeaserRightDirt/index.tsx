@@ -12,6 +12,7 @@ import preact from "preact";
 import dreck from "../../data/images/dreck.png";
 import { useContainerStyles } from "../../hooks";
 import { getColors, invert } from "../../utils";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -62,9 +63,7 @@ export default function ContentTeaserRightDirt(): preact.VNode {
           <Hidden />
         </Grid>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.padding24}>
-            Mit Dreck unter den Fingernägeln
-          </Typography>
+          <SectionTitle title="Mit Dreck unter den Fingernägeln" />
           <Typography variant="body1">
             Mit der engen Verknüpfung zum Bauernhof wollen wir ein Umfeld
             schaffen, in dem die Kinder Verbundenheit mit der Natur, den Tieren

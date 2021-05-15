@@ -1,23 +1,17 @@
 import {
-  Container,
   Grid,
   Hidden,
   makeStyles,
   Typography,
   useTheme,
 } from "@material-ui/core";
-import clsx from "clsx";
 import preact from "preact";
-import { useContainerStyles } from "../../hooks";
 import { ColorsType, invert } from "../../utils";
 import ArrowButton from "../arrowButton";
+import Section from "../section";
 import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
-  container: {
-    paddingTop: 80,
-    paddingBottom: 80,
-  },
   margin24: {
     marginBottom: 24,
   },
@@ -29,15 +23,9 @@ export default function ContentTeaserSchule(): preact.VNode {
     color: theme.palette.blue.main,
     backgroundColor: theme.palette.blue.contrastText,
   };
-
   const classes = useStyles();
-  const containerClasses = useContainerStyles((_) => colors);
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      className={clsx(containerClasses.main, classes.container)}
-    >
+    <Section paddingBottom={80} paddingTop={80} palette="blue">
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
           <SectionTitle title="Die Genossenschaft «Schule Bauernhof Schmeli»" />
@@ -73,6 +61,6 @@ export default function ContentTeaserSchule(): preact.VNode {
           </ArrowButton>
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }
