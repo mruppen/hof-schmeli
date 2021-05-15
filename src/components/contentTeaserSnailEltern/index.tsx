@@ -1,24 +1,19 @@
 import {
-  Container,
   Grid,
   Hidden,
   makeStyles,
-  Theme,
   Typography,
   useTheme,
 } from "@material-ui/core";
-import clsx from "clsx";
 import preact from "preact";
 import schnecke from "../../data/images/schneckeGelb.png";
-import { useContainerStyles } from "../../hooks";
 import { ColorsType, invert } from "../../utils";
 import ArrowButton from "../arrowButton";
+import Section from "../section";
 import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   container: {
-    paddingTop: 112,
-    paddingBottom: 112,
     backgroundImage: `url(${schnecke})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -30,28 +25,23 @@ const useStyles = makeStyles({
 
 export default function ContentTeaserSnailEltern(): preact.VNode {
   const classes = useStyles();
-  const containerClasses = useContainerStyles((theme: Theme) => {
-    return {
-      color: theme.palette.orange.contrastText,
-      backgroundColor: theme.palette.orange.main,
-    };
-  });
   const theme = useTheme();
-  const buttonColors: ColorsType = invert({
+  const invertedOrange: ColorsType = invert({
     color: theme.palette.orange.contrastText,
     backgroundColor: theme.palette.orange.main,
   });
 
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      className={clsx(containerClasses.main, classes.container)}
+    <Section
+      paddingBottom={112}
+      paddingTop={112}
+      palette="orange"
+      additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={5}>
           <SectionTitle title="Die Schule als Gemeinschaft" />
-          <Typography variant="body1" className={classes.padding24}>
+          <Typography variant="body1" class="spaceBottom24">
             Die Kinder sollen ein vollwertiger Teil der Schulgemeinschaft sein.
             Sie dürfen zu Entscheidungsfindungen beitragen, Mitverantwortung
             tragen, zuhören, sagen, was gesagt werden muss und Respekt erfahren
@@ -59,7 +49,7 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
           </Typography>
           <ArrowButton
             arrow="start"
-            palette={buttonColors}
+            palette={invertedOrange}
             variant="outlined"
             documentLink
             to="/documents/Unsere Lernkultur.pdf"
@@ -85,7 +75,7 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
           </Typography>
           <ArrowButton
             arrow="start"
-            palette={buttonColors}
+            palette={invertedOrange}
             variant="outlined"
             documentLink
             to="/documents/Unsere Werte und Grundhaltungen.pdf"
@@ -95,6 +85,6 @@ export default function ContentTeaserSnailEltern(): preact.VNode {
           </ArrowButton>
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }

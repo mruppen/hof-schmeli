@@ -1,5 +1,4 @@
 import {
-  Container,
   Grid,
   Hidden,
   makeStyles,
@@ -7,23 +6,22 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
-import clsx from "clsx";
 import preact from "preact";
 import schnecke from "../../data/images/schneckeGelb.png";
 import { useContainerStyles } from "../../hooks";
 import { ColorsType, invert } from "../../utils";
 import ArrowButton from "../arrowButton";
+import Section from "../section";
+import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles({
   container: {
-    paddingTop: 112,
-    paddingBottom: 112,
     backgroundImage: `url(${schnecke})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   },
-  padding24: {
-    paddingBottom: 24,
+  distance: {
+    marginBottom: 24,
   },
 });
 
@@ -36,26 +34,25 @@ export default function ContentTeaserRightSnail(): preact.VNode {
     };
   });
   const theme = useTheme();
-  const buttonColors: ColorsType = invert({
+  const orangeInverted: ColorsType = invert({
     color: theme.palette.orange.contrastText,
     backgroundColor: theme.palette.orange.main,
   });
 
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      className={clsx(containerClasses.main, classes.container)}
+    <Section
+      paddingTop={112}
+      paddingBottom={112}
+      palette={orangeInverted}
+      additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
         <Grid item xs={false} sm={7}>
           <Hidden />
         </Grid>
         <Grid item xs={12} sm={5}>
-          <Typography variant="h2" className={classes.padding24}>
-            Und mit Begeisterung, die Kreise zieht
-          </Typography>
-          <Typography variant="body1" className={classes.padding24}>
+          <SectionTitle title="Und mit Begeisterung, die Kreise zieht" />
+          <Typography variant="body1" className={classes.distance}>
             Wir möchten nicht nur für die Kinder und Familien, die unsere Schule
             besuchen, dazu beitragen, eine glückliche, zufriedene und
             selbstbestimmte Schulzeit zu erleben. Wir möchten auch Inspiration,
@@ -63,7 +60,7 @@ export default function ContentTeaserRightSnail(): preact.VNode {
           </Typography>
           <ArrowButton
             arrow="start"
-            palette={buttonColors}
+            palette={orangeInverted}
             variant="outlined"
             to="/gemeinschaft"
             transparent={true}
@@ -72,6 +69,6 @@ export default function ContentTeaserRightSnail(): preact.VNode {
           </ArrowButton>
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }

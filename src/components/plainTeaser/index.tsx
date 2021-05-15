@@ -1,5 +1,4 @@
 import {
-  Container,
   createStyles,
   Grid,
   Hidden,
@@ -7,17 +6,12 @@ import {
   Theme,
   Typography,
 } from "@material-ui/core";
-import clsx from "clsx";
 import preact, { ComponentChildren } from "preact";
-import { useContainerStyles } from "../../hooks";
 import ArrowButton from "../arrowButton";
+import Section from "../section";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
-    container: {
-      paddingTop: 80,
-      paddingBottom: 80,
-    },
     center: {
       textAlign: "center",
     },
@@ -37,19 +31,9 @@ export default function PlainTeaser({
   documentLink = false,
   children,
 }: PlainTeaserProps): preact.VNode {
-  const containerClasses = useContainerStyles((theme) => {
-    return {
-      color: theme.palette.orange.contrastText,
-      backgroundColor: theme.palette.orange.main,
-    };
-  });
-
   const classes = useStyles();
   return (
-    <Container
-      className={clsx(containerClasses.main, classes.container)}
-      disableGutters
-    >
+    <Section paddingBottom={80} paddingTop={80} palette="orange">
       <Grid container spacing={2} justify="center">
         <Grid item xs={false} sm={1}>
           <Hidden />
@@ -64,7 +48,7 @@ export default function PlainTeaser({
             <ArrowButton
               variant="outlined"
               arrow="start"
-              palette="orange"
+              palette="orangeInverted"
               to={to}
               documentLink={documentLink}
             >
@@ -76,6 +60,6 @@ export default function PlainTeaser({
           <Hidden />
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }

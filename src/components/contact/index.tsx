@@ -1,75 +1,50 @@
-import {
-  createStyles,
-  makeStyles,
-  Theme,
-  Typography,
-  useTheme,
-} from "@material-ui/core";
-import clsx from "clsx";
-import {
-  ColorsType,
-  getColors,
-  invert,
-  PaletteOrColorsType,
-} from "../../utils";
-import ArrowButton from "../arrowButton";
+import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
+import ArrowLink from "../arrowLink";
+import FlexColumnContainer from "../layout/FlexColumnContainer";
+import ContentTitleH3 from "../titles/contentTitleH3";
 
-const useStyles = makeStyles<Theme, ColorsType>((theme: Theme) => {
+const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
-    flexbox: (props) => ({
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
+    container: {
       padding: 24,
-      backgroundColor: props.backgroundColor,
-      color: props.color,
+      backgroundColor: theme.palette.blue.contrastText,
+      color: theme.palette.blue.main,
       minHeight: "100%",
-    }),
-    border: (props) => ({
       borderRadius: 12,
       borderWidth: 1,
       borderStyle: "solid",
-      borderColor: props.color,
-    }),
-    margin20: {
+      borderColor: theme.palette.blue.contrastText,
+      [theme.breakpoints.down("xs")]: {
+        paddingLeft: 16,
+        paddingRight: 16,
+      },
+    },
+    distance: {
       marginBottom: 20,
     },
   });
 });
 
-type ContactProps = {
-  colors: PaletteOrColorsType;
-};
-
-export default function Contact({ colors }: ContactProps): preact.VNode {
-  const theme = useTheme();
-  const colorsType = getColors(theme, colors);
-  const classes = useStyles(colorsType);
+export default function Contact(): preact.VNode {
+  const classes = useStyles();
   return (
-    <div className={clsx(classes.flexbox, classes.border)}>
-      <Typography variant="h3" className={classes.margin20}>
-        Kontakt
-      </Typography>
-      <Typography variant="body2" className={classes.margin20}>
+    <FlexColumnContainer className={classes.container}>
+      <ContentTitleH3 title="Kontakt" />
+      <Typography variant="body2" className={classes.distance}>
         Schule Bauernhof Schmeli
         <br />
         Termerweg 140
         <br />
         3900 Brig
       </Typography>
-      <Typography variant="body2" className={classes.margin20}>
+      <Typography variant="body2" className={classes.distance}>
         Telefon
         <br />
         079 847 93 96
       </Typography>
-      <ArrowButton
-        variant="text"
-        arrow="end"
-        palette={invert(colorsType)}
-        to="mailto:schmeli@gmail.com"
-      >
+      <ArrowLink variant="body2" palette="blue" to="mailto:schmeli@gmail.com">
         Mail schreiben
-      </ArrowButton>
-    </div>
+      </ArrowLink>
+    </FlexColumnContainer>
   );
 }

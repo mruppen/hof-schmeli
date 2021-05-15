@@ -8,9 +8,13 @@ export type ColorsType = {
 
 export type PaletteOrColorsType =
   | "green"
+  | "greenInverted"
   | "blue"
+  | "blueInverted"
   | "orange"
+  | "orangeInverted"
   | "yellow"
+  | "yellowInverted"
   | ColorsType;
 
 export function invert(colors: ColorsType): ColorsType {
@@ -27,8 +31,8 @@ export function getColors(
   const paletteColor = getPaletteColorFromTheme(theme, palette);
   if (!!paletteColor) {
     return {
-      backgroundColor: paletteColor.contrastText,
-      color: paletteColor.main,
+      backgroundColor: paletteColor.main,
+      color: paletteColor.contrastText,
     };
   } else {
     return {

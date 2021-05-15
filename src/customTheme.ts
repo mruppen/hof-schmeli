@@ -9,15 +9,23 @@ const fontFamilyMono = ["IBM Plex Mono"].join(",");
 declare module "@material-ui/core/styles/createPalette" {
   interface Palette {
     green: Palette["primary"];
+    greenInverted: Palette["primary"];
     orange: Palette["primary"];
+    orangeInverted: Palette["primary"];
     blue: Palette["primary"];
+    blueInverted: Palette["primary"];
     yellow: Palette["primary"];
+    yellowInverted: Palette["primary"];
   }
   interface PaletteOptions {
     green: PaletteOptions["primary"];
+    greenInverted: PaletteOptions["primary"];
     orange: PaletteOptions["primary"];
+    orangeInverted: PaletteOptions["primary"];
     blue: PaletteOptions["primary"];
+    blueInverted: PaletteOptions["primary"];
     yellow: PaletteOptions["primary"];
+    yellowInverted: PaletteOptions["primary"];
   }
 }
 
@@ -29,17 +37,33 @@ export default function useCustomTheme(): Theme {
           main: "#369340",
           contrastText: common.white,
         },
+        greenInverted: {
+          main: common.white,
+          contrastText: "#369340",
+        },
         orange: {
           main: "#EF4F2B",
           contrastText: common.white,
+        },
+        orangeInverted: {
+          main: common.white,
+          contrastText: "#EF4F2B",
         },
         blue: {
           main: "#63899F",
           contrastText: common.white,
         },
+        blueInverted: {
+          main: common.white,
+          contrastText: "#63899F",
+        },
         yellow: {
           main: "#EAA922",
           contrastText: common.black,
+        },
+        yellowInverted: {
+          main: common.black,
+          contrastText: "#EAA922",
         },
       },
       typography: {
@@ -49,9 +73,21 @@ export default function useCustomTheme(): Theme {
     });
 
     theme.palette.green = theme.palette.augmentColor(theme.palette.green);
+    theme.palette.greenInverted = theme.palette.augmentColor(
+      theme.palette.greenInverted
+    );
     theme.palette.orange = theme.palette.augmentColor(theme.palette.orange);
+    theme.palette.orangeInverted = theme.palette.augmentColor(
+      theme.palette.orangeInverted
+    );
     theme.palette.blue = theme.palette.augmentColor(theme.palette.blue);
+    theme.palette.blueInverted = theme.palette.augmentColor(
+      theme.palette.blueInverted
+    );
     theme.palette.yellow = theme.palette.augmentColor(theme.palette.yellow);
+    theme.palette.yellowInverted = theme.palette.augmentColor(
+      theme.palette.yellowInverted
+    );
 
     // P paragraph
     theme.typography.body1 = {

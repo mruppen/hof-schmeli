@@ -10,9 +10,10 @@ import {
 import { ClassNameMap } from "@material-ui/styles";
 import clsx from "clsx";
 import preact, { ComponentChildren } from "preact";
-import { useContainerStyles } from "../../hooks";
 import { getColors, invert } from "../../utils";
 import ArrowLink from "../arrowLink";
+import Contact from "../contact";
+import FlexColumnContainer from "../layout/FlexColumnContainer";
 import Section from "../section";
 import ContentTitleH3 from "../titles/contentTitleH3";
 import SectionTitle from "../titles/sectionTitle";
@@ -26,20 +27,18 @@ const useStyles = makeStyles((theme: Theme) => {
     center: {
       textAlign: "center",
     },
-    flexbox: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
+    content: {
       padding: 24,
       borderRadius: 12,
+      [theme.breakpoints.down("xs")]: {
+        paddingLeft: 16,
+        paddingRight: 16,
+      },
     },
-
     subscribe: {
       border: "1px solid white",
     },
     contact: {
-      backgroundColor: theme.palette.blue.contrastText,
-      color: theme.palette.blue.main,
       minHeight: "100%",
     },
     listItem: {
@@ -92,19 +91,12 @@ function createListItem(
 }
 
 export default function ContactSubscribe(): preact.VNode {
-  const containerClasses = useContainerStyles((theme) => {
-    return {
-      color: theme.palette.blue.contrastText,
-      backgroundColor: theme.palette.blue.main,
-    };
-  });
-
   const classes = useStyles();
   const theme = useTheme();
-  const buttonStyle = invert(getColors(theme, "blue"));
+  const invertedBlue = invert(getColors(theme, "blue"));
 
   return (
-    <Section paddingBottom={80} paddingTop={80} palette={buttonStyle}>
+    <Section paddingBottom={80} paddingTop={80} palette="blue">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <SectionTitle
@@ -124,7 +116,9 @@ export default function ContactSubscribe(): preact.VNode {
           <Hidden />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <div className={clsx(classes.subscribe, classes.flexbox)}>
+          <FlexColumnContainer
+            className={clsx(classes.content, classes.subscribe)}
+          >
             <ContentTitleH3 title="Anmeldeprozess" />
             {createListItem(
               1,
@@ -141,7 +135,7 @@ export default function ContactSubscribe(): preact.VNode {
                 März 2022 aus.
                 <ArrowLink
                   variant="body1"
-                  palette="blue"
+                  palette="blueInverted"
                   to="/documents/Anmeldung Schule Bauernhof Schmeli.pdf"
                   documentLink
                 >
@@ -161,31 +155,10 @@ export default function ContactSubscribe(): preact.VNode {
               Anmerkung: Aus schulorganisatorischen Gründen behalten wir uns
               vor, nicht alle Anmeldungen zu berücksichtigen.
             </Typography>
-          </div>
+          </FlexColumnContainer>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <div className={clsx(classes.flexbox, classes.contact)}>
-            <ContentTitleH3 title="Kontakt" />
-            <Typography variant="body2" className={classes.margin20}>
-              Schule Bauernhof Schmeli
-              <br />
-              Termerweg 140
-              <br />
-              3900 Brig
-            </Typography>
-            <Typography variant="body2" className={classes.margin20}>
-              Telefon
-              <br />
-              079 847 93 96
-            </Typography>
-            <ArrowLink
-              variant="body2"
-              palette={buttonStyle}
-              to="mailto:info.schmeli@gmail.com"
-            >
-              Mail schreiben
-            </ArrowLink>
-          </div>
+          <Contact />
         </Grid>
       </Grid>
     </Section>

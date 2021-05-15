@@ -67,7 +67,7 @@ export default function TopicTeaser({
           <ArrowButton
             arrow="start"
             documentLink={documentLink}
-            palette="green"
+            palette="greenInverted"
             variant="outlined"
             to={to}
             className={classes.button}
@@ -76,7 +76,7 @@ export default function TopicTeaser({
           </ArrowButton>
         </div>
       </Grid>
-      {teasers && createTeaserRowGridItems(teasers, "green")}
+      {teasers && createTeaserRowGridItems(teasers, "greenInverted")}
     </Grid>
   );
 }

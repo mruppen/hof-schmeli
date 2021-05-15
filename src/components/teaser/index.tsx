@@ -1,6 +1,5 @@
 import {
   createStyles,
-  Grid,
   makeStyles,
   Theme,
   Typography,
@@ -57,43 +56,43 @@ export default function Teaser({
   const colors = getColors(theme, palette);
   const classes = useStyles((theme: Theme) => colors);
   return (
-    <Grid container spacing={0} className={classes.container}>
+    <div className={classes.container}>
       {image && (
-        <Grid item xs={12}>
-          <img src={image} className={classes.image} />
-        </Grid>
+        // <Grid item xs={12}>
+        <img src={image} className={classes.image} />
+        // </Grid>
       )}
       {imageCaption && (
-        <Grid item xs={12}>
-          <Typography variant="subtitle1" className={classes.subtitle}>
-            {imageCaption}
-          </Typography>
-        </Grid>
+        // <Grid item xs={12}>
+        <Typography variant="subtitle1" className={classes.subtitle}>
+          {imageCaption}
+        </Typography>
+        // </Grid>
       )}
       {title && (
-        <Grid item xs={12}>
-          <Typography variant="h4">{title}</Typography>
-        </Grid>
+        // <Grid item xs={12}>
+        <Typography variant="h4">{title}</Typography>
+        // </Grid>
       )}
       {text && (
-        <Grid item xs={12}>
-          <Typography variant="body2" className={classes.text}>
-            {text}
-          </Typography>
-        </Grid>
+        // <Grid item xs={12}>
+        <Typography variant="body2" className={classes.text}>
+          {text}
+        </Typography>
+        // </Grid>
       )}
       {to && (
-        <Grid item xs={12}>
-          <ArrowLink
-            variant="body2"
-            palette={invert(colors)}
-            to={to}
-            documentLink={documentLink}
-          >
-            {toText || "Link"}
-          </ArrowLink>
-        </Grid>
+        // <Grid item xs={12}>
+        <ArrowLink
+          variant="body2"
+          palette={invert(colors)}
+          to={to}
+          documentLink={documentLink}
+        >
+          {toText || "Link"}
+        </ArrowLink>
+        // </Grid>
       )}
-    </Grid>
+    </div>
   );
 }

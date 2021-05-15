@@ -55,7 +55,7 @@ export default function Home(): preact.VNode {
   return (
     <div>
       <HeaderHome />
-      <Section palette="green" paddingBottom={80} paddingTop={80}>
+      <Section palette="greenInverted" paddingBottom={80} paddingTop={80}>
         <TopicTeaser
           imageClass={classes.milchHolenImage}
           title="So lernt dein Kind"

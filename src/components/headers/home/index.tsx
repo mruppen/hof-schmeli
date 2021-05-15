@@ -7,12 +7,12 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
-import clsx from "clsx";
 import preact from "preact";
 import home from "../../../data/images/header/home.png";
 import { useContainerStyles } from "../../../hooks";
 import { PaletteOrColorsType } from "../../../utils";
 import MainNavigation from "../../mainNavigation";
+import Section from "../../section";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -53,11 +53,7 @@ export default function HeaderHome(): preact.VNode {
   };
 
   return (
-    <Container
-      disableGutters
-      maxWidth={false}
-      className={clsx(classes.container, containerClasses.main)}
-    >
+    <Section palette="greenInverted" additionalClassName={classes.container}>
       <Container disableGutters maxWidth={false} className={classes.inner}>
         <Grid container spacing={2}>
           <Grid xs={12} item>
@@ -84,6 +80,6 @@ export default function HeaderHome(): preact.VNode {
           </Grid>
         </Grid>
       </Container>
-    </Container>
+    </Section>
   );
 }
