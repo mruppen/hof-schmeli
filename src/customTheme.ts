@@ -65,6 +65,9 @@ export default function useCustomTheme(): Theme {
           main: common.black,
           contrastText: "#EAA922",
         },
+        background: {
+          default: "#FFFFFF",
+        },
       },
       typography: {
         fontSize: 14,

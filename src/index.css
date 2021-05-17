@@ -11,17 +11,9 @@ body {
   font-family: "IBM Plex Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.spaceBottom24 {
-  margin-bottom: 24px;
-}
-
-.spaceBottom20 {
-  margin-bottom: 20px;
 }
