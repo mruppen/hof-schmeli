@@ -7,28 +7,26 @@ import {
   Typography,
 } from "@material-ui/core";
 import preact, { ComponentChildren } from "preact";
+import { LinkType } from "../../models/models";
 import ArrowButton from "../arrowButton";
 import Section from "../section";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
     center: {
+      width: "100%",
       textAlign: "center",
     },
   });
 });
 
 type PlainTeaserProps = {
-  to: string;
-  toText: string;
-  documentLink?: boolean;
+  links?: LinkType[];
   children: ComponentChildren;
 };
 
 export default function PlainTeaser({
-  to,
-  toText,
-  documentLink = false,
+  links,
   children,
 }: PlainTeaserProps): preact.VNode {
   const classes = useStyles();
@@ -43,19 +41,22 @@ export default function PlainTeaser({
             {children}
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={10}>
-          <div className={classes.center}>
-            <ArrowButton
-              variant="outlined"
-              arrow="start"
-              palette="orangeInverted"
-              to={to}
-              documentLink={documentLink}
-            >
-              {toText}
-            </ArrowButton>
-          </div>
-        </Grid>
+        {links &&
+          links.map((link) => (
+            <Grid item xs={12}>
+              <div className={classes.center}>
+                <ArrowButton
+                  variant="outlined"
+                  arrow="start"
+                  palette="orangeInverted"
+                  to={link.to}
+                  documentLink={link.documentLink}
+                >
+                  {link.label}
+                </ArrowButton>
+              </div>
+            </Grid>
+          ))}
         <Grid item xs={false} sm={1}>
           <Hidden />
         </Grid>

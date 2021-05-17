@@ -39,5 +39,5 @@ export type LinkType = {
   to: string;
   label: string;
   documentLink?: boolean;
-  target?: string;
+  // target?: string;
 };

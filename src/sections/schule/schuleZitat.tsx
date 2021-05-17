@@ -4,9 +4,18 @@ import PlainTeaser from "../../components/plainTeaser";
 export default function SchuleZitat(): preact.VNode {
   return (
     <PlainTeaser
-      to="/documents/Unsere Werte und Grundhaltungen.pdf"
-      toText="Unsere Werte und Grundhaltungen"
-      documentLink
+      links={[
+        {
+          to: "/documents/Unsere Werte und Grundhaltungen.pdf",
+          label: "Unsere Werte und Grundhaltungen",
+          documentLink: true,
+        },
+        {
+          to: "/documents/Wir leben Schule - unsere Methodik.pdf",
+          label: "Wir leben Schule - unsere Methodik",
+          documentLink: true,
+        },
+      ]}
     >
       Wir leben Schule - Mit Menschlichkeit
     </PlainTeaser>

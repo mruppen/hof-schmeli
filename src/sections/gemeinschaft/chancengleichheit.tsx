@@ -21,7 +21,7 @@ export default function Chancengleichheit(): preact.VNode {
             <b>Patenschaft</b> kann das Schulgeld für ein Kind während einer
             wählbaren Zeitspanne übernommen werden. So bieten Sie einem Kind die
             Chance, die Schule Bauernhof Schmeli zu besuchen, auch wenn seine
-            Eltern sich dies nicht leisten könnten.
+            Eltern sich dies nicht leisten können.
           </Typography>
         </Grid>
         <Grid item xs={false} sm={2}>

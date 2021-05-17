@@ -57,11 +57,10 @@ export default function Leitbild(): preact.VNode {
               bieten:
             </Typography>
             <Typography variant="h4" className={classes.distanceBottom}>
-              selbstbestimmt / selbstorganisiert / lebensnahe Inhalte / freie
-              Altersdurchmischung / Lernprozess gewährleisten / Lernprozesse
-              sichtbar machen Wissen sammeln und weitergeben / projektorientiert
-              / geführte Sequenzen / Lernlandschaften / Schule unterwegs / die
-              Welt zu Gast / Generationen-übergreifend
+              Solidarität / Konfliktlösung / Gemeinschaft / Partizipation /
+              Wertschätzung / Vertrauen / Naturverbundenheit / Sicherheit /
+              Mitgefühl / Akzeptanz / Freiraum / Grenzen erleben / Flexibilität
+              / Stärken aufbauen / Geborgenheit / Offenheit / Toleranz
             </Typography>
             <img src={wurzeln} className={classes.image} />
             <Typography variant="h2" className={classes.distance}>
@@ -94,7 +93,7 @@ export default function Leitbild(): preact.VNode {
             </Typography>
             <Typography variant="h4" className={classes.distanceBottom}>
               Rituale / freies Spiel / Bewegung / Tiere / Natur / Garten / Raum
-              für Stille Theater / Musik Tanz Yoga/Atemtechnik/Entspannung /
+              für Stille Theater / Musik / Tanz / Yoga/Atemtechnik/Entspannung /
               Achtsamkeit / Experimentieren / Gestalten / Geschichten / Bücher /
               Fundiertes Erlernen der Grundkompetenzen (lesen, schreiben,
               rechnen)
@@ -111,7 +110,7 @@ export default function Leitbild(): preact.VNode {
             </Typography>
             <Typography variant="h4" className={classes.distanceBottom}>
               Kreativität / Fantasie / vernetztes Denken / Achtsamkeit
-              Wertschätzung / Zusammenhalt Verbundenheit / Selbstvertrauen /
+              Wertschätzung / Zusammenhalt / Verbundenheit / Selbstvertrauen /
               Lebensfreude / Resilienz / Kooperationsfähigkeit / selbständiges
               Denken / Kritikfähigkeit / Konfliktfähigkeit / Beziehungsfähigkeit
               / Dialogfähigkeit / Offenheit / aktiv Verantwortung übernehmen

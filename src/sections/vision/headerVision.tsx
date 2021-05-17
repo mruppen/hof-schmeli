@@ -22,7 +22,7 @@ const useStyles = makeStyles(() =>
       backgroundRepeat: "no-repeat",
       backgroundSize: "100%",
       backgroundPosition: "left bottom",
-      backgroundColor: "#F2F2F2",
+      backgroundColor: "#F1F0E5",
       width: 1440,
       height: 986,
       border: "none",
