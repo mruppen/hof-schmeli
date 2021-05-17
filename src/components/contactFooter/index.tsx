@@ -15,17 +15,14 @@ import ArrowLink from "../arrowLink";
 
 const useStyles = makeStyles<Theme, ColorsType>((theme: Theme) => {
   return createStyles({
-    flexbox: (props) => ({
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
+    container: (props) => ({
       paddingLeft: 16,
       backgroundColor: props.backgroundColor,
       color: props.color,
       minHeight: "100%",
     }),
-    margin21: {
-      marginBottom: 21,
+    space: {
+      marginBottom: 20,
     },
   });
 });
@@ -39,18 +36,18 @@ export default function ContactFooter({ colors }: ContactProps): preact.VNode {
   const colorsType = getColors(theme, colors);
   const classes = useStyles(colorsType);
   return (
-    <div className={classes.flexbox}>
-      <Typography variant="h4" className={classes.margin21}>
+    <div className={classes.container}>
+      <Typography variant="h4" className={classes.space}>
         Kontakt
       </Typography>
-      <Typography variant="body2" className={classes.margin21}>
+      <Typography variant="body2" className={classes.space}>
         Schule Bauernhof Schmeli
         <br />
         Termerweg 140
         <br />
         3900 Brig
       </Typography>
-      <Typography variant="body2" className={classes.margin21}>
+      <Typography variant="body2" className={classes.space}>
         Telefon
         <br />
         079 847 93 96

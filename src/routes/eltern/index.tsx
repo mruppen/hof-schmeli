@@ -1,26 +1,26 @@
 import { Container } from "@material-ui/core";
 import preact from "preact";
-import ContactSubscribe from "../../components/contactSubscribe";
-import ContentImportantAssets from "../../components/contentImportantAssets";
-import ContentTeaserElternInteressiert from "../../components/contentTeaserElternInteressiert";
-import ContentTeaserSchule from "../../components/contentTeaserSchule";
-import ContentTeaserSnailEltern from "../../components/contentTeaserSnailEltern";
-import ContentTeaserWayOfLearning from "../../components/contentTeaserWayOfLearning";
-import ShortInformation from "../../components/eltern/shortInformation";
+import AnmeldungKontakt from "../../components/anmeldungKontakt";
 import Footer from "../../components/footer";
-import HeaderEltern from "../../components/headers/eltern";
+import DasWichtigsteInKuerze from "../../sections/eltern/dasWichtigsteInKuerze";
+import EinTag from "../../sections/eltern/einTag";
+import HeaderEltern from "../../sections/eltern/headerEltern";
+import IchBinInteressiert from "../../sections/eltern/ichBinInteressiert";
+import SchuleAlsGemeinschaft from "../../sections/eltern/schuleAlsGemeinschaft";
+import SoLerntDeinKind from "../../sections/eltern/soLerntDeinKind";
+import Unterstuetzungsverein from "../../sections/eltern/unterstuetzungsverein";
 
 export default function Eltern(): preact.VNode {
   return (
     <Container disableGutters maxWidth={false}>
       <HeaderEltern />
-      <ShortInformation />
-      <ContentImportantAssets />
-      <ContentTeaserSnailEltern />
-      <ContentTeaserWayOfLearning />
-      <ContentTeaserElternInteressiert />
-      <ContentTeaserSchule />
-      <ContactSubscribe />
+      <DasWichtigsteInKuerze />
+      <EinTag />
+      <SchuleAlsGemeinschaft />
+      <SoLerntDeinKind />
+      <IchBinInteressiert />
+      <AnmeldungKontakt />
+      <Unterstuetzungsverein />
       <Footer />
     </Container>
   );

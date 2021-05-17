@@ -7,13 +7,6 @@ import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    container: {
-      paddingTop: 80,
-      paddingBottom: 112,
-    },
-    padding24: {
-      paddingBottom: 24,
-    },
     image: {
       borderRadius: 8,
       width: "100%",

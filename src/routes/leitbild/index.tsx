@@ -7,13 +7,13 @@ import {
 } from "@material-ui/core";
 import preact from "preact";
 import Footer from "../../components/footer";
-import HeaderLeitbild from "../../components/headers/leitbild";
 import Section from "../../components/section";
 import aeste from "../../data/images/aeste.png";
 import fruechte from "../../data/images/fruechte.png";
 import leitbild from "../../data/images/leitbild.png";
 import stamm from "../../data/images/stamm.png";
 import wurzeln from "../../data/images/wurzeln.png";
+import HeaderLeitbild from "../../sections/leitbild/headerLeitbild";
 
 const useStyles = makeStyles({
   image: {
@@ -33,7 +33,7 @@ export default function Leitbild(): preact.VNode {
   return (
     <Container disableGutters maxWidth={false}>
       <HeaderLeitbild />
-      <Section palette="orange" paddingBottom={80} paddingTop={80}>
+      <Section palette="orangeInverted" paddingBottom={80} paddingTop={80}>
         <Grid container spacing={2}>
           <Grid item xs={false} sm={2}>
             <Hidden />
