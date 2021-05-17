@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: 307,
     },
     margin21: {
-      marginBottom: 21,
+      marginBottom: 20,
     },
   })
 );
@@ -108,19 +108,19 @@ export default function Footer(): preact.VNode {
                 Unterstütze unser Projekt und helfe uns, die Schule zu einem Ort
                 der Chancengleichheit zu machen.
               </Typography>
-              <ArrowLink
+              {/* <ArrowLink
                 palette={navigationColors}
                 variant="body2"
                 className={classes.margin21}
                 to="mailto:schmeli@gmail.com"
               >
                 Newsletter anmelden
-              </ArrowLink>
+              </ArrowLink> */}
               <ArrowLink
                 palette={navigationColors}
                 variant="body2"
                 className={classes.margin21}
-                to="mailto:schmeli@gmail.com"
+                to="/gemeinschaft"
               >
                 Sponsor werden
               </ArrowLink>

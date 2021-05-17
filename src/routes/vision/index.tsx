@@ -1,26 +1,19 @@
-import { makeStyles } from "@material-ui/core";
 import preact from "preact";
-import ContentTeaserRightDirt from "../../components/contentTeaserRightDirt";
-import ContentTeaserRightSnail from "../../components/contentTeaserRightSnail";
-import ContentTeaserVision from "../../components/contentTeaserVision";
 import Footer from "../../components/footer";
-import HeaderVision from "../../components/headers/vision";
-import Keywords from "../../components/keywords";
-
-const useStyles = makeStyles({
-  image: {
-    backgroundSize: "auto",
-  },
-});
+import Begeisterung from "../../sections/vision/begeisterung";
+import BlickInDieZukunft from "../../sections/vision/blickInDieZukunft";
+import DreckUnterDenNaegeln from "../../sections/vision/dreckUnterDenNaegeln";
+import HeaderVision from "../../sections/vision/headerVision";
+import NaeheVertrauenFreiheit from "../../sections/vision/naeheVertrauerFreiheit";
 
 export default function Vision(): preact.VNode {
   return (
     <div>
       <HeaderVision />
-      <ContentTeaserVision />
-      <ContentTeaserRightDirt />
-      <Keywords />
-      <ContentTeaserRightSnail />
+      <NaeheVertrauenFreiheit />
+      <DreckUnterDenNaegeln />
+      <BlickInDieZukunft />
+      <Begeisterung />
       <Footer />
     </div>
   );
