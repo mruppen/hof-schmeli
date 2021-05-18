@@ -1,14 +1,14 @@
+import Section from "components/section";
+import TeaserRow from "components/teaserRow";
+import SectionTitle from "components/titles/sectionTitle";
+import bauernhof from "data/images/bauernhof.png";
+import foerdern from "data/images/foerdern.png";
+import mittagstisch from "data/images/mittagstisch.png";
+import schulweg from "data/images/schulweg.png";
+import unterwegs from "data/images/unterwegs.png";
+import wachsen from "data/images/wachsen.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import TeaserRow from "../../components/teaserRow";
-import SectionTitle from "../../components/titles/sectionTitle";
-import bauernhof from "../../data/images/bauernhof.png";
-import foerdern from "../../data/images/foerdern.png";
-import mittagstisch from "../../data/images/mittagstisch.png";
-import schulweg from "../../data/images/schulweg.png";
-import unterwegs from "../../data/images/unterwegs.png";
-import wachsen from "../../data/images/wachsen.png";
-import { TeaserModel } from "../../models/models";
 
 const teasers: TeaserModel[] = [
   {

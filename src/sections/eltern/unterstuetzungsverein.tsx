@@ -1,8 +1,8 @@
 import { Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
+import ArrowButton from "components/arrowButton";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
 import preact from "preact";
-import ArrowButton from "../../components/arrowButton";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
 
 const useStyles = makeStyles({
   space: {

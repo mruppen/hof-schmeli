@@ -1,9 +1,9 @@
 import { makeStyles, Typography } from "@material-ui/core";
+import Section from "components/section";
+import TopicTeaser from "components/topicTeaser";
+import tisch from "data/images/tisch.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import TopicTeaser from "../../components/topicTeaser";
-import tisch from "../../data/images/tisch.png";
-import { TeaserModel } from "../../models/models";
 
 const useStyles = makeStyles({
   image: {

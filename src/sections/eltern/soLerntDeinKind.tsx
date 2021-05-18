@@ -1,9 +1,9 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
+import Section from "components/section";
+import TopicTeaser from "components/topicTeaser";
+import feldstecher from "data/images/feldstecher.png";
 import preact from "preact";
-import Section from "../../components/section";
-import TopicTeaser from "../../components/topicTeaser";
-import feldstecher from "../../data/images/feldstecher.png";
 
 const useStyles = makeStyles({
   padding32: {

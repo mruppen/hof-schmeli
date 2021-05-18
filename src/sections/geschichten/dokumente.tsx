@@ -1,13 +1,13 @@
 import { Grid, Hidden } from "@material-ui/core";
+import Section from "components/section";
+import Teaser from "components/teaser";
+import TeaserRow from "components/teaserRow";
+import aeste from "data/images/aeste.png";
+import leitbild from "data/images/leitbild.png";
+import stamm from "data/images/stamm.png";
+import wurzeln from "data/images/wurzeln.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import Teaser from "../../components/teaser";
-import TeaserRow from "../../components/teaserRow";
-import aeste from "../../data/images/aeste.png";
-import leitbild from "../../data/images/leitbild.png";
-import stamm from "../../data/images/stamm.png";
-import wurzeln from "../../data/images/wurzeln.png";
-import { TeaserModel } from "../../models/models";
 
 const documents: TeaserModel[] = [
   //   {

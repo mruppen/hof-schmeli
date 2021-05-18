@@ -1,23 +1,23 @@
 import { Grid, Hidden, makeStyles, useTheme } from "@material-ui/core";
+import Section from "components/section";
+import Teaser from "components/teaser";
+import { createTeaserRowGridItems } from "components/teaserRow";
+import SectionTitle from "components/titles/sectionTitle";
+import benedikt from "data/images/benedikt.png";
+import carole from "data/images/carole.png";
+import daniela from "data/images/daniela.png";
+import danielaImhof from "data/images/danielaImhof.png";
+import david from "data/images/david.png";
+import ephraim from "data/images/ephraim.png";
+import joerg from "data/images/joerg.png";
+import marieChristin from "data/images/marieChristin.png";
+import nicole from "data/images/nicole.png";
+import piera from "data/images/piera.png";
+import roger from "data/images/roger.png";
+import simone from "data/images/simone.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import Teaser from "../../components/teaser";
-import { createTeaserRowGridItems } from "../../components/teaserRow";
-import SectionTitle from "../../components/titles/sectionTitle";
-import benedikt from "../../data/images/benedikt.png";
-import carole from "../../data/images/carole.png";
-import daniela from "../../data/images/daniela.png";
-import danielaImhof from "../../data/images/danielaImhof.png";
-import david from "../../data/images/david.png";
-import ephraim from "../../data/images/ephraim.png";
-import joerg from "../../data/images/joerg.png";
-import marieChristin from "../../data/images/marieChristin.png";
-import nicole from "../../data/images/nicole.png";
-import piera from "../../data/images/piera.png";
-import roger from "../../data/images/roger.png";
-import simone from "../../data/images/simone.png";
-import { TeaserModel } from "../../models/models";
-import { ColorsType } from "../../utils";
+import { ColorsType } from "utils/index";
 
 const useStyles = makeStyles({
   title: {

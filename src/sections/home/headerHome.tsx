@@ -7,12 +7,12 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
+import MainNavigation from "components/mainNavigation";
+import Section from "components/section";
+import HeaderTitle from "components/titles/headerTitle";
+import home from "data/images/header/home.png";
 import preact from "preact";
-import MainNavigation from "../../components/mainNavigation";
-import Section from "../../components/section";
-import HeaderTitle from "../../components/titles/headerTitle";
-import home from "../../data/images/header/home.png";
-import { PaletteOrColorsType } from "../../utils";
+import { PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles(() =>
   createStyles({

@@ -8,12 +8,12 @@ import {
   useTheme,
 } from "@material-ui/core";
 import clsx from "clsx";
+import MainNavigation from "components/mainNavigation";
+import HeaderTitle from "components/titles/headerTitle";
+import eltern from "data/images/header/eltern.png";
+import { useContainerStyles } from "hooks/index";
 import preact from "preact";
-import MainNavigation from "../../components/mainNavigation";
-import HeaderTitle from "../../components/titles/headerTitle";
-import eltern from "../../data/images/header/eltern.png";
-import { useContainerStyles } from "../../hooks";
-import { PaletteOrColorsType } from "../../utils";
+import { PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles(() =>
   createStyles({

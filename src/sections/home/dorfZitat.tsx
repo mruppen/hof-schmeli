@@ -1,5 +1,5 @@
+import PlainTeaser from "components/plainTeaser";
 import preact from "preact";
-import PlainTeaser from "../../components/plainTeaser";
 
 export default function DorfZitat(): preact.VNode {
   return (

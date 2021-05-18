@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@material-ui/core";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
 import preact from "preact";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
 
 export default function NaeheVertrauenFreiheit(): preact.VNode {
   return (
