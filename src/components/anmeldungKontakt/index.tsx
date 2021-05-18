@@ -8,12 +8,12 @@ import {
 } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/styles";
 import clsx from "clsx";
+import ArrowLink from "components/arrowLink";
+import Kontakt from "components/kontakt";
+import Section from "components/section";
+import ContentTitleH3 from "components/titles/contentTitleH3";
+import SectionTitle from "components/titles/sectionTitle";
 import preact, { ComponentChildren } from "preact";
-import ArrowLink from "../arrowLink";
-import Kontakt from "../kontakt";
-import Section from "../section";
-import ContentTitleH3 from "../titles/contentTitleH3";
-import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
