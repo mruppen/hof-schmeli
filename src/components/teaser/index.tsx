@@ -6,11 +6,11 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/core/styles/withStyles";
+import ArrowLink from "components/arrowLink";
+import { ColorsFunc } from "hooks/index";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import { ColorsFunc } from "../../hooks";
-import { TeaserModel } from "../../models/models";
-import { getColors, invert, PaletteOrColorsType } from "../../utils";
-import ArrowLink from "../arrowLink";
+import { getColors, invert, PaletteOrColorsType } from "utils/index";
 
 type UseStylesType = (
   func: ColorsFunc

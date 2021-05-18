@@ -6,11 +6,11 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
+import ArrowLink from "components/arrowLink";
+import ContactFooter from "components/contactFooter";
+import MainNavigation from "components/mainNavigation";
 import preact from "preact";
-import { invert, PaletteOrColorsType } from "../../utils";
-import ArrowLink from "../arrowLink";
-import ContactFooter from "../contactFooter";
-import MainNavigation from "../mainNavigation";
+import { invert, PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

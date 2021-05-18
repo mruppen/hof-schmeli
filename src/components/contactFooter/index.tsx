@@ -5,13 +5,13 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
+import ArrowLink from "components/arrowLink";
 import {
   ColorsType,
   getColors,
   invert,
   PaletteOrColorsType,
-} from "../../utils";
-import ArrowLink from "../arrowLink";
+} from "utils/index";
 
 const useStyles = makeStyles<Theme, ColorsType>((theme: Theme) => {
   return createStyles({

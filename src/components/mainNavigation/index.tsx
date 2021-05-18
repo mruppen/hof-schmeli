@@ -12,11 +12,11 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
+import HomeIcon from "data/icons/home";
 import preact from "preact";
 import { useState } from "preact/hooks";
 import { Link } from "react-router-dom";
-import { ColorsType, getColors, PaletteOrColorsType } from "../../utils";
-import HomeIcon from "../icons/home";
+import { ColorsType, getColors, PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles<Theme, ColorsType>((theme) =>
   createStyles({

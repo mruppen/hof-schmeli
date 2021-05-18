@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
-import ArrowLink from "../arrowLink";
-import ContentTitleH3 from "../titles/contentTitleH3";
+import ArrowLink from "components/arrowLink";
+import ContentTitleH3 from "components/titles/contentTitleH3";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
