@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
-import HomeIcon from "data/icons/home";
+import HomeIcon from "components/icons/home";
 import preact from "preact";
 import { useState } from "preact/hooks";
 import { Link } from "react-router-dom";
