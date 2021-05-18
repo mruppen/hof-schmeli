@@ -15,7 +15,7 @@ import {
   getColors,
   invert,
   PaletteOrColorsType,
-} from "../../utils";
+} from "utils/index";
 
 type ArrowButtonProps = {
   arrow: "start" | "end";
