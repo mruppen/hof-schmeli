@@ -5,10 +5,10 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
+import dreck from "data/images/dreck.png";
 import preact from "preact";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
-import dreck from "../../data/images/dreck.png";
 
 const useStyles = makeStyles(() =>
   createStyles({

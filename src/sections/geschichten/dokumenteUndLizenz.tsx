@@ -6,12 +6,12 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
+import ArrowLink from "components/arrowLink";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
+import schnecke from "data/images/schneckeGelb.png";
 import preact from "preact";
-import ArrowLink from "../../components/arrowLink";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
-import schnecke from "../../data/images/schneckeGelb.png";
-import { ColorsType } from "../../utils";
+import { ColorsType } from "utils/index";
 
 const useStyles = makeStyles({
   container: {

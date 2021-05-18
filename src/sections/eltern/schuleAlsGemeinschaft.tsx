@@ -1,9 +1,9 @@
 import { Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
+import ArrowButton from "components/arrowButton";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
+import schnecke from "data/images/schneckeGelb.png";
 import preact from "preact";
-import ArrowButton from "../../components/arrowButton";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
-import schnecke from "../../data/images/schneckeGelb.png";
 
 const useStyles = makeStyles({
   container: {

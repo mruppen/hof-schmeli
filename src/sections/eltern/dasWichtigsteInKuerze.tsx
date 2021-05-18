@@ -5,11 +5,11 @@ import {
   Typography,
   useTheme,
 } from "@material-ui/core";
+import CheckIcon from "components/icons/check";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
 import preact from "preact";
-import CheckIcon from "../../components/icons/check";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
-import { getColors, invert } from "../../utils";
+import { getColors, invert } from "utils/index";
 
 const useStyles = makeStyles({
   enumeration: {

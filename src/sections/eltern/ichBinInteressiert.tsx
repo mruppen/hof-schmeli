@@ -1,12 +1,12 @@
 import { makeStyles } from "@material-ui/core";
+import Section from "components/section";
+import TeaserRow from "components/teaserRow";
+import SectionTitle from "components/titles/sectionTitle";
+import schulgeld from "data/images/schulgeld.png";
+import schulstart from "data/images/schulstart.png";
+import stundenplan from "data/images/stundenplan.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import TeaserRow from "../../components/teaserRow";
-import SectionTitle from "../../components/titles/sectionTitle";
-import schulgeld from "../../data/images/schulgeld.png";
-import schulstart from "../../data/images/schulstart.png";
-import stundenplan from "../../data/images/stundenplan.png";
-import { TeaserModel } from "../../models/models";
 
 const useStyles = makeStyles({
   padding32: {

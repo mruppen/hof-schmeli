@@ -1,7 +1,7 @@
 import { makeStyles, Typography } from "@material-ui/core";
+import ContentTeaserLeft from "components/contentTeaserLeft";
+import schnecke from "data/images/schnecke.png";
 import preact from "preact";
-import ContentTeaserLeft from "../../components/contentTeaserLeft";
-import schnecke from "../../data/images/schnecke.png";
 
 const useStyles = makeStyles({
   image: {

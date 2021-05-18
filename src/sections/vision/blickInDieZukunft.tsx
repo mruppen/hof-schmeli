@@ -1,10 +1,10 @@
 import { Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
+import flower from "data/images/flower.png";
+import stichworte from "data/images/stichworte.png";
+import { useContainerStyles } from "hooks/index";
 import preact from "preact";
-import Section from "../../components/section";
-import SectionTitle from "../../components/titles/sectionTitle";
-import flower from "../../data/images/flower.png";
-import stichworte from "../../data/images/stichworte.png";
-import { useContainerStyles } from "../../hooks";
 
 const useStyles = makeStyles({
   container: {

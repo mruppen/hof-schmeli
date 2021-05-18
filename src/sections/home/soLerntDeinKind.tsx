@@ -1,10 +1,10 @@
 import { makeStyles, Typography } from "@material-ui/core";
+import Section from "components/section";
+import ContentTitleH4 from "components/titles/contentTitleH4";
+import TopicTeaser from "components/topicTeaser";
+import milchHolen from "data/images/milchHolen.png";
+import { TeaserModel } from "models/models";
 import preact from "preact";
-import Section from "../../components/section";
-import ContentTitleH4 from "../../components/titles/contentTitleH4";
-import TopicTeaser from "../../components/topicTeaser";
-import milchHolen from "../../data/images/milchHolen.png";
-import { TeaserModel } from "../../models/models";
 
 const useStyles = makeStyles({
   milchHolenImage: {

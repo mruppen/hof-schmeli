@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/styles";
-import { ColorsType as colorsFromUtils } from "../utils";
+import { ColorsType as colorsFromUtils } from "utils/index";
 
 export type Colors = colorsFromUtils;
 

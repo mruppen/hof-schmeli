@@ -1,12 +1,12 @@
-import Section from "../../components/section";
-import TeaserRow from "../../components/teaserRow";
-import gaestehaus from "../../data/images/gaestehaus.png";
-import landschaft from "../../data/images/landschaft.png";
-import milchHolen from "../../data/images/milchHolen.png";
-import schweine from "../../data/images/schweine.png";
-import tipi from "../../data/images/tipi.png";
-import wohnwagen from "../../data/images/wohnwagen.png";
-import { TeaserModel } from "../../models/models";
+import Section from "components/section";
+import TeaserRow from "components/teaserRow";
+import gaestehaus from "data/images/gaestehaus.png";
+import landschaft from "data/images/landschaft.png";
+import milchHolen from "data/images/milchHolen.png";
+import schweine from "data/images/schweine.png";
+import tipi from "data/images/tipi.png";
+import wohnwagen from "data/images/wohnwagen.png";
+import { TeaserModel } from "models/models";
 
 const teasers: TeaserModel[] = [
   {

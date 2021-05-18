@@ -8,10 +8,10 @@ import {
 import { Check } from "@material-ui/icons";
 import { ClassNameMap } from "@material-ui/styles";
 import clsx from "clsx";
+import Section from "components/section";
+import ContentTitleH4 from "components/titles/contentTitleH4";
+import SectionTitle from "components/titles/sectionTitle";
 import preact, { ComponentChildren } from "preact";
-import Section from "../../components/section";
-import ContentTitleH4 from "../../components/titles/contentTitleH4";
-import SectionTitle from "../../components/titles/sectionTitle";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({

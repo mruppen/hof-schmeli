@@ -5,15 +5,15 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import Footer from "components/footer";
+import Section from "components/section";
+import aeste from "data/images/aeste.png";
+import fruechte from "data/images/fruechte.png";
+import leitbild from "data/images/leitbild.png";
+import stamm from "data/images/stamm.png";
+import wurzeln from "data/images/wurzeln.png";
 import preact from "preact";
-import Footer from "../../components/footer";
-import Section from "../../components/section";
-import aeste from "../../data/images/aeste.png";
-import fruechte from "../../data/images/fruechte.png";
-import leitbild from "../../data/images/leitbild.png";
-import stamm from "../../data/images/stamm.png";
-import wurzeln from "../../data/images/wurzeln.png";
-import HeaderLeitbild from "../../sections/leitbild/headerLeitbild";
+import HeaderLeitbild from "sections/leitbild/headerLeitbild";
 
 const useStyles = makeStyles({
   image: {
