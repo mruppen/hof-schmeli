@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
-import { TeaserModel } from "../../models/models";
-import { PaletteOrColorsType } from "../../utils";
-import Teaser from "../teaser";
+import Teaser from "components/teaser";
+import { TeaserModel } from "models/models";
+import { PaletteOrColorsType } from "utils/index";
 
 export function createTeaserRowGridItems(
   teasers: TeaserModel[],

@@ -14,7 +14,7 @@ import {
   getColors,
   invert,
   PaletteOrColorsType,
-} from "../../utils";
+} from "utils/index";
 
 type ArrowLinkProps = {
   palette: PaletteOrColorsType;

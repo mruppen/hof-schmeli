@@ -1,7 +1,7 @@
 import { makeStyles, Theme, Typography } from "@material-ui/core";
 import clsx from "clsx";
+import { IsInsideGrid, TitleProps } from "components/titles/titleProps";
 import preact from "preact";
-import { IsInsideGrid, TitleProps } from "./titleProps";
 
 const useStyles = makeStyles<Theme, IsInsideGrid>((theme: Theme) => ({
   title: {

@@ -6,9 +6,9 @@ import {
   Theme,
 } from "@material-ui/core";
 import clsx from "clsx";
+import { useContainerStyles } from "hooks/index";
 import preact from "preact";
-import { useContainerStyles } from "../../hooks";
-import { getColors, PaletteOrColorsType } from "../../utils";
+import { getColors, PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles<Theme, PaddingStyles>(() =>
   createStyles({

@@ -1,11 +1,11 @@
 import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
 import clsx from "clsx";
+import ArrowButton from "components/arrowButton";
+import { createTeaserRowGridItems } from "components/teaserRow";
+import ContentTitleH4 from "components/titles/contentTitleH4";
+import SectionTitle from "components/titles/sectionTitle";
+import { TeaserModel } from "models/models";
 import preact, { ComponentChildren, Fragment } from "preact";
-import { TeaserModel } from "../../models/models";
-import ArrowButton from "../arrowButton";
-import { createTeaserRowGridItems } from "../teaserRow";
-import ContentTitleH4 from "../titles/contentTitleH4";
-import SectionTitle from "../titles/sectionTitle";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

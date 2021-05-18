@@ -1,8 +1,8 @@
 import { makeStyles, Typography } from "@material-ui/core";
+import ArrowButton from "components/arrowButton";
+import QuoteTeaser from "components/quoteTeaser";
+import baum from "data/images/baum.png";
 import preact from "preact";
-import baum from "../../data/images/baum.png";
-import ArrowButton from "../arrowButton";
-import QuoteTeaser from "../quoteTeaser";
 
 const useStyles = makeStyles({
   space: {

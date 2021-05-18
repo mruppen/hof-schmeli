@@ -1,9 +1,9 @@
 import { createStyles, Grid, Hidden, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
+import Section from "components/section";
+import SectionTitle from "components/titles/sectionTitle";
 import preact, { ComponentChildren } from "preact";
-import { PaletteOrColorsType } from "../../utils";
-import Section from "../section";
-import SectionTitle from "../titles/sectionTitle";
+import { PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles(() =>
   createStyles({

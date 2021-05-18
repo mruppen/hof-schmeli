@@ -6,10 +6,10 @@ import {
   Theme,
   Typography,
 } from "@material-ui/core";
+import ArrowButton from "components/arrowButton";
+import Section from "components/section";
+import { LinkType } from "models/models";
 import preact, { ComponentChildren } from "preact";
-import { LinkType } from "../../models/models";
-import ArrowButton from "../arrowButton";
-import Section from "../section";
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
