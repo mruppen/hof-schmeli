@@ -9,7 +9,7 @@ export default function HeaderVision(): preact.VNode {
   const colors: ColorsType = {
     color: theme.palette.orange.main,
     backgroundColor: "#F1F0E5",
-  }  ;
+  };
 
   return (
     <Header
