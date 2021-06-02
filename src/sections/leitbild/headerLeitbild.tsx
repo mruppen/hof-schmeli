@@ -46,7 +46,7 @@ export default function HeaderLeitbild(): preact.VNode {
       <Container disableGutters maxWidth={false} className={classes.inner}>
         <Grid container spacing={2}>
           <Grid xs={12} item>
-            <MainNavigation colors={navigationColors} />
+            <MainNavigation palette={navigationColors} />
           </Grid>
           <Grid xs={12} item>
             <Typography variant="h1" className={classes.title}>

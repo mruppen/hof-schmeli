@@ -57,7 +57,7 @@ export default function DasWichtigsteInKuerze(): preact.VNode {
         <Grid item xs={12}>
           <SectionTitle title="Das Wichtigste in Kürze" isInsideGrid />
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item sm={12} md={6} lg={5}>
           <Typography variant="body1">
             Kinder müssen sich wohl, sicher und geborgen fühlen, um lernen zu
             können. In unserer Schule wollen wir dieses sichere Umfeld
@@ -68,10 +68,10 @@ export default function DasWichtigsteInKuerze(): preact.VNode {
             kann.
           </Typography>
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden mdDown>
+          <Grid item lg={2} />
+        </Hidden>
+        <Grid item sm={12} md={6} lg={5}>
           <div className={classes.enumeration}>
             {enumerationItems.map((item) => (
               <div className={classes.row}>

@@ -20,6 +20,9 @@ const useStyles = makeStyles<Theme, ColorsType>((theme: Theme) => {
       backgroundColor: props.backgroundColor,
       color: props.color,
       minHeight: "100%",
+      [theme.breakpoints.down("sm")]: {
+        paddingLeft: 0,
+      },
     }),
     space: {
       marginBottom: 20,

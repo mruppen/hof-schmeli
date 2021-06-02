@@ -99,7 +99,10 @@ export default function useCustomTheme(): Theme {
       fontFamily: fontFamily,
       fontStyle: "normal",
       fontWeight: 600,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down(1500)]: {
+        fontSize: theme.typography.pxToRem(19),
+      },
+      [theme.breakpoints.down("md")]: {
         fontSize: "1rem",
       },
     };
@@ -109,7 +112,7 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(16),
       lineHeight: "160%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(14),
       },
     };
@@ -126,7 +129,7 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "150%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(13),
         lineHeight: "160%",
       },
@@ -138,8 +141,14 @@ export default function useCustomTheme(): Theme {
       lineHeight: "93%",
       fontWeight: 700,
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
-        fontSize: theme.typography.pxToRem(32),
+      [theme.breakpoints.down(1500)]: {
+        fontSize: theme.typography.pxToRem(72),
+      },
+      [theme.breakpoints.down("md")]: {
+        fontSize: theme.typography.pxToRem(62),
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: theme.typography.pxToRem(34),
         lineHeight: "130%",
       },
     };
@@ -149,9 +158,18 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(44),
       lineHeight: "110%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
-        fontSize: theme.typography.pxToRem(28),
-        lineHeight: "130%",
+      [theme.breakpoints.down(1500)]: {
+        fontSize: theme.typography.pxToRem(32),
+      },
+      [theme.breakpoints.down("lg")]: {
+        fontsize: theme.typography.pxToRem(28),
+      },
+      [theme.breakpoints.down("md")]: {
+        fontSize: theme.typography.pxToRem(24),
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: theme.typography.pxToRem(22),
+        lineHeight: "140%",
       },
     };
 
@@ -160,7 +178,7 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(32),
       lineHeight: "130%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(24),
         lineHeight: "130%",
       },
@@ -171,7 +189,16 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(24),
       lineHeight: "130%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down(1500)]: {
+        fontSize: 20,
+      },
+      [theme.breakpoints.down("lg")]: {
+        fontsize: 18,
+      },
+      [theme.breakpoints.down("md")]: {
+        fontSize: 17,
+      },
+      [theme.breakpoints.down("sm")]: {
         fontSize: theme.typography.pxToRem(20),
         lineHeight: "140%",
       },
@@ -182,7 +209,7 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(18),
       lineHeight: "140%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(16),
         lineHeight: "150%",
       },
@@ -193,7 +220,7 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(16),
       lineHeight: "150%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(14),
         lineHeight: "160%",
       },
@@ -206,6 +233,7 @@ export default function useCustomTheme(): Theme {
       lineHeight: "160%",
     };
 
+    console.log(theme.typography);
     return theme;
   }, []);
 }

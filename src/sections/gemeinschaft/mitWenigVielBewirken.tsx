@@ -7,7 +7,7 @@ import preact from "preact";
 
 const useStyles = makeStyles({
   image: {
-    minHeight: 439,
+    // minHeight: 439,
     backgroundRepeat: "no-repeat",
     backgroundImage: `url(${tisch})`,
     backgroundSize: "115%",
@@ -45,6 +45,7 @@ export default function MitWenigVielBewirken(): preact.VNode {
     <Section paddingBottom={80} palette="greenInverted">
       <TopicTeaser
         imageClass={classes.image}
+        imageRatio={1.5}
         title="Mit wenig viel bewirken"
         teasers={teasers}
         to="/documents/Materialspenden für unsere Schulwelten.pdf"

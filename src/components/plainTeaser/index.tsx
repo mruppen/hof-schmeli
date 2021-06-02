@@ -33,10 +33,10 @@ export default function PlainTeaser({
   return (
     <Section paddingBottom={80} paddingTop={80} palette="orange">
       <Grid container spacing={2} justify="center">
-        <Grid item xs={false} sm={1}>
+        <Grid item xs={false} sm={false} md={1}>
           <Hidden />
         </Grid>
-        <Grid item xs={12} sm={10}>
+        <Grid item xs={12} sm={12} md={10}>
           <Typography variant="h2" className={classes.center}>
             {children}
           </Typography>
@@ -57,7 +57,7 @@ export default function PlainTeaser({
               </div>
             </Grid>
           ))}
-        <Grid item xs={false} sm={1}>
+        <Grid item xs={false} sm={false} md={1}>
           <Hidden />
         </Grid>
       </Grid>

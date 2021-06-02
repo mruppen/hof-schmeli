@@ -14,7 +14,7 @@ export default function Chancengleichheit(): preact.VNode {
   return (
     <Section palette="blueInverted" paddingBottom={80} paddingTop={80}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item sm={12} md={6} lg={5}>
           <SectionTitle title="Chancengleichheit für alle Kinder" />
           <Typography variant="body1" className={classes.space}>
             Dies ist eines der wichtigsten Ziele unserer Schule. Mit einer&nbsp;
@@ -24,10 +24,10 @@ export default function Chancengleichheit(): preact.VNode {
             Eltern sich dies nicht leisten können.
           </Typography>
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden mdDown>
+          <Grid item lg={2} />
+        </Hidden>
+        <Grid item sm={12} md={6} lg={5}>
           <SectionTitle title="Schule für jeden Geldbeutel" />
           <Typography variant="body1" className={classes.space}>
             Die Schule Bauernhof Schmeli soll jeder Familie offenstehen. Gelebte
