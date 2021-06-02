@@ -16,7 +16,7 @@ export default function GenossenschaftUnterstuetzungsverein(): preact.VNode {
   return (
     <Section paddingBottom={80} paddingTop={80} palette="blueInverted">
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={6} lg={5}>
           <SectionTitle title="Die Genossenschaft «Schule Bauernhof Schmeli»" />
           <Typography variant="body1" className={classes.space}>
             Wir sind nicht profitorientiert (keine GmbH oder AG), sondern
@@ -29,10 +29,10 @@ export default function GenossenschaftUnterstuetzungsverein(): preact.VNode {
             beigetragen und tragen diese mit.
           </Typography>
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden mdDown>
+          <Grid item lg={2} />
+        </Hidden>
+        <Grid item xs={12} md={6} lg={5}>
           <SectionTitle title="Der Unterstützungsverein «Schule Bauernhof Schmeli»" />
           <Typography variant="body1" className={classes.space}>
             Unser Unterstützungsverein hat zum Sinn und Zweck, die Schule

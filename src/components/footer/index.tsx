@@ -10,28 +10,38 @@ import ArrowLink from "components/arrowLink";
 import ContactFooter from "components/contactFooter";
 import MainNavigation from "components/mainNavigation";
 import preact from "preact";
-import { invert, PaletteOrColorsType } from "utils/index";
+import { PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       backgroundColor: theme.palette.green.main,
       color: theme.palette.green.contrastText,
-      [theme.breakpoints.up("sm")]: {
-        width: 1440,
-        maxWidth: 1440,
-        paddingTop: 80,
-        paddingRight: 79,
-        paddingBottom: 80,
-        paddingLeft: 82,
+      width: 1440,
+      maxWidth: 1440,
+      paddingTop: 80,
+      paddingRight: 79,
+      paddingBottom: 80,
+      paddingLeft: 82,
+      [theme.breakpoints.down(1500)]: {
+        width: 1024,
+        maxWidth: 1024,
+      },
+      [theme.breakpoints.down("md")]: {
+        width: 900,
+        maxWidth: 900,
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: 540,
+        maxWidth: 540,
+        paddingTop: 56,
+        paddingRight: 24,
+        paddingBottom: 56,
+        paddingLeft: 24,
       },
       [theme.breakpoints.down("xs")]: {
         width: 375,
         maxWidth: 375,
-        addingTop: 56,
-        paddingRight: 24,
-        paddingBottom: 56,
-        paddingLeft: 24,
       },
     },
     content: {
@@ -40,6 +50,9 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       alignItems: "flex-start",
       width: "100%",
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+      },
     },
     title: {
       fontSize: theme.typography.pxToRem(72),
@@ -47,7 +60,16 @@ const useStyles = makeStyles((theme: Theme) =>
       fontStyle: "normal",
       lineHeight: "93%",
       letterSpacing: "-1%",
-      width: 415,
+      width: "100%",
+      [theme.breakpoints.down(1500)]: {
+        fontSize: theme.typography.pxToRem(64),
+      },
+      [theme.breakpoints.down("md")]: {
+        fontSize: theme.typography.pxToRem(56),
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: theme.typography.pxToRem(48),
+      },
     },
     left: {
       width: 415,
@@ -59,6 +81,9 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       alignItems: "flex-start",
       marginLeft: 16,
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: 0,
+      },
     },
     rightInner: {
       width: "100%",
@@ -67,6 +92,9 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-start",
       alignItems: "flex-start",
       marginTop: 32,
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
+      },
     },
     rightInnerLeft: {
       display: "flex",
@@ -86,19 +114,24 @@ export default function Footer(): preact.VNode {
   const theme = useTheme();
 
   const navigationColors: PaletteOrColorsType = {
-    color: theme.palette.green.main,
-    backgroundColor: theme.palette.green.contrastText,
+    color: "white",
+    backgroundColor: "transparent",
   };
+
   return (
     <Container maxWidth={false} disableGutters className={classes.container}>
       <div className={classes.content}>
         <div className={classes.left}>
           <Typography variant="h1" className={classes.title}>
-            Schule Bauernhof Schmeli
+            Schule
+            <br />
+            Bauernhof
+            <br />
+            Schmeli
           </Typography>
         </div>
         <div className={classes.right}>
-          <MainNavigation colors={navigationColors} />
+          <MainNavigation palette={navigationColors} footer={true} />
           <div className={classes.rightInner}>
             <div className={classes.rightInnerLeft}>
               <Typography variant="h4" className={classes.margin21}>
@@ -117,7 +150,7 @@ export default function Footer(): preact.VNode {
                 Newsletter anmelden
               </ArrowLink> */}
               <ArrowLink
-                palette={navigationColors}
+                palette="greenInverted"
                 variant="body2"
                 className={classes.margin21}
                 to="/gemeinschaft"
@@ -125,7 +158,7 @@ export default function Footer(): preact.VNode {
                 Sponsor werden
               </ArrowLink>
             </div>
-            <ContactFooter colors={invert(navigationColors)} />
+            <ContactFooter colors="green" />
           </div>
         </div>
       </div>

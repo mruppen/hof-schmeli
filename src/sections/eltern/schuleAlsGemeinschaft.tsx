@@ -27,7 +27,7 @@ export default function SchuleAlsGemeinschaft(): preact.VNode {
       additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={6} lg={5}>
           <SectionTitle title="Die Schule als Gemeinschaft" />
           <Typography variant="body1" className={classes.space}>
             Die Kinder sollen ein vollwertiger Teil der Schulgemeinschaft sein.
@@ -46,10 +46,10 @@ export default function SchuleAlsGemeinschaft(): preact.VNode {
             Unsere Lernkultur
           </ArrowButton>
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden mdDown>
+          <Grid item lg={2} />
+        </Hidden>
+        <Grid item xs={12} md={6} lg={5}>
           <SectionTitle title="Gelebte Solidarität" />
           <Typography variant="body1" className={classes.space}>
             Wir möchten mit all jenen, die sich mit unserer pädagogischen

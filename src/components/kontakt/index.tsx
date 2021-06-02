@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme: Theme) => {
       backgroundColor: theme.palette.blue.contrastText,
       color: theme.palette.blue.main,
       minHeight: "100%",
+      width: "100%",
       borderRadius: 12,
       borderWidth: 1,
       borderStyle: "solid",

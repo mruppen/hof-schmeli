@@ -1,13 +1,16 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Theme, Typography } from "@material-ui/core";
 import ContentTeaserLeft from "components/contentTeaserLeft";
 import hahn from "data/images/hahn.png";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   image: {
     marginTop: 92,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0,
+    },
   },
-});
+}));
 
 export default function DieBauernhofSchule(): preact.VNode {
   const classes = useStyles();

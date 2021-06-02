@@ -101,10 +101,10 @@ export default function AnmeldungKontakt(): preact.VNode {
             <br /> So sieht unser Anmeldeprozess aus:
           </Typography>
         </Grid>
-        <Grid item sm={1}>
+        <Grid item sm={false} md={1}>
           <Hidden />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item sm={12} md={6}>
           <div className={clsx(classes.content, classes.subscribe)}>
             <ContentTitleH3 title="Anmeldeprozess" />
             {createListItem(
@@ -144,7 +144,7 @@ export default function AnmeldungKontakt(): preact.VNode {
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={12} md={4}>
           <Kontakt />
         </Grid>
       </Grid>

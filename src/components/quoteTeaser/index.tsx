@@ -1,12 +1,5 @@
-import {
-  Container,
-  createStyles,
-  Grid,
-  makeStyles,
-  Theme,
-} from "@material-ui/core";
-import clsx from "clsx";
-import { useContainerStyles } from "hooks/index";
+import { createStyles, Grid, makeStyles, Theme } from "@material-ui/core";
+import Section from "components/section";
 import preact, { ComponentChildren } from "preact";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -24,21 +17,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       marginTop: "auto",
       marginBottom: "auto",
-    },
-
-    content: {
-      [theme.breakpoints.up("sm")]: {
-        marginLeft: 40,
-        paddingTop: 80 - theme.spacing(1),
-        paddingBottom: 80 - theme.spacing(1),
-      },
-      [theme.breakpoints.down("xs")]: {
-        paddingTop: 0 - theme.spacing(1),
-        paddingBottom: 56 - theme.spacing(1),
-        marginLeft: 0,
+      [theme.breakpoints.down("sm")]: {
+        maxHeight: 200,
+        maxWidth: "auto",
       },
     },
-
     spacing: {
       marginTop: 20,
     },
@@ -54,29 +37,20 @@ export default function QuoteTeaser({
   image,
   children,
 }: QuoteTeaserProps): preact.VNode {
-  const containerClasses = useContainerStyles((theme: Theme) => {
-    return {
-      backgroundColor: theme.palette.yellow.main,
-      color: theme.palette.yellow.contrastText,
-    };
-  });
   const classes = useStyles();
 
   return (
-    <Container
-      className={clsx(containerClasses.main, classes.container)}
-      disableGutters
-    >
+    <Section palette="yellow" paddingBottom={80} paddingTop={80}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={3}>
+        <Grid item sm={12} md={3}>
           <div className={classes.imageContainer}>
             <img src={image} className={classes.image} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={9}>
+        <Grid item sm={12} md={9}>
           {children}
         </Grid>
       </Grid>
-    </Container>
+    </Section>
   );
 }

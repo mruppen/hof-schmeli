@@ -14,81 +14,119 @@ import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
 import HomeIcon from "components/icons/home";
 import preact from "preact";
-import { useState } from "preact/hooks";
-import { Link } from "react-router-dom";
+import { useRef, useState } from "preact/hooks";
+import { Link, useHistory } from "react-router-dom";
 import { ColorsType, getColors, PaletteOrColorsType } from "utils/index";
 
-const useStyles = makeStyles<Theme, ColorsType>((theme) =>
+interface StylesProps {
+  colors: ColorsType;
+  footer: boolean;
+}
+
+const useStyles = makeStyles<Theme, StylesProps>((theme) =>
   createStyles({
     navigation: (props) => ({
-      backgroundColor: props.backgroundColor,
-      color: props.color,
+      marginTop: 56,
+      backgroundColor: "transparent",
+      color: props.colors.color,
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-start",
       alignItems: "center",
-      paddingBottom: 80,
-      [theme.breakpoints.down("xs")]: {
-        backgroundColor: "transparent",
-        justifyContent: "flex-end",
+      [theme.breakpoints.down("md")]: {
+        flexWrap: "wrap",
+      },
+      [theme.breakpoints.down("sm")]: {
+        marginTop: 24,
+        justifyContent: props.footer ? "flex-start" : "flex-end",
+        flexWrap: "wrap",
       },
     }),
     link: {
       color: "inherit",
+      fontSize: theme.typography.h4.fontSize,
+    },
+    icon: {
+      fontSize: theme.typography.h4.fontSize,
     },
     textLink: {
       marginLeft: 24,
       fontWeight: 700,
       fontSize: 24,
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: 20,
+      },
     },
     textLinkActive: {
       textDecoration: "none",
     },
-    menuItem: (props) => ({
-      color: props.backgroundColor,
-      backgroundColor: props.color,
-      paddingTop: 24,
-      "> li": {
-        textAlign: "center",
-      },
-    }),
+    menuItem: {
+      paddingTop: 10,
+      paddingBottom: 10,
+      justifyContent: "center",
+      backgroundColor: "inherit",
+      color: "inherit",
+    },
+    listItem: {
+      textAlign: "center",
+    },
+    popupMenu: {
+      width: 375,
+    },
   })
 );
 
 type MainNavigationProps = {
-  colors: PaletteOrColorsType;
+  palette: PaletteOrColorsType;
   route?: "/" | "eltern" | "schule" | "vision" | "geschichten" | "gemeinschaft";
+  footer?: boolean;
 };
 
+function isWhiteOrTransparent(color: string): boolean {
+  if (!!color) {
+    const lowerCaseColor = color.toLowerCase();
+    return (
+      lowerCaseColor == "white" ||
+      lowerCaseColor == "#ffffff" ||
+      lowerCaseColor == "#fff" ||
+      lowerCaseColor == "transparent"
+    );
+  }
+  return false;
+}
+
 export default function MainNavigation({
-  colors,
+  palette,
   route = "/",
+  footer = false,
 }: MainNavigationProps): preact.VNode {
   const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down("xs"));
-  const realColors = getColors(theme, colors);
-  const classes = useStyles({
-    color: realColors.backgroundColor,
-    backgroundColor: realColors.color,
-  });
+  const isXs = useMediaQuery(theme.breakpoints.down("sm"));
+  const colors = getColors(theme, palette);
+  const classes = useStyles({ colors, footer });
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>();
   const handleClick = (event: JSX.TargetedMouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+    setAnchorEl(ref.current);
   };
 
-  const handleClose = () => {
+  const handleClose = (action?: () => void) => {
     setAnchorEl(null);
+    if (!!action) {
+      action();
+    }
   };
 
-  if (!isXs) {
+  if (!isXs || footer) {
     return (
       <nav className={classes.navigation}>
         <Link className={classes.link} to="/">
-          <HomeIcon />
+          <HomeIcon className={classes.icon} />
         </Link>
         <Typography variant="h4">
           <Link
+            style={{ fontSize: "inherit" }}
             to="/eltern"
             className={clsx(classes.link, classes.textLink, {
               [classes.textLinkActive]: route === "eltern",
@@ -99,6 +137,7 @@ export default function MainNavigation({
         </Typography>
         <Typography variant="h4">
           <Link
+            style={{ fontSize: "inherit" }}
             to="/schule"
             className={clsx(classes.link, classes.textLink, {
               [classes.textLinkActive]: route === "schule",
@@ -109,6 +148,7 @@ export default function MainNavigation({
         </Typography>
         <Typography variant="h4">
           <Link
+            style={{ fontSize: "inherit" }}
             to="/vision"
             className={clsx(classes.link, classes.textLink, {
               [classes.textLinkActive]: route === "vision",
@@ -119,6 +159,7 @@ export default function MainNavigation({
         </Typography>
         <Typography variant="h4">
           <Link
+            style={{ fontSize: "inherit" }}
             to="/geschichten"
             className={clsx(classes.link, classes.textLink, {
               [classes.textLinkActive]: route === "geschichten",
@@ -129,6 +170,7 @@ export default function MainNavigation({
         </Typography>
         <Typography variant="h4">
           <Link
+            style={{ fontSize: "inherit" }}
             to="/gemeinschaft"
             className={clsx(classes.link, classes.textLink, {
               [classes.textLinkActive]: route === "gemeinschaft",
@@ -140,15 +182,20 @@ export default function MainNavigation({
       </nav>
     );
   } else {
+    const backgroundColor = isWhiteOrTransparent(colors.color)
+      ? colors.backgroundColor
+      : colors.color;
     const styles = {
       paper: {
-        backgroundColor: theme.palette.orange.main,
+        color: "white",
+        backgroundColor: backgroundColor,
         width: "100%",
       },
     };
+    const history = useHistory();
     const StyledMenu = withStyles(styles)(Menu);
     return (
-      <div className={classes.navigation}>
+      <div className={classes.navigation} ref={ref}>
         <Button
           style={{ paddingRight: 0 }}
           color="inherit"
@@ -158,27 +205,42 @@ export default function MainNavigation({
           Menu
         </Button>
         <StyledMenu
+          className={classes.popupMenu}
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
-          onClose={handleClose}
+          onClose={() => handleClose()}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          anchorReference="anchorEl"
+          transformOrigin={{ vertical: "top", horizontal: "center" }}
         >
           <MenuItem
-            onClick={handleClose}
+            onClick={() => handleClose(() => history.push("/eltern"))}
             className={classes.menuItem}
-            alignItems="center"
           >
             Für Eltern
           </MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/schule"))}
+            className={classes.menuItem}
+          >
             Schule
           </MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/vision"))}
+            className={classes.menuItem}
+          >
             Vision
           </MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/geschichten"))}
+            className={classes.menuItem}
+          >
             Geschichten
           </MenuItem>
-          <MenuItem onClick={handleClose} className={classes.menuItem}>
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/gemeinschaft"))}
+            className={classes.menuItem}
+          >
             Ich möchte helfen
           </MenuItem>
         </StyledMenu>

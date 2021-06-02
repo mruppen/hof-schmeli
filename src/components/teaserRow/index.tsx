@@ -10,7 +10,7 @@ export function createTeaserRowGridItems(
   const children: React.ReactNode[] = [];
   teasers.forEach((teaser, index) =>
     children.push(
-      <Grid item xs={12} sm={4}>
+      <Grid item sm={12} md={4}>
         <Teaser
           keys={teaser.keys}
           palette={palette}

@@ -1,11 +1,17 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Theme, Typography } from "@material-ui/core";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   title: {
-    paddingTop: 42,
+    marginTop: 116,
+    [theme.breakpoints.down(1500)]: {
+      marginTop: 30,
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0,
+    },
   },
-});
+}));
 
 export default function HeaderTitle(): preact.VNode {
   const classes = useStyles();
