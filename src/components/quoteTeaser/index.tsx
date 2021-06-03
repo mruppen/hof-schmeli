@@ -4,22 +4,18 @@ import preact, { ComponentChildren } from "preact";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
-      paddingTop: 80,
-      paddingBottom: 80,
-    },
     imageContainer: {
       display: "flex",
       alignItems: "center",
+      justifyContent: "center",
       height: "100%",
     },
     image: {
-      width: "100%",
+      // width: "100%",
       marginTop: "auto",
       marginBottom: "auto",
       [theme.breakpoints.down("sm")]: {
-        maxHeight: 200,
-        maxWidth: "auto",
+        maxWidth: 260,
       },
     },
     spacing: {

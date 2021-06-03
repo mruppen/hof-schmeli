@@ -4,7 +4,6 @@ import {
   makeStyles,
   Theme,
   Typography,
-  useTheme,
 } from "@material-ui/core";
 import ArrowLink from "components/arrowLink";
 import ContactFooter from "components/contactFooter";
@@ -60,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontStyle: "normal",
       lineHeight: "93%",
       letterSpacing: "-1%",
-      width: "100%",
+      // width: "100%",
       [theme.breakpoints.down(1500)]: {
         fontSize: theme.typography.pxToRem(64),
       },
@@ -111,8 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Footer(): preact.VNode {
   const classes = useStyles();
-  const theme = useTheme();
-
   const navigationColors: PaletteOrColorsType = {
     color: "white",
     backgroundColor: "transparent",
@@ -121,15 +118,15 @@ export default function Footer(): preact.VNode {
   return (
     <Container maxWidth={false} disableGutters className={classes.container}>
       <div className={classes.content}>
-        <div className={classes.left}>
-          <Typography variant="h1" className={classes.title}>
-            Schule
-            <br />
-            Bauernhof
-            <br />
-            Schmeli
-          </Typography>
-        </div>
+        {/* <div className={classes.left}> */}
+        <Typography variant="h1" className={classes.title}>
+          Schule
+          <br />
+          Bauernhof
+          <br />
+          Schmeli
+        </Typography>
+        {/* </div> */}
         <div className={classes.right}>
           <MainNavigation palette={navigationColors} footer={true} />
           <div className={classes.rightInner}>
