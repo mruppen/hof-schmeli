@@ -15,10 +15,10 @@ export default function Unterstuetzungsverein(): preact.VNode {
   return (
     <Section paddingBottom={80} paddingTop={80} palette="blueInverted">
       <Grid container spacing={2}>
-        <Grid item xs={false} sm={7}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden smDown>
+          <Grid item md={7} />
+        </Hidden>
+        <Grid item sm={12} md={5}>
           <SectionTitle title="Der Unterstützungsverein «Schule Bauernhof Schmeli»" />
           <Typography variant="body1" className={classes.space}>
             Unser Unterstützungsverein hat zum Sinn und Zweck, die Schule
