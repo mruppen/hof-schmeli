@@ -3,9 +3,9 @@ import {
   Hidden,
   Link,
   makeStyles,
+  Theme,
   Typography,
   useTheme,
-  Theme,
 } from "@material-ui/core";
 import ArrowLink from "components/arrowLink";
 import Section from "components/section";
@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundPosition: "85% 15%",
     [theme.breakpoints.down("sm")]: {
       backgroundSize: "80%",
-      backgroundPosition: "center center"
-    }
+      backgroundPosition: "center center",
+    },
   },
   space: {
     marginTop: 20,
@@ -92,7 +92,7 @@ export default function DokumenteUndLizenz(): preact.VNode {
             to="/documents/Materialspenden für unsere Schulwelten.pdf"
             variant="body1"
           >
-            Materialspenden
+            Spenden für Material
           </ArrowLink>
         </Grid>
         <Hidden smDown>

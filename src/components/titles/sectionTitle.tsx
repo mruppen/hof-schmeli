@@ -8,7 +8,7 @@ const useStyles = makeStyles<Theme, IsInsideGrid>((theme: Theme) => ({
     marginBottom: (props) =>
       props.isInsideGrid ? theme.spacing(1) : theme.spacing(3),
     [theme.breakpoints.down("xs")]: {
-      marginBottom: (props) => (props.isInsideGrid ? 0 : theme.spacing(3)),
+      marginBottom: (props) => (props.isInsideGrid ? 0 : theme.spacing(2)),
     },
   },
 }));

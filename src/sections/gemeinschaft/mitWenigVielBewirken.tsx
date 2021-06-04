@@ -49,7 +49,7 @@ export default function MitWenigVielBewirken(): preact.VNode {
         title="Mit wenig viel bewirken"
         teasers={teasers}
         to="/documents/Materialspenden für unsere Schulwelten.pdf"
-        toText="Materialspenden"
+        toText="Spenden für Material"
         documentLink
       >
         <Typography variant="body1">

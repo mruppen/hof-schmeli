@@ -9,8 +9,8 @@ import ArrowLink from "components/arrowLink";
 import ContactFooter from "components/contactFooter";
 import MainNavigation from "components/mainNavigation";
 import preact from "preact";
-import { PaletteOrColorsType } from "utils/index";
 import { customLg } from "src/data/constants";
+import { PaletteOrColorsType } from "utils/index";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
       justifyContent: "flex-start",
       alignItems: "flex-start",
-      marginLeft: 16,
+      marginLeft: 64,
       [theme.breakpoints.down("sm")]: {
         marginLeft: 0,
       },

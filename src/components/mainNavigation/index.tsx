@@ -16,6 +16,7 @@ import HomeIcon from "components/icons/home";
 import preact from "preact";
 import { useRef, useState } from "preact/hooks";
 import { Link, useHistory } from "react-router-dom";
+import { customLg } from "src/data/constants";
 import { ColorsType, getColors, PaletteOrColorsType } from "utils/index";
 
 interface StylesProps {
@@ -33,7 +34,7 @@ const useStyles = makeStyles<Theme, StylesProps>((theme) =>
       flexDirection: "row",
       justifyContent: "flex-start",
       alignItems: "center",
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down(customLg)]: {
         flexWrap: "wrap",
       },
       [theme.breakpoints.down("sm")]: {
