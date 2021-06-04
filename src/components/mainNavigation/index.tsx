@@ -217,6 +217,12 @@ export default function MainNavigation({
             onClick={() => handleClose(() => history.push("/eltern"))}
             className={classes.menuItem}
           >
+            <HomeIcon />
+          </MenuItem>
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/eltern"))}
+            className={classes.menuItem}
+          >
             Für Eltern
           </MenuItem>
           <MenuItem

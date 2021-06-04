@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) => {
       height: "100%",
       padding: 24,
       borderRadius: 12,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         paddingLeft: 16,
         paddingRight: 16,
       },
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => {
       borderWidth: 1,
       borderStyle: "solid",
       borderColor: theme.palette.blue.contrastText,
-      [theme.breakpoints.down("xs")]: {
+      [theme.breakpoints.down("sm")]: {
         paddingLeft: 16,
         paddingRight: 16,
       },
@@ -76,21 +76,21 @@ export default function IchHelfeMit(): preact.VNode {
   return (
     <Section paddingBottom={80} paddingTop={80} palette="blue">
       <Grid container spacing={2}>
-        <Grid item xs={12}>
+        <Grid item sm={12}>
           <SectionTitle
             title="Ich helfe mit"
             className={classes.center}
             isInsideGrid
           />
         </Grid>
-        <Grid item xs={12} sm={7}>
+        <Grid item sm={12} md={7}>
           <div className={clsx(classes.content, classes.payment)}>
             <Typography variant="body1">
               Dieser Teil ist noch am Entstehen
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item sm={12} md={5}>
           <div className={classes.containerRight}>
             <ContentTitleH4 title="Warum braucht es meine Hilfe" />
             {createListItem(

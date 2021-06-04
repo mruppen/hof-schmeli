@@ -7,7 +7,7 @@ export default function NaeheVertrauenFreiheit(): preact.VNode {
   return (
     <Section palette="green" paddingBottom={80} paddingTop={80}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={4}>
+        <Grid item sm={12} md={4}>
           <SectionTitle title="Mit Nähe" />
           <Typography variant="body1">
             Wo Kinder, Erwachsene und Tiere sich begegnen und wertschätzende und
@@ -16,7 +16,7 @@ export default function NaeheVertrauenFreiheit(): preact.VNode {
             wertschätzend statt bewertend ist – auf allen Ebenen.
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item sm={12} md={4}>
           <SectionTitle title="Mit Vertrauen" />
           <Typography variant="body1">
             Wo Herausforderungen mutig und vertrauensvoll angegangen werden
@@ -25,7 +25,7 @@ export default function NaeheVertrauenFreiheit(): preact.VNode {
             Konflikte gewaltfrei gelöst werden.
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item sm={12} md={4}>
           <SectionTitle title="Mit Freiheit und Verantwortung" />
           <Typography variant="body1">
             Wo ein jeder Raum findet, seine Persönlichkeit weiterzuentwickeln

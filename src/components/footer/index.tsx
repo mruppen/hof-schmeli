@@ -10,6 +10,7 @@ import ContactFooter from "components/contactFooter";
 import MainNavigation from "components/mainNavigation";
 import preact from "preact";
 import { PaletteOrColorsType } from "utils/index";
+import { customLg } from "src/data/constants";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingRight: 79,
       paddingBottom: 80,
       paddingLeft: 82,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         width: 1024,
         maxWidth: 1024,
       },
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
       lineHeight: "93%",
       letterSpacing: "-1%",
       // width: "100%",
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         fontSize: theme.typography.pxToRem(64),
       },
       [theme.breakpoints.down("md")]: {

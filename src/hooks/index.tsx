@@ -2,6 +2,7 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import { ClassNameMap } from "@material-ui/styles";
 import { useEffect, useState } from "preact/hooks";
 import { ColorsType as colorsFromUtils } from "utils/index";
+import { customLg } from "src/data/constants";
 
 export type Colors = colorsFromUtils;
 
@@ -13,37 +14,66 @@ const useContainerStyles: (props: ColorsFunc) => ClassNameMap<"main"> =
       main: (props) => ({
         backgroundColor: props(theme).backgroundColor,
         color: props(theme).color,
-
-        [theme.breakpoints.up("xs")]: {
-          paddingLeft: 24,
-          paddingRight: 24,
-          width: 375,
-          maxWidth: 375,
-        },
-        [theme.breakpoints.up("sm")]: {
-          width: 540,
-          maxWidth: 540,
-          paddingLeft: 96,
-          paddingRight: 96,
-        },
-        [theme.breakpoints.up("md")]: {
+        width: 1440,
+        maxWidth: 1440,
+        paddingLeft: 188,
+        paddingRight: 188,
+        [theme.breakpoints.down(customLg)]: {
+          width: 1024,
+          maxWidth: 1024,
+          paddingLeft: 124,
+          paddingRight: 124
+        }, 
+        [theme.breakpoints.down("md")]: {
           width: 900,
           maxWidth: 900,
           paddingLeft: 116,
           paddingRight: 116,
         },
-        [theme.breakpoints.up("lg")]: {
-          width: 1024,
-          maxWidth: 1024,
-          paddingLeft: 124,
-          paddingRight: 124,
+        [theme.breakpoints.down("sm")]: {
+          width: 540,
+          maxWidth: 540,
+          paddingLeft: 96,
+          paddingRight: 96,
+        }, 
+        [theme.breakpoints.down("xs")]: {
+          paddingLeft: 24,
+          paddingRight: 24,
+          width: 375,
+          maxWidth: 375,
         },
-        [theme.breakpoints.up(1500)]: {
-          width: 1440,
-          maxWidth: 1440,
-          paddingLeft: 188,
-          paddingRight: 188,
-        },
+
+
+        // [theme.breakpoints.up("xs")]: {
+        //   paddingLeft: 24,
+        //   paddingRight: 24,
+        //   width: 375,
+        //   maxWidth: 375,
+        // },
+        // [theme.breakpoints.up("sm")]: {
+        //   width: 540,
+        //   maxWidth: 540,
+        //   paddingLeft: 96,
+        //   paddingRight: 96,
+        // },
+        // [theme.breakpoints.up("md")]: {
+        //   width: 900,
+        //   maxWidth: 900,
+        //   paddingLeft: 116,
+        //   paddingRight: 116,
+        // },
+        // [theme.breakpoints.up("lg")]: {
+        //   width: 1024,
+        //   maxWidth: 1024,
+        //   paddingLeft: 124,
+        //   paddingRight: 124,
+        // },
+        // [theme.breakpoints.up(1500)]: {
+        //   width: 1440,
+        //   maxWidth: 1440,
+        //   paddingLeft: 188,
+        //   paddingRight: 188,
+        // },
       }),
     })
   );
@@ -68,7 +98,7 @@ const useHeaderStyles: (
     container: (props) => ({
       height: props.height,
       backgroundColor: props.backgroundColor,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         height: calculateHeight(props.height, 1024),
       },
       [theme.breakpoints.down("md")]: {

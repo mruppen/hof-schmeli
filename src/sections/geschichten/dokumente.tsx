@@ -44,10 +44,10 @@ export default function Dokumente(): preact.VNode {
     <Section paddingBottom={80} palette="greenInverted">
       <TeaserRow teasers={documents} palette="greenInverted" />
       <Grid container spacing={2}>
-        <Grid item xs={false} sm={4}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={4}>
+        <Hidden smDown>
+          <Grid item md={4}/>
+        </Hidden>
+        <Grid item sm={12} md={4}>
           <Teaser
             title="Leitbild"
             palette="greenInverted"

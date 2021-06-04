@@ -1,4 +1,4 @@
-import { Grid, Hidden, makeStyles, useTheme } from "@material-ui/core";
+import { Grid, Hidden, makeStyles, useTheme, Theme } from "@material-ui/core";
 import Section from "components/section";
 import Teaser from "components/teaser";
 import { createTeaserRowGridItems } from "components/teaserRow";
@@ -19,14 +19,17 @@ import { TeaserModel } from "models/models";
 import preact from "preact";
 import { ColorsType } from "utils/index";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   title: {
     marginBottom: 24,
   },
   titleTop: {
     marginTop: 64,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 16
+    }
   },
-});
+}));
 
 const teasers: TeaserModel[] = [
   {
@@ -75,7 +78,7 @@ export default function Personen(): preact.VNode {
         <Grid item xs={12}>
           <SectionTitle title="LehrerInnen-Team" isInsideGrid />
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={5}>
           <Teaser
             palette={colors}
             image={simone}
@@ -83,10 +86,10 @@ export default function Personen(): preact.VNode {
             text="Kindergärtnerin, Primarlehrerin, Kinderyoga-Lehrerin, Landwirtin im Nebenerwerb mit Schafen, Eseln und Pferden. Genossenschafts-Präsidentin"
           />
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden smDown>
+          <Grid item md={2}/>
+        </Hidden>
+        <Grid item xs={12} md={5}>
           <Teaser
             palette={colors}
             image={daniela}
@@ -94,7 +97,7 @@ export default function Personen(): preact.VNode {
             text="Kindergärtnerin,  Basisstufen-Lehrerin, Lehrerin Fremdsprachen"
           />
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={5}>
           <Teaser
             palette={colors}
             image={carole}
@@ -102,10 +105,10 @@ export default function Personen(): preact.VNode {
             text="Lehrerin 3H-8H, Leiterin Bewegung und Tanz, Genossenschaft-Administratorin"
           />
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden smDown>
+          <Grid item md={2}/>
+        </Hidden>
+        <Grid item xs={12} md={5}>
           <Teaser
             palette={colors}
             image={ephraim}
@@ -120,13 +123,13 @@ export default function Personen(): preact.VNode {
             className={classes.titleTop}
           />
         </Grid>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={5}>
           <Teaser palette={colors} image={piera} title="Piera Sutter" />
         </Grid>
-        <Grid item xs={false} sm={2}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden smDown>
+          <Grid item md={2}/>
+        </Hidden>
+        <Grid item xs={12} md={5}>
           <Teaser palette={colors} image={david} title="David Müller" />
         </Grid>
         <Grid item xs={12}>

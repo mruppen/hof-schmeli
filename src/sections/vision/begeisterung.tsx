@@ -1,19 +1,23 @@
-import { Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
+import { Grid, Hidden, makeStyles, Typography, Theme } from "@material-ui/core";
 import Section from "components/section";
 import SectionTitle from "components/titles/sectionTitle";
 import schnecke from "data/images/schneckeGelb.png";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     backgroundImage: `url(${schnecke})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
+    [theme.breakpoints.down("sm")]: {
+      backgroundSize: "80%"
+    }
+
   },
   space: {
     marginBottom: 24,
   },
-});
+}));
 
 export default function Begeisterung(): preact.VNode {
   const classes = useStyles();
@@ -26,10 +30,10 @@ export default function Begeisterung(): preact.VNode {
       additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
-        <Grid item xs={false} sm={7}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={5}>
+        <Hidden smDown>
+          <Grid item md={7} />
+        </Hidden>
+        <Grid item sm={12} md={5}>
           <SectionTitle title="Und mit Begeisterung, die Kreise zieht" />
           <Typography variant="body1" className={classes.space}>
             Wir möchten nicht nur für die Kinder und Familien, die unsere Schule

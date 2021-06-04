@@ -5,6 +5,7 @@ import {
   makeStyles,
   Typography,
   useTheme,
+  Theme,
 } from "@material-ui/core";
 import ArrowLink from "components/arrowLink";
 import Section from "components/section";
@@ -13,11 +14,15 @@ import schnecke from "data/images/schneckeGelb.png";
 import preact from "preact";
 import { ColorsType } from "utils/index";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     backgroundImage: `url(${schnecke})`,
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "80% 40%",
+    backgroundPosition: "85% 15%",
+    [theme.breakpoints.down("sm")]: {
+      backgroundSize: "80%",
+      backgroundPosition: "center center"
+    }
   },
   space: {
     marginTop: 20,
@@ -26,7 +31,7 @@ const useStyles = makeStyles({
     color: "white",
     fontStyle: "underline",
   },
-});
+}));
 
 export default function DokumenteUndLizenz(): preact.VNode {
   const classes = useStyles();
@@ -43,7 +48,7 @@ export default function DokumenteUndLizenz(): preact.VNode {
       additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item sm={12} md={5}>
           <SectionTitle title="Weitere Dokumente" />
           <ArrowLink
             palette={colors}
@@ -90,9 +95,9 @@ export default function DokumenteUndLizenz(): preact.VNode {
             Materialspenden
           </ArrowLink>
         </Grid>
-        <Grid item xs={false} sm={7}>
-          <Hidden />
-        </Grid>
+        <Hidden smDown>
+          <Grid item md={7} />
+        </Hidden>
         <Grid item xs={12} sm={12}>
           <SectionTitle
             title="Lizenz für Dokumente"

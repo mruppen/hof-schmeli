@@ -14,6 +14,7 @@ import HeaderTitle from "components/titles/headerTitle";
 import preact from "preact";
 import { useHeaderStyles } from "src/hooks";
 import { getColors, PaletteOrColorsType } from "utils/index";
+import { customLg } from "src/data/constants";
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   subtitle: {
     marginTop: 48,
-    [theme.breakpoints.down(1500)]: {
+    [theme.breakpoints.down(customLg)]: {
       marginTop: 20,
     },
     [theme.breakpoints.down("sm")]: {
@@ -35,9 +36,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   lead: {
     marginTop: 18,
-    // [theme.breakpoints.down(1500)]: {
-    //   marginTop: 20,
-    // },
   },
   image: {
     visibility: "hidden",
