@@ -41,14 +41,14 @@ export default function ContentTeaserLeft({
       additionalClassName={containerClassName}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item sm={12} md={5}>
           <SectionTitle title={title} />
           {children}
         </Grid>
-        <Grid item xs={false} sm={1}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={6}>
+        <Hidden smDown>
+          <Grid item md={1} />
+        </Hidden>
+        <Grid item sm={12} md={6}>
           <img src={image} className={clsx(classes.image, imageClassName)} />
         </Grid>
       </Grid>

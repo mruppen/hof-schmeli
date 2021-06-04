@@ -1,10 +1,11 @@
 import { makeStyles, Theme, Typography } from "@material-ui/core";
 import preact from "preact";
+import { customLg } from "src/data/constants";
 
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
     marginTop: 116,
-    [theme.breakpoints.down(1500)]: {
+    [theme.breakpoints.down(customLg)]: {
       marginTop: 30,
     },
     [theme.breakpoints.down("sm")]: {

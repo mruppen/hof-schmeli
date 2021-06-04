@@ -2,6 +2,8 @@ import { createMuiTheme, Theme } from "@material-ui/core";
 import common from "@material-ui/core/colors/common";
 import createPalette from "@material-ui/core/styles/createPalette";
 import React from "react";
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+import { customLg } from "./data/constants";
 
 const fontFamily = ["IBM Plex Sans"].join(",");
 const fontFamilyMono = ["IBM Plex Mono"].join(",");
@@ -99,7 +101,7 @@ export default function useCustomTheme(): Theme {
       fontFamily: fontFamily,
       fontStyle: "normal",
       fontWeight: 600,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         fontSize: theme.typography.pxToRem(19),
       },
       [theme.breakpoints.down("md")]: {
@@ -141,7 +143,7 @@ export default function useCustomTheme(): Theme {
       lineHeight: "93%",
       fontWeight: 700,
       fontFamily: fontFamily,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         fontSize: theme.typography.pxToRem(72),
       },
       [theme.breakpoints.down("md")]: {
@@ -158,11 +160,8 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(44),
       lineHeight: "110%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         fontSize: theme.typography.pxToRem(32),
-      },
-      [theme.breakpoints.down("lg")]: {
-        fontsize: theme.typography.pxToRem(28),
       },
       [theme.breakpoints.down("md")]: {
         fontSize: theme.typography.pxToRem(24),
@@ -189,11 +188,8 @@ export default function useCustomTheme(): Theme {
       fontSize: theme.typography.pxToRem(24),
       lineHeight: "130%",
       fontFamily: fontFamily,
-      [theme.breakpoints.down(1500)]: {
+      [theme.breakpoints.down(customLg)]: {
         fontSize: 20,
-      },
-      [theme.breakpoints.down("lg")]: {
-        fontsize: 18,
       },
       [theme.breakpoints.down("md")]: {
         fontSize: 17,
@@ -233,7 +229,6 @@ export default function useCustomTheme(): Theme {
       lineHeight: "160%",
     };
 
-    console.log(theme.typography);
     return theme;
   }, []);
 }

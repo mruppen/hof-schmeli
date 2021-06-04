@@ -39,13 +39,17 @@ export default function DasWichtigsteInKuerze(): preact.VNode {
   const theme = useTheme();
   const colors = invert(getColors(theme, "green"));
   const classes = useStyles();
-  const enumerationItems: string[] = [
+  const enumerationItems: (JSX.Element | string)[] = [
     "keine Hausaufgaben",
     "keine Noten",
     "Leistung ohne Leistungsdruck",
     "Sicherheit und Geborgenheit für dein Kind",
     "wir übernehmen Verantwortung für die Bildung und sind dem Lehrplan 21 verpflichtet",
-    "problemloser Schulweg mit dem ÖV (Brig-Biela = 15Min.)",
+    <span>
+      "problemloser Schulweg mit dem ÖV
+      <br />
+      (Brig-Biela = 15Min.)"
+    </span>,
     "Tagesschule mit Mmmh…ittagstisch",
     "Schule und Bauernhof bilden ein Ganzes",
     "genossenschaftlich organisiert",

@@ -9,9 +9,12 @@ import Leitbild from "routes/leitbild";
 import Schule from "routes/schule";
 import Vision from "routes/vision";
 import useCustomTheme from "src/customTheme";
+import { customLg } from "./data/constants";
 
 export function App(): preact.VNode {
   const theme = useCustomTheme();
+  console.log(theme);
+  console.log(theme.breakpoints.down(customLg));
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

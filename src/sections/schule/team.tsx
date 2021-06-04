@@ -1,19 +1,26 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography, Theme } from "@material-ui/core";
 import ContentTeaserLeft from "components/contentTeaserLeft";
 import schnecke from "data/images/schnecke.png";
 import preact from "preact";
+import { customLg } from "src/data/constants";
 
-const useStyles = makeStyles({
-  image: {
-    marginTop: 92,
-  },
+const useStyles = makeStyles((theme: Theme) =>({
   imageSnail: {
     marginTop: -200,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0
+    }
   },
   container: {
     marginTop: 112,
+    [theme.breakpoints.down(customLg)]: {
+      marginTop: 80
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0
+    },
   },
-});
+}));
 
 export default function Team(): preact.VNode {
   const classes = useStyles();

@@ -1,11 +1,11 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography, Theme } from "@material-ui/core";
 import clsx from "clsx";
 import Section from "components/section";
 import TopicTeaser from "components/topicTeaser";
 import feldstecher from "data/images/feldstecher.png";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   padding32: {
     paddingBottom: 32,
   },
@@ -27,17 +27,27 @@ const useStyles = makeStyles({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column"
+    }
   },
   item: {
     width: 198.4,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 16,
+      width: "100%",
+    }
   },
   itemDistance: {
     marginRight: 18,
+    [theme.breakpoints.down("sm")]: {
+      marginRight:0
+    }
   },
   itemText: {
     marginTop: 8,
   },
-});
+}));
 
 export default function SoLerntDeinKind(): preact.VNode {
   const classes = useStyles();

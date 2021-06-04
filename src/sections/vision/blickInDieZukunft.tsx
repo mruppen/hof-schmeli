@@ -3,29 +3,30 @@ import Section from "components/section";
 import SectionTitle from "components/titles/sectionTitle";
 import flower from "data/images/flower.png";
 import stichworte from "data/images/stichworte.png";
-import { useContainerStyles } from "hooks/index";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     backgroundImage: `url(${flower})`,
     backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    [theme.breakpoints.down("sm")]: {
+      backgroundPositionY: "bottom",
+      backgroundPositionX: "right"
+    }
   },
   image: {
     width: "100%",
   },
   space: {
     marginTop: 260,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0
+    }
   },
-});
+}));
 
 export default function BlickInDieZukunft(): preact.VNode {
-  const containerClasses = useContainerStyles((theme: Theme) => {
-    return {
-      color: theme.palette.blue.main,
-      backgroundColor: theme.palette.blue.contrastText,
-    };
-  });
   const classes = useStyles();
 
   return (
@@ -36,7 +37,7 @@ export default function BlickInDieZukunft(): preact.VNode {
       additionalClassName={classes.container}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} md={5}>
           <SectionTitle
             title="Mit Blick in die Zukunft"
             className={classes.space}
@@ -48,10 +49,10 @@ export default function BlickInDieZukunft(): preact.VNode {
             meistern zu können.
           </Typography>
         </Grid>
-        <Grid item xs={false} sm={1}>
-          <Hidden />
-        </Grid>
-        <Grid item xs={12} sm={6}>
+        <Hidden smDown>
+          <Grid item md={1} />
+        </Hidden>
+        <Grid item xs={12} md={6}>
           <img src={stichworte} className={classes.image} />
         </Grid>
       </Grid>

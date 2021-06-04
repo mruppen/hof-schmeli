@@ -1,20 +1,23 @@
-import { Grid, Hidden, makeStyles, Typography } from "@material-ui/core";
+import { Grid, Hidden, makeStyles, Theme, Typography } from "@material-ui/core";
 import ArrowButton from "components/arrowButton";
 import Section from "components/section";
 import SectionTitle from "components/titles/sectionTitle";
 import schnecke from "data/images/schneckeGelb.png";
 import preact from "preact";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   container: {
     backgroundImage: `url(${schnecke})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
+    [theme.breakpoints.down("sm")]: {
+      backgroundSize: "80%"
+    }
   },
   space: {
     marginBottom: 24,
   },
-});
+}));
 
 export default function SchuleAlsGemeinschaft(): preact.VNode {
   const classes = useStyles();

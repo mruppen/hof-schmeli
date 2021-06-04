@@ -16,6 +16,7 @@ import HomeIcon from "components/icons/home";
 import preact from "preact";
 import { useRef, useState } from "preact/hooks";
 import { Link, useHistory } from "react-router-dom";
+import { customLg } from "src/data/constants";
 import { ColorsType, getColors, PaletteOrColorsType } from "utils/index";
 
 interface StylesProps {
@@ -33,7 +34,7 @@ const useStyles = makeStyles<Theme, StylesProps>((theme) =>
       flexDirection: "row",
       justifyContent: "flex-start",
       alignItems: "center",
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down(customLg)]: {
         flexWrap: "wrap",
       },
       [theme.breakpoints.down("sm")]: {
@@ -213,6 +214,12 @@ export default function MainNavigation({
           anchorReference="anchorEl"
           transformOrigin={{ vertical: "top", horizontal: "center" }}
         >
+          <MenuItem
+            onClick={() => handleClose(() => history.push("/eltern"))}
+            className={classes.menuItem}
+          >
+            <HomeIcon />
+          </MenuItem>
           <MenuItem
             onClick={() => handleClose(() => history.push("/eltern"))}
             className={classes.menuItem}

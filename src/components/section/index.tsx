@@ -1,7 +1,6 @@
 import {
   Container,
   ContainerProps,
-  createStyles,
   makeStyles,
   Theme,
 } from "@material-ui/core";
@@ -10,24 +9,28 @@ import { useContainerStyles } from "hooks/index";
 import preact from "preact";
 import { getColors, PaletteOrColorsType } from "utils/index";
 
-const useStyles = makeStyles<Theme, PaddingStyles>(() =>
-  createStyles({
-    container: (props) => ({
-      paddingTop: props.paddingTop,
-      paddingBottom: props.paddingBottom,
-    }),
-  })
-);
+const useStyles = makeStyles<Theme, PaddingStyles>((theme: Theme) => ({
+  container: (props) => ({
+    paddingTop: props.paddingTop,
+    paddingBottom: props.paddingBottom,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: props.paddingTop - 24,
+      paddingBottom: props.paddingBottom - 24,
+    },
+  }),
+}));
 
 type PaddingStyles = {
-  paddingTop: number | string;
-  paddingBottom: number | string;
+  paddingTop: number;
+  paddingBottom: number;
 };
 
 export type SectionProps = {
   palette: PaletteOrColorsType;
-  paddingTop?: number | string;
-  paddingBottom?: number | string;
+  // paddingTop?: number | string;
+  // paddingBottom?: number | string;
+  paddingTop?: number;
+  paddingBottom?: number;
   additionalClassName?: string;
 } & Required<Pick<ContainerProps, "children">>;
 
