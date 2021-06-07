@@ -59,7 +59,7 @@ export default function MitWenigVielBewirken(): preact.VNode {
         </Typography>
       </TopicTeaser>
       <Typography variant="h4" className={classes.space}>
-        Haben wir ihr Interesse geweckt? Wir freuen uns sehr, wenn sie mit uns
+        Haben wir Ihr Interesse geweckt? Wir freuen uns sehr, wenn Sie mit uns
         Kontakt aufnehmen.
       </Typography>
     </Section>

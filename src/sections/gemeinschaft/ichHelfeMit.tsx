@@ -67,6 +67,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginBottom: -theme.spacing(0.5),
     },
   },
+  margin24: {
+    marginBottom: 24,
+  },
 }));
 
 function createListItem(
@@ -105,7 +108,6 @@ function CreateAccountLine(
 }
 
 export default function IchHelfeMit(): preact.VNode {
-  console.log("Rerender");
   const classes = useStyles();
   const windowSize = useWindowSize();
   const theme = useTheme();
@@ -113,8 +115,6 @@ export default function IchHelfeMit(): preact.VNode {
   const [isSmOrSmaller, setIsSmOrSmaller] = useState<boolean>(result);
 
   useEffect(() => {
-    console.log("logging result:", result);
-
     setIsSmOrSmaller(result);
   }, [windowSize]);
 
@@ -130,6 +130,13 @@ export default function IchHelfeMit(): preact.VNode {
         </Grid>
         <Grid item sm={12} md={7}>
           <div className={clsx(classes.content, classes.payment)}>
+            <Typography variant="body1">
+              Dieser Teil wird noch bearbeitet. Es folgen direkte Zugänge zu den
+              Zahlungsmöglichkeiten.
+            </Typography>
+            <Typography variant="body1" className={classes.margin24}>
+              Bis dahin können Spenden hier einbezahlt werden.
+            </Typography>
             <Typography variant="h4">Spendenkonto</Typography>
             {CreateAccountLine(
               "Kontoinhaber",
@@ -164,9 +171,12 @@ export default function IchHelfeMit(): preact.VNode {
             {CreateAccountLine(
               "Clearing",
               "765",
-              classes.paymentLine,
+              clsx(classes.paymentLine, classes.margin24),
               isSmOrSmaller
             )}
+            <Typography variant="body1">
+              Vielen Dank für Ihr Verständnis und Ihre Unterstützung.
+            </Typography>
           </div>
         </Grid>
         <Grid item sm={12} md={5}>
